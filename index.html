@@ -1,0 +1,163 @@
+<html lang="en" dir="ltr">
+
+<head>
+    <meta http-equiv="origin-trial"
+        content="A/kargTFyk8MR5ueravczef/wIlTkbVk1qXQesp39nV+xNECPdLBVeYffxrM8TmZT6RArWGQVCJ0LRivD7glcAUAAACQeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZS5jb206NDQzIiwiZmVhdHVyZSI6IkRpc2FibGVUaGlyZFBhcnR5U3RvcmFnZVBhcnRpdGlvbmluZzIiLCJleHBpcnkiOjE3NDIzNDIzOTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+    <title>
+        Perfex CRM - Login </title>
+    <link rel="shortcut icon" id="favicon" href="./uploads/company/favicon.ico">
+    <link rel="apple-touch-icon”" id="favicon-apple-touch-icon"
+        href="./uploads/company/favicon.ico">
+    <link rel="stylesheet" type="text/css" id="inter-font"
+        href="./assepluginsts//inter/inter.css?v=3.2.1">
+    <link rel="stylesheet" type="text/css" id="reset-css"
+        href="./assets/css/reset.min.css?v=3.2.1">
+    <link rel="stylesheet" type="text/css" id="bootstrap-css"
+        href="./assets/plugins/bootstrap/css/bootstrap.min.css?v=3.2.1">
+    <link rel="stylesheet" type="text/css" id="tailwind-css"
+        href="./assets/builds/tailwind.css?v=3.2.1">
+    <style>
+        body,
+        html {
+            font-size: 16px;
+        }
+
+        body>* {
+            font-size: 14px;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            color: #475569;
+            margin: 0;
+            padding: 0;
+        }
+
+        .company-logo {
+            padding: 25px 10px;
+            display: block;
+        }
+
+        .company-logo img {
+            margin: 0 auto;
+            display: block;
+        }
+        .company-logo img {
+        width: 32px;
+        height: 32px;
+    }
+
+    </style>
+    <script type="text/javascript" async="" charset="utf-8"
+        src="https://www.gstatic.com/recaptcha/releases/I0bG74fWAenNf3Z5ncHSz-bd/recaptcha__en.js"
+        crossorigin="anonymous" integrity="sha384-jf2mERW8WH2M+UziYJqb5zn6+3s50s+HOV/YWiSQE0QCWluCff6yMvvBynKl9zaL">
+        </script>
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+</head>
+
+<body class="tw-bg-neutral-100 login_admin" cz-shortcut-listen="true" data-new-gr-c-s-check-loaded="14.1220.0"
+    data-gr-ext-installed="">
+
+    <div class="tw-max-w-md tw-mx-auto tw-pt-24 authentication-form-wrapper tw-relative tw-z-20">
+        <div class="company-logo text-center">
+            <a href="./" class="logo img-responsive">
+                <img src="./uploads/company/favicon.png" class="img-responsive" alt="Perfex CRM" 
+                style="width: 180px; height: 60px;">
+
+            </a>
+        </div>
+
+        <div class=" text-center tw-mb-5">
+            <h1 class="tw-text-neutral-800 tw-text-2xl tw-font-bold tw-mb-1">
+                Login </h1>
+            <p class="tw-text-neutral-600">
+                Welcome, please sign in to your dashboard </p>
+        </div>
+
+        <div
+            class="tw-bg-white tw-mx-2 sm:tw-mx-6 tw-py-8 tw-px-6 sm:tw-px-8 tw-shadow-sm tw-rounded-lg tw-border tw-border-solid tw-border-neutral-600/20">
+
+            <div class="row">
+            </div>
+
+            <form action="./admin/authentication" method="post" accept-charset="utf-8">
+                <input type="hidden" name="csrf_token_name" value="0242432495333b0f061066544ce54e0f">
+
+
+
+                <div class="form-group">
+                    <label for="email" class="control-label !tw-mb-3">
+                        Email Address </label>
+                    <input type="email" value="admin@test.com" id="email" name="email" class="form-control"
+                        autofocus="1">
+                </div>
+
+                <div class="form-group tw-mt-8">
+                    <span class="tw-inline-flex tw-justify-between tw-items-end tw-w-full tw-mb-3">
+                        <label for="password" class="control-label !tw-m-0">
+                            Password </label>
+                        <a href="./admin/authentication/forgot_password" class="text-muted">
+                            Forgot Password? </a>
+                    </span>
+
+                    <input type="password" value="perfexdemo" id="password" name="password" class="form-control">
+                </div>
+
+                <div class="tw-mt-6">
+                    <a href="/../page/admin/dashboard.html" class="btn btn-primary btn-block tw-font-semibold tw-py-2">
+                        Login
+                    </a>
+                </div>
+                
+
+
+            </form>
+        </div>
+    </div>
+    <style type="text/css">
+        .open-demo-button {
+            text-align: center;
+            width: 100%;
+            height: auto;
+            background: #2663eb;
+            padding: 15px;
+            display: block;
+            color: #fff;
+            font-size: 15px;
+            border-radius: 4px;
+        }
+
+        .open-demo-button:hover,
+        .open-demo-button:active,
+        .open-demo-button:focus {
+            background: #3269e3;
+            text-decoration: none;
+            color: #fff;
+        }
+    </style>
+
+
+
+    <div
+        style="background-color: rgb(255, 255, 255); border: 1px solid rgb(204, 204, 204); box-shadow: rgba(0, 0, 0, 0.2) 2px 2px 3px; position: absolute; transition: visibility linear 0.3s, opacity 0.3s linear; opacity: 0; visibility: hidden; z-index: 2000000000; left: 0px; top: -10000px;">
+        <div
+            style="width: 100%; height: 100%; position: fixed; top: 0px; left: 0px; z-index: 2000000000; background-color: rgb(255, 255, 255); opacity: 0.05;">
+        </div>
+        <div class="g-recaptcha-bubble-arrow"
+            style="border: 11px solid transparent; width: 0px; height: 0px; position: absolute; pointer-events: none; margin-top: -11px; z-index: 2000000000;">
+        </div>
+        <div class="g-recaptcha-bubble-arrow"
+            style="border: 10px solid transparent; width: 0px; height: 0px; position: absolute; pointer-events: none; margin-top: -10px; z-index: 2000000000;">
+        </div>
+        <div style="z-index: 2000000000; position: relative;"><iframe title="recaptcha challenge expires in two minutes"
+                name="c-pze4qxn3sk9i" frameborder="0" scrolling="no"
+                sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox allow-storage-access-by-user-activation"
+                src="https://www.google.com/recaptcha/api2/bframe?hl=en&amp;v=I0bG74fWAenNf3Z5ncHSz-bd&amp;k=6LdfWiITAAAAANbaBbicnRRxDQUwPZmA00lQJTEx"
+                style="width: 100%; height: 100%;"></iframe></div>
+    </div>
+</body>
+
+</html>
