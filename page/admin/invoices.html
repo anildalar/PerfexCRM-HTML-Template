@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>
-        Expenses </title>
+        Invoices </title>
 
     <link rel="shortcut icon" id="favicon" href="../../uploads/company/favicon.ico">
     <link rel="apple-touch-icon”" id="favicon-apple-touch-icon"
@@ -688,7 +688,7 @@
     </style>
 </head>
 
-<body class="app admin h-full expenses user-id-1 chrome" data-new-gr-c-s-check-loaded="14.1221.0"
+<body class="app admin h-full invoices user-id-1 chrome" data-new-gr-c-s-check-loaded="14.1221.0"
     data-gr-ext-installed="" cz-shortcut-listen="true">
     <div id="header">
         <button type="button"
@@ -1038,7 +1038,7 @@
                                             <span class=" tw-text-smtext-has-action notification-date"
                                                 data-placement="right" data-toggle="tooltip"
                                                 data-title="2025-02-10 05:50:47">
-                                                2 hrs ago </span>
+                                                an hour ago </span>
                                         </div>
                                     </div>
                                 </a>
@@ -1062,7 +1062,7 @@
                                             <span class=" tw-text-smtext-has-action notification-date"
                                                 data-placement="right" data-toggle="tooltip"
                                                 data-title="2025-02-10 05:50:44">
-                                                2 hrs ago </span>
+                                                an hour ago </span>
                                         </div>
                                     </div>
                                 </a>
@@ -1090,7 +1090,7 @@
                                             <span class=" tw-text-smtext-has-action notification-date"
                                                 data-placement="right" data-toggle="tooltip"
                                                 data-title="2025-02-10 03:42:22">
-                                                4 hrs ago </span>
+                                                3 hrs ago </span>
                                         </div>
                                     </div>
                                 </a>
@@ -1134,7 +1134,7 @@
             </div>
         </nav>
     </div>
-    <div id="setup-menu-wrapper" class="sidebar animated" style="min-height: 1002px;">
+    <div id="setup-menu-wrapper" class="sidebar animated" style="min-height: 1188px;">
         <ul class="nav metis-menu tw-mt-[57px]" id="setup-menu">
             <div
                 class="tw-flex tw-items-center tw-justify-between tw-space-x-2 rtl:tw-space-x-reverse tw-pl-4 tw-pr-2.5 tw-py-3">
@@ -1398,7 +1398,7 @@
             </li>
         </ul>
     </div>
-    <aside id="menu" class="sidebar" style="min-height: 1116px;">
+    <aside id="menu" class="sidebar" style="min-height: 1302px;">
         <div class="dropdown sidebar-user-profile tw-mt-[80px] tw-mx-1.5 ">
             <a href="#"
                 class="dropdown-toggle profile -tw-mt-1 tw-font-medium tw-border tw-border-solid tw-rounded-lg tw-bg-white/20 tw-py-2 tw-px-2.5 tw-block tw-shadow-sm tw-border-neutral-900/20 tw-text-neutral-700 hover:tw-text-neutral-800 focus:tw-text-neutral-800 hover:tw-bg-neutral-900/5 focus:tw-bg-neutral-900/5"
@@ -1566,7 +1566,7 @@
                         Sales </span>
                     <span class="fa arrow pleft5"></span>
                 </a>
-                <ul class="nav nav-second-level collapse" aria-expanded="false">
+                <ul class="nav nav-second-level collapse" aria-expanded="false" style="height: 0px;">
                     <li class="sub-menu-item-proposals">
                         <a href="https://perfexcrm.com/demo/admin/proposals">
                             <span class="sub-menu-text">
@@ -1579,7 +1579,7 @@
                                 Estimates </span>
                         </a>
                     </li>
-                    <li class="sub-menu-item-invoices">
+                    <li class="sub-menu-item-invoices active">
                         <a href="https://perfexcrm.com/demo/admin/invoices">
                             <span class="sub-menu-text">
                                 Invoices </span>
@@ -1612,7 +1612,7 @@
                         Subscriptions </span>
                 </a>
             </li>
-            <li class="menu-item-expenses active">
+            <li class="menu-item-expenses">
                 <a href="https://perfexcrm.com/demo/admin/expenses" aria-expanded="false">
                     <i class="fa-regular fa-file-lines menu-icon"></i>
                     <span class="menu-text">
@@ -1675,7 +1675,7 @@
                         Utilities </span>
                     <span class="fa arrow pleft5"></span>
                 </a>
-                <ul class="nav nav-second-level collapse" aria-expanded="false">
+                <ul class="nav nav-second-level collapse" aria-expanded="false" style="height: 0px;">
                     <li class="sub-menu-item-media">
                         <a href="https://perfexcrm.com/demo/admin/utilities/media">
                             <span class="sub-menu-text">
@@ -1785,7 +1785,7 @@
                 </ul>
             </li>
             <li id="setup-menu-item">
-                <a href="#" class="open-customizer"><i class="fa fa-cog menu-icon"></i>
+                <a href="#" class="open-customizer" aria-expanded="false"><i class="fa fa-cog menu-icon"></i>
                     <span class="menu-text">
                         Setup </span>
                 </a>
@@ -1793,7 +1793,7 @@
             <li class="pinned-separator tw-border-b tw-border-solid tw-border-neutral-900/10 tw-mt-1"></li>
             <li class="pinned_project last:tw-border-b last:tw-border-solid last:tw-border-neutral-900/10">
                 <a href="https://perfexcrm.com/demo/admin/projects/view/2" data-toggle="tooltip"
-                    data-title="Pinned Project">
+                    data-title="Pinned Project" aria-expanded="false" data-original-title="" title="">
                     SEO Optimization<br>
                     <small>
                         Lind Ltd </small>
@@ -1808,132 +1808,203 @@
             </li>
         </ul>
     </aside>
-    <div id="wrapper" style="min-height: 1059px;">
+    <div id="wrapper" style="min-height: 1245px;">
         <div class="content">
-            <div class="row">
-                <div class="col-md-12">
-                    <h4 class="tw-mt-0 tw-font-bold tw-text-xl tw-mb-3">
-                        Expenses </h4>
-                    <div id="stats-top" class="tw-mb-6">
-                        <div id="expenses_total" class="empty:tw-min-h-[61px]">
-                            <dl class="tw-grid tw-grid-cols-2 md:tw-grid-cols-2 lg:tw-grid-cols-5 tw-gap-2 tw-mb-0">
-                                <div
-                                    class="tw-bg-white tw-border tw-border-solid tw-border-neutral-300/80 tw-shadow-sm tw-py-2 tw-px-3.5 tw-rounded-lg tw-text-sm odd:last:tw-col-span-2 md:odd:last:tw-col-auto">
-                                    <dt class="tw-font-medium tw-text-base text-warning">
-                                        Total </dt>
-                                    <dd
-                                        class="tw-mt-1 tw-flex tw-items-baseline tw-justify-between md:tw-block lg:tw-flex">
-                                        <div class="tw-font-semibold tw-text-neutral-600">
-                                            $4,589.84 </div>
-                                    </dd>
+            <div id="vueApp" data-v-app="">
+                <div class="row">
+                    <div class="col-md-12 tw-mb-3 md:tw-mb-6">
+                        <div class="md:tw-flex md:tw-items-center">
+                            <div class="tw-grow">
+                                <h4 class="tw-my-0 tw-font-bold tw-text-xl"> Invoices </h4><a
+                                    href="https://perfexcrm.com/demo/admin/invoices/recurring" class="tw-mr-4">
+                                    Recurring Invoices → </a>
+                            </div>
+                            <div id="invoices_total" data-type="badge"
+                                class="tw-self-start tw-mt-2 md:tw-mt-0 empty:tw-min-h-[60px]">
+
+
+                                <div class="tw-relative">
+                                    <div
+                                        class="md:tw-flex md:tw-items-center tw-space-y-1 md:tw-space-y-0 md:tw-gap-1 tw-mb-0">
+
+                                        <div
+                                            class="tw-border tw-border-solid tw-border-neutral-300/80 tw-rounded-lg tw-shrink-0 tw-bg-white">
+                                            <div
+                                                class="tw-px-2 md:tw-px-1.5 tw-py-1.5 md:tw-py-0.5 tw-text-sm tw-inline-flex tw-gap-2">
+                                                <div class="text-success">
+                                                    Paid Invoices </div>
+                                                <div class="tw-font-medium">
+                                                    $23,257.00 </div>
+                                            </div>
+                                        </div>
+                                        <div
+                                            class="tw-border tw-border-solid tw-border-neutral-300/80 tw-rounded-lg tw-shrink-0 tw-bg-white">
+                                            <div
+                                                class="tw-px-2 md:tw-px-1.5 tw-py-1.5 md:tw-py-0.5 tw-text-sm tw-inline-flex tw-gap-2">
+                                                <div class="text-danger">
+                                                    Past Due Invoices </div>
+                                                <div class="tw-font-medium">
+                                                    $0.00 </div>
+                                            </div>
+                                        </div>
+                                        <div
+                                            class="tw-border tw-border-solid tw-border-neutral-300/80 tw-rounded-lg tw-shrink-0 tw-bg-white">
+                                            <div
+                                                class="tw-px-2 md:tw-px-1.5 tw-py-1.5 md:tw-py-0.5 tw-text-sm tw-inline-flex tw-gap-2">
+                                                <div class="text-warning">
+                                                    Outstanding Invoices </div>
+                                                <div class="tw-font-medium">
+                                                    $25,114.70 </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div
-                                    class="tw-bg-white tw-border tw-border-solid tw-border-neutral-300/80 tw-shadow-sm tw-py-2 tw-px-3.5 tw-rounded-lg tw-text-sm odd:last:tw-col-span-2 md:odd:last:tw-col-auto">
-                                    <dt class="tw-font-medium tw-text-base text-success">
-                                        Billable </dt>
-                                    <dd
-                                        class="tw-mt-1 tw-flex tw-items-baseline tw-justify-between md:tw-block lg:tw-flex">
-                                        <div class="tw-font-semibold tw-text-neutral-600">
-                                            $2,744.50 </div>
-                                    </dd>
-                                </div>
-                                <div
-                                    class="tw-bg-white tw-border tw-border-solid tw-border-neutral-300/80 tw-shadow-sm tw-py-2 tw-px-3.5 tw-rounded-lg tw-text-sm odd:last:tw-col-span-2 md:odd:last:tw-col-auto">
-                                    <dt class="tw-font-medium tw-text-base text-warning">
-                                        Non Billable </dt>
-                                    <dd
-                                        class="tw-mt-1 tw-flex tw-items-baseline tw-justify-between md:tw-block lg:tw-flex">
-                                        <div class="tw-font-semibold tw-text-neutral-600">
-                                            $1,845.34 </div>
-                                    </dd>
-                                </div>
-                                <div
-                                    class="tw-bg-white tw-border tw-border-solid tw-border-neutral-300/80 tw-shadow-sm tw-py-2 tw-px-3.5 tw-rounded-lg tw-text-sm odd:last:tw-col-span-2 md:odd:last:tw-col-auto">
-                                    <dt class="tw-font-medium tw-text-base text-danger">
-                                        Not Invoiced </dt>
-                                    <dd
-                                        class="tw-mt-1 tw-flex tw-items-baseline tw-justify-between md:tw-block lg:tw-flex">
-                                        <div class="tw-font-semibold tw-text-neutral-600">
-                                            $1,874.40 </div>
-                                    </dd>
-                                </div>
-                                <div
-                                    class="tw-bg-white tw-border tw-border-solid tw-border-neutral-300/80 tw-shadow-sm tw-py-2 tw-px-3.5 tw-rounded-lg tw-text-sm odd:last:tw-col-span-2 md:odd:last:tw-col-auto">
-                                    <dt class="tw-font-medium tw-text-base text-success">
-                                        Billed </dt>
-                                    <dd
-                                        class="tw-mt-1 tw-flex tw-items-baseline tw-justify-between md:tw-block lg:tw-flex">
-                                        <div class="tw-font-semibold tw-text-neutral-600">
-                                            $0.00 </div>
-                                    </dd>
-                                </div>
-                            </dl>
-                            <script>
-                                init_selectpicker();
-                            </script>
+                                <script>
+                                    (function () {
+                                        if (typeof (init_selectpicker) == 'function') {
+                                            init_selectpicker();
+                                        }
+                                    })();
+                                </script>
+                            </div>
                         </div>
                     </div>
-                    <div class="tw-mb-2">
-                        <div class="_buttons sm:tw-space-x-1 rtl:sm:tw-space-x-reverse">
-                            <a href="https://perfexcrm.com/demo/admin/expenses/expense" class="btn btn-primary">
-                                <i class="fa-regular fa-plus"></i>
-                                Record Expense </a>
-                            <a href="https://perfexcrm.com/demo/admin/expenses/import"
-                                class="hidden-xs btn btn-default ">
-                                <i class="fa-solid fa-upload tw-mr-1"></i>
-                                Import Expenses </a>
-                            <a href="https://perfexcrm.com/demo/admin/utilities/bulk_pdf_exporter?feature=expenses"
-                                data-toggle="tooltip" title="Bulk PDF Export"
-                                class="btn-with-tooltip btn btn-default !tw-px-3">
-                                <i class="fa-regular fa-file-pdf"></i>
-                            </a>
-                            <div id="vueApp" class="tw-inline pull-right tw-ml-0 sm:tw-ml-1.5 rtl:tw-mr-1.5 rtl:tw-ml-0"
-                                data-v-app="">
-                                <div class="btn-group"><button type="button"
-                                        class="btn btn-default dropdown-toggle sm:tw-max-w-xs tw-truncate"
-                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i
-                                            class="fa fa-filter" aria-hidden="true"></i> Filters</button>
-                                    <ul
-                                        class="dropdown-menu dropdown-menu-right width300 tw-max-h-[500px] tw-overflow-y-auto">
-                                        <div
-                                            class="tw-py-2 tw-px-4 tw-space-x-2 tw-divide-x tw-divide-solid tw-divide-neutral-300">
-                                            <a href="#">New Filter</a><a href="#" class="tw-pl-2"
-                                                style="display: none;">Clear Filter</a><a href="#" class="tw-pl-2"
-                                                style="display: none;">Edit</a></div>
-                                        <li class="divider"></li>
-                                        <div
-                                            class="tw-px-4 tw-pt-4 tw-pb-3 tw-text-balance tw-text-center tw-text-neutral-500">
-                                            No saved filters, get started by creating a new filter.</div>
-                                    </ul>
+                    <div class="col-md-12">
+                        <div class="quick-top-stats tw-mb-6">
+                            <div class="tw-grid tw-grid-cols-2 md:tw-grid-cols-3 lg:tw-grid-cols-5 tw-mb-0 tw-gap-2">
+                                <button type="button"
+                                    class="tw-bg-white tw-border tw-border-solid tw-border-neutral-300/80 tw-shadow-sm tw-py-2 tw-px-3.5 tw-rounded-lg tw-text-sm hover:tw-bg-neutral-100 tw-text-neutral-600 hover:tw-text-neutral-600 focus:tw-text-neutral-600 text-left odd:last:tw-col-span-2 md:odd:last:tw-col-auto">
+                                    <div class="tw-flex tw-items-center"><span
+                                            class="tw-font-medium tw-text-base tw-inline-flex tw-items-center text-danger">
+                                            Unpaid </span><span
+                                            class="tw-ml-2 rtl:tw-mr-2 tw-text-xs tw-text-neutral-500 tw-mt-px">
+                                            (53.85%) </span></div>
+                                    <div class="tw-mt-0.5">
+                                        <div class="tw-text-neutral-600"><span class="tw-font-semibold"> 7 / 13 </span>
+                                        </div>
+                                    </div>
+                                </button><button type="button"
+                                    class="tw-bg-white tw-border tw-border-solid tw-border-neutral-300/80 tw-shadow-sm tw-py-2 tw-px-3.5 tw-rounded-lg tw-text-sm hover:tw-bg-neutral-100 tw-text-neutral-600 hover:tw-text-neutral-600 focus:tw-text-neutral-600 text-left odd:last:tw-col-span-2 md:odd:last:tw-col-auto">
+                                    <div class="tw-flex tw-items-center"><span
+                                            class="tw-font-medium tw-text-base tw-inline-flex tw-items-center text-success">
+                                            Paid </span><span
+                                            class="tw-ml-2 rtl:tw-mr-2 tw-text-xs tw-text-neutral-500 tw-mt-px">
+                                            (30.77%) </span></div>
+                                    <div class="tw-mt-0.5">
+                                        <div class="tw-text-neutral-600"><span class="tw-font-semibold"> 4 / 13 </span>
+                                        </div>
+                                    </div>
+                                </button><button type="button"
+                                    class="tw-bg-white tw-border tw-border-solid tw-border-neutral-300/80 tw-shadow-sm tw-py-2 tw-px-3.5 tw-rounded-lg tw-text-sm hover:tw-bg-neutral-100 tw-text-neutral-600 hover:tw-text-neutral-600 focus:tw-text-neutral-600 text-left odd:last:tw-col-span-2 md:odd:last:tw-col-auto">
+                                    <div class="tw-flex tw-items-center"><span
+                                            class="tw-font-medium tw-text-base tw-inline-flex tw-items-center text-warning">
+                                            Partially Paid </span><span
+                                            class="tw-ml-2 rtl:tw-mr-2 tw-text-xs tw-text-neutral-500 tw-mt-px">
+                                            (15.38%) </span></div>
+                                    <div class="tw-mt-0.5">
+                                        <div class="tw-text-neutral-600"><span class="tw-font-semibold"> 2 / 13 </span>
+                                        </div>
+                                    </div>
+                                </button><button type="button"
+                                    class="tw-bg-white tw-border tw-border-solid tw-border-neutral-300/80 tw-shadow-sm tw-py-2 tw-px-3.5 tw-rounded-lg tw-text-sm hover:tw-bg-neutral-100 tw-text-neutral-600 hover:tw-text-neutral-600 focus:tw-text-neutral-600 text-left odd:last:tw-col-span-2 md:odd:last:tw-col-auto">
+                                    <div class="tw-flex tw-items-center"><span
+                                            class="tw-font-medium tw-text-base tw-inline-flex tw-items-center text-warning">
+                                            Overdue </span><span
+                                            class="tw-ml-2 rtl:tw-mr-2 tw-text-xs tw-text-neutral-500 tw-mt-px"> (0.00%)
+                                        </span></div>
+                                    <div class="tw-mt-0.5">
+                                        <div class="tw-text-neutral-600"><span class="tw-font-semibold"> 0 / 13 </span>
+                                        </div>
+                                    </div>
+                                </button><button type="button"
+                                    class="tw-bg-white tw-border tw-border-solid tw-border-neutral-300/80 tw-shadow-sm tw-py-2 tw-px-3.5 tw-rounded-lg tw-text-sm hover:tw-bg-neutral-100 tw-text-neutral-600 hover:tw-text-neutral-600 focus:tw-text-neutral-600 text-left odd:last:tw-col-span-2 md:odd:last:tw-col-auto">
+                                    <div class="tw-flex tw-items-center"><span
+                                            class="tw-font-medium tw-text-base tw-inline-flex tw-items-center text-default">
+                                            Draft </span><span
+                                            class="tw-ml-2 rtl:tw-mr-2 tw-text-xs tw-text-neutral-500 tw-mt-px"> (0.00%)
+                                        </span></div>
+                                    <div class="tw-mt-0.5">
+                                        <div class="tw-text-neutral-600"><span class="tw-font-semibold"> 0 / 13 </span>
+                                        </div>
+                                    </div>
+                                </button></div>
+                        </div>
+                    </div>
+                    <div class="_filters _hidden_inputs"><input type="hidden" name="sale_agent_1"><input type="hidden"
+                            name="sale_agent_6"><input type="hidden" name="sale_agent_7"><input type="hidden"
+                            name="sale_agent_8"><input type="hidden" name="sale_agent_9"><input type="hidden"
+                            name="sale_agent_10"><input type="hidden" name="invoices_1"><input type="hidden"
+                            name="invoices_2"><input type="hidden" name="invoices_3"><input type="hidden"
+                            name="invoices_4"><input type="hidden" name="invoices_5"><input type="hidden"
+                            name="invoices_6"><input type="hidden" name="year_2025" value="2025"><input type="hidden"
+                            name="invoice_payments_by_1"><input type="hidden"
+                            name="invoice_payments_by_authorize_acceptjs"><input type="hidden"
+                            name="invoice_payments_by_instamojo"><input type="hidden"
+                            name="invoice_payments_by_mollie"><input type="hidden"
+                            name="invoice_payments_by_paypal_braintree"><input type="hidden"
+                            name="invoice_payments_by_paypal_checkout"><input type="hidden"
+                            name="invoice_payments_by_paypal"><input type="hidden"
+                            name="invoice_payments_by_payu_money"><input type="hidden"
+                            name="invoice_payments_by_stripe"><input type="hidden"
+                            name="invoice_payments_by_stripe_ideal"><input type="hidden"
+                            name="invoice_payments_by_two_checkout"><input type="hidden" name="not_sent"><input
+                            type="hidden" name="not_have_payment"><input type="hidden" name="recurring"><input
+                            type="hidden" name="project_id"></div>
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-12 tw-mb-2">
+                                <div class="_buttons sm:tw-space-x-1 rtl:sm:tw-space-x-reverse"><a
+                                        href="https://perfexcrm.com/demo/admin/invoices/invoice"
+                                        class="btn btn-primary pull-left new new-invoice-list"><i
+                                            class="fa-regular fa-plus tw-mr-1"></i> Create New Invoice </a><button
+                                        id="add-batch-payment" onclick="add_batch_payment()"
+                                        class="btn btn-default pull-left"><i class="fa-solid fa-plus tw-mr-1"></i> Batch
+                                        Payments </button><a
+                                        href="https://perfexcrm.com/demo/admin/utilities/bulk_pdf_exporter?feature=invoices"
+                                        data-toggle="tooltip" title="Bulk PDF Export"
+                                        class="btn-with-tooltip pull-left btn btn-default !tw-px-3"><i
+                                            class="fa-regular fa-file-pdf"></i></a>
+                                    <div
+                                        class="display-block pull-right tw-space-x-0 sm:tw-space-x-1.5 rtl:tw-space-x-reverse">
+                                        <a href="#"
+                                            class="btn btn-default btn-with-tooltip toggle-small-view hidden-xs sm:!tw-px-3"
+                                            onclick="toggle_small_view('.table-invoices','#invoice'); return false;"
+                                            data-toggle="tooltip" title="Toggle Table"><i
+                                                class="fa fa-angle-double-left"></i></a>
+                                        <div class="btn-group"><button type="button"
+                                                class="btn btn-default dropdown-toggle sm:tw-max-w-xs tw-truncate"
+                                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i
+                                                    class="fa fa-filter" aria-hidden="true"></i> Filters</button>
+                                            <ul
+                                                class="dropdown-menu dropdown-menu-right width300 tw-max-h-[500px] tw-overflow-y-auto">
+                                                <div
+                                                    class="tw-py-2 tw-px-4 tw-space-x-2 tw-divide-x tw-divide-solid tw-divide-neutral-300">
+                                                    <a href="#">New Filter</a><a href="#" class="tw-pl-2"
+                                                        style="display: none;">Clear Filter</a><a href="#"
+                                                        class="tw-pl-2" style="display: none;">Edit</a></div>
+                                                <li class="divider"></li>
+                                                <div
+                                                    class="tw-px-4 tw-pt-4 tw-pb-3 tw-text-balance tw-text-center tw-text-neutral-500">
+                                                    No saved filters, get started by creating a new filter.</div>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="clearfix"></div>
                                 </div>
                             </div>
-                            <a href="#" class="btn btn-default pull-right btn-with-tooltip toggle-small-view hidden-xs"
-                                onclick="toggle_small_view('.table-expenses','#expense'); return false;"
-                                data-toggle="tooltip" title="Toggle Table"><i class="fa fa-angle-double-left"></i></a>
-
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12" id="small-table">
-                            <div class="panel_s">
-                                <div class="panel-body">
-                                    <div class="clearfix"></div>
-                                    <!-- if expenseid found in url -->
-
-                                    <input type="hidden" name="expenseid" value="">
-                                    <div class="panel-table-full">
-                                        <a href="#" data-toggle="modal" data-target="#expenses_bulk_actions"
-                                            class="hide bulk-actions-btn table-btn" data-table=".table-expenses">
-                                            Bulk Actions</a>
+                            <div class="clearfix"></div>
+                            <div class="col-md-12" id="small-table">
+                                <div class="panel_s">
+                                    <div class="panel-body panel-table-full"><input type="hidden" name="invoiceid">
                                         <div class="">
-                                            <div id="expenses_wrapper"
+                                            <div id="invoices_wrapper"
                                                 class="dataTables_wrapper form-inline dt-bootstrap no-footer">
                                                 <div class="row"></div>
                                                 <div class="row">
                                                     <div class="col-md-7">
-                                                        <div class="dataTables_length" id="expenses_length">
-                                                            <label><select name="expenses_length"
-                                                                    aria-controls="expenses"
+                                                        <div class="dataTables_length" id="invoices_length">
+                                                            <label><select name="invoices_length"
+                                                                    aria-controls="invoices"
                                                                     class="form-control input-sm">
                                                                     <option value="10">10</option>
                                                                     <option value="25">25</option>
@@ -1943,361 +2014,440 @@
                                                                 </select></label></div>
                                                         <div class="dt-buttons btn-group"> <button
                                                                 class="btn btn-default buttons-collection btn-sm btn-default-dt-options"
-                                                                tabindex="0" aria-controls="expenses" type="button"
+                                                                tabindex="0" aria-controls="invoices" type="button"
                                                                 aria-haspopup="true"
                                                                 aria-expanded="false"><span>Export</span></button>
                                                             <button
-                                                                class="btn btn-default btn-sm btn-default-dt-options"
-                                                                tabindex="0" aria-controls="expenses"
-                                                                type="button"><span>Bulk Actions</span></button> <button
                                                                 class="btn btn-default btn-sm btn-default-dt-options btn-dt-reload"
-                                                                tabindex="0" aria-controls="expenses" type="button"
-                                                                data-toggle="tooltip" title="Reload"><span><i
+                                                                tabindex="0" aria-controls="invoices" type="button"
+                                                                data-toggle="tooltip" title=""
+                                                                data-original-title="Reload"><span><i
                                                                         class="fa fa-refresh"></i></span></button>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-5">
-                                                        <div id="expenses_filter" class="dataTables_filter"><label>
+                                                        <div id="invoices_filter" class="dataTables_filter"><label>
                                                                 <div class="input-group"><span
                                                                         class="input-group-addon"><span
                                                                             class="fa fa-search"></span></span><input
                                                                         type="search" class="form-control input-sm"
                                                                         placeholder="Search..."
-                                                                        aria-controls="expenses"></div>
+                                                                        aria-controls="invoices"></div>
                                                             </label></div>
                                                     </div>
                                                 </div>
-                                                <div id="expenses_processing"
+                                                <div id="invoices_processing"
                                                     class="dataTables_processing panel panel-default"
                                                     style="display: none;">
                                                     <div class="dt-loader"></div>
                                                 </div>
                                                 <div class="table-responsive">
-                                                    <table data-last-order-identifier="expenses" data-default-order=""
-                                                        id="expenses" class="table table-expenses dataTable no-footer"
-                                                        role="grid" aria-describedby="expenses_info">
+                                                    <table id="invoices"
+                                                        class="table table-invoices dataTable no-footer" role="grid"
+                                                        aria-describedby="invoices_info">
                                                         <thead>
                                                             <tr role="row">
-                                                                <th class="sorting_disabled not-export" rowspan="1"
-                                                                    colspan="1" aria-label=" - "><span class="hide"> -
-                                                                    </span>
-                                                                    <div class="checkbox mass_select_all_wrap"><input
-                                                                            type="checkbox" id="mass_select_all"
-                                                                            data-to-table="expenses"><label></label>
-                                                                    </div>
-                                                                </th>
+                                                                <th class="sorting sorting_desc" tabindex="0"
+                                                                    aria-controls="invoices" rowspan="1" colspan="1"
+                                                                    aria-label="Invoice # activate to sort column ascending">
+                                                                    Invoice #</th>
                                                                 <th class="sorting" tabindex="0"
-                                                                    aria-controls="expenses" rowspan="1" colspan="1"
-                                                                    aria-label="Category activate to sort column ascending">
-                                                                    Category</th>
-                                                                <th class="sorting" tabindex="0"
-                                                                    aria-controls="expenses" rowspan="1" colspan="1"
+                                                                    aria-controls="invoices" rowspan="1" colspan="1"
                                                                     aria-label="Amount activate to sort column ascending">
                                                                     Amount</th>
                                                                 <th class="sorting" tabindex="0"
-                                                                    aria-controls="expenses" rowspan="1" colspan="1"
-                                                                    aria-label="Name activate to sort column ascending">
-                                                                    Name</th>
+                                                                    aria-controls="invoices" rowspan="1" colspan="1"
+                                                                    aria-label="Total Tax activate to sort column ascending">
+                                                                    Total Tax</th>
                                                                 <th class="sorting" tabindex="0"
-                                                                    aria-controls="expenses" rowspan="1" colspan="1"
-                                                                    aria-label="Receipt activate to sort column ascending">
-                                                                    Receipt</th>
-                                                                <th class="sorting sorting_desc" tabindex="0"
-                                                                    aria-controls="expenses" rowspan="1" colspan="1"
-                                                                    aria-sort="descending"
+                                                                    aria-controls="invoices" rowspan="1" colspan="1"
                                                                     aria-label="Date activate to sort column ascending">
                                                                     Date</th>
                                                                 <th class="sorting" tabindex="0"
-                                                                    aria-controls="expenses" rowspan="1" colspan="1"
-                                                                    aria-label="Project activate to sort column ascending">
-                                                                    Project</th>
-                                                                <th class="sorting" tabindex="0"
-                                                                    aria-controls="expenses" rowspan="1" colspan="1"
+                                                                    aria-controls="invoices" rowspan="1" colspan="1"
                                                                     aria-label="Customer activate to sort column ascending">
                                                                     Customer</th>
                                                                 <th class="sorting" tabindex="0"
-                                                                    aria-controls="expenses" rowspan="1" colspan="1"
-                                                                    aria-label="Invoice activate to sort column ascending">
-                                                                    Invoice</th>
+                                                                    aria-controls="invoices" rowspan="1" colspan="1"
+                                                                    aria-label="Project activate to sort column ascending">
+                                                                    Project</th>
                                                                 <th class="sorting" tabindex="0"
-                                                                    aria-controls="expenses" rowspan="1" colspan="1"
-                                                                    aria-label="Reference # activate to sort column ascending">
-                                                                    Reference #</th>
+                                                                    aria-controls="invoices" rowspan="1" colspan="1"
+                                                                    aria-label="Tags activate to sort column ascending">
+                                                                    Tags</th>
                                                                 <th class="sorting" tabindex="0"
-                                                                    aria-controls="expenses" rowspan="1" colspan="1"
-                                                                    aria-label="Payment Mode activate to sort column ascending">
-                                                                    Payment Mode</th>
+                                                                    aria-controls="invoices" rowspan="1" colspan="1"
+                                                                    aria-label="Due Date activate to sort column ascending">
+                                                                    Due Date</th>
+                                                                <th class="sorting" tabindex="0"
+                                                                    aria-controls="invoices" rowspan="1" colspan="1"
+                                                                    aria-label="Status activate to sort column ascending">
+                                                                    Status</th>
                                                             </tr>
                                                         </thead>
                                                         <tbody>
                                                             <tr class="has-row-options odd">
-                                                                <td>
-                                                                    <div class="checkbox"><input type="checkbox"
-                                                                            value="6"><label></label></div>
-                                                                </td>
-                                                                <td><a href="https://perfexcrm.com/demo/admin/expenses/list_expenses/6"
-                                                                        onclick="init_expense(6);return false;"
-                                                                        class="tw-font-medium">Travel Expense</a>
+                                                                <td class="sorting_2"><a
+                                                                        href="https://perfexcrm.com/demo/admin/invoices/list_invoices/13"
+                                                                        onclick="init_invoice(13); return false;"
+                                                                        class="tw-font-medium">INV-000013</a>
                                                                     <div class="row-options"><a
-                                                                            href="https://perfexcrm.com/demo/admin/expenses/list_expenses/6"
-                                                                            onclick="init_expense(6);return false;">View</a>
-                                                                        | <a
-                                                                            href="https://perfexcrm.com/demo/admin/expenses/expense/6">Edit
-                                                                        </a> | <a
-                                                                            href="https://perfexcrm.com/demo/admin/expenses/delete/6"
-                                                                            class="_delete">Delete </a></div>
+                                                                            href="https://perfexcrm.com/demo/invoice/13/91949e472b12b8ffc6a87140739714fb"
+                                                                            target="_blank">View</a> | <a
+                                                                            href="https://perfexcrm.com/demo/admin/invoices/invoice/13">Edit
+                                                                        </a></div>
                                                                 </td>
-                                                                <td>$363.00</td>
-                                                                <td><a href="https://perfexcrm.com/demo/admin/expenses/list_expenses/6"
-                                                                        onclick="init_expense(6);return false;">However,
-                                                                        the Multiplication Table.</a></td>
+                                                                <td><span class="tw-font-medium">$870.10</span></td>
+                                                                <td><span class="tw-font-medium">$79.10</span></td>
+                                                                <td>2025-02-10</td>
+                                                                <td><a
+                                                                        href="https://perfexcrm.com/demo/admin/clients/client/6">Lind
+                                                                        Ltd</a></td>
+                                                                <td><a
+                                                                        href="https://perfexcrm.com/demo/admin/projects/view/2">SEO
+                                                                        Optimization</a></td>
                                                                 <td></td>
-                                                                <td class="sorting_1">2025-04-09</td>
-                                                                <td><a
-                                                                        href="https://perfexcrm.com/demo/admin/projects/view/4">Website
-                                                                        Redesign</a></td>
-                                                                <td><a
-                                                                        href="https://perfexcrm.com/demo/admin/clients/client/9">Bradtke-Schultz</a>
+                                                                <td>2025-03-12</td>
+                                                                <td><span
+                                                                        class="label label-danger  s-status invoice-status-1">Unpaid</span>
                                                                 </td>
-                                                                <td></td>
-                                                                <td>688</td>
-                                                                <td>Bank</td>
                                                             </tr>
                                                             <tr class="has-row-options even">
-                                                                <td>
-                                                                    <div class="checkbox"><input type="checkbox"
-                                                                            value="7"><label></label></div>
-                                                                </td>
-                                                                <td><a href="https://perfexcrm.com/demo/admin/expenses/list_expenses/7"
-                                                                        onclick="init_expense(7);return false;"
-                                                                        class="tw-font-medium">Automobile Expense</a>
+                                                                <td class="sorting_2"><a
+                                                                        href="https://perfexcrm.com/demo/admin/invoices/list_invoices/12"
+                                                                        onclick="init_invoice(12); return false;"
+                                                                        class="tw-font-medium">INV-000012</a>
                                                                     <div class="row-options"><a
-                                                                            href="https://perfexcrm.com/demo/admin/expenses/list_expenses/7"
-                                                                            onclick="init_expense(7);return false;">View</a>
-                                                                        | <a
-                                                                            href="https://perfexcrm.com/demo/admin/expenses/expense/7">Edit
-                                                                        </a> | <a
-                                                                            href="https://perfexcrm.com/demo/admin/expenses/delete/7"
-                                                                            class="_delete">Delete </a></div>
+                                                                            href="https://perfexcrm.com/demo/invoice/12/456fd8e32c10bca7954a494b17b80242"
+                                                                            target="_blank">View</a> | <a
+                                                                            href="https://perfexcrm.com/demo/admin/invoices/invoice/12">Edit
+                                                                        </a></div>
                                                                 </td>
-                                                                <td>$19.00</td>
-                                                                <td><a href="https://perfexcrm.com/demo/admin/expenses/list_expenses/7"
-                                                                        onclick="init_expense(7);return false;">dddddddd</a>
-                                                                </td>
-                                                                <td></td>
-                                                                <td class="sorting_1">2025-02-10</td>
+                                                                <td><span class="tw-font-medium">$9,937.00</span></td>
+                                                                <td><span class="tw-font-medium">$1,287.00</span></td>
+                                                                <td>2025-02-10</td>
+                                                                <td><a
+                                                                        href="https://perfexcrm.com/demo/admin/clients/client/6">Lind
+                                                                        Ltd</a></td>
                                                                 <td><a
                                                                         href="https://perfexcrm.com/demo/admin/projects/view/0"></a>
                                                                 </td>
-                                                                <td><a
-                                                                        href="https://perfexcrm.com/demo/admin/clients/client/0"></a>
+                                                                <td></td>
+                                                                <td>2025-03-12</td>
+                                                                <td><span
+                                                                        class="label label-success  s-status invoice-status-2">Paid</span>
                                                                 </td>
-                                                                <td></td>
-                                                                <td></td>
-                                                                <td></td>
                                                             </tr>
                                                             <tr class="has-row-options odd">
-                                                                <td>
-                                                                    <div class="checkbox"><input type="checkbox"
-                                                                            value="1"><label></label></div>
-                                                                </td>
-                                                                <td><a href="https://perfexcrm.com/demo/admin/expenses/list_expenses/1"
-                                                                        onclick="init_expense(1);return false;"
-                                                                        class="tw-font-medium">Parking</a>
-                                                                    <p
-                                                                        class="text-success tw-text-sm tw-mb-1 tw-font-medium">
-                                                                        Invoiced</p>
+                                                                <td class="sorting_2"><a
+                                                                        href="https://perfexcrm.com/demo/admin/invoices/list_invoices/11"
+                                                                        onclick="init_invoice(11); return false;"
+                                                                        class="tw-font-medium">INV-000011</a>
                                                                     <div class="row-options"><a
-                                                                            href="https://perfexcrm.com/demo/admin/expenses/list_expenses/1"
-                                                                            onclick="init_expense(1);return false;">View</a>
-                                                                        | <a
-                                                                            href="https://perfexcrm.com/demo/admin/expenses/expense/1">Edit
-                                                                        </a> | <a
-                                                                            href="https://perfexcrm.com/demo/admin/expenses/delete/1"
-                                                                            class="_delete">Delete </a></div>
+                                                                            href="https://perfexcrm.com/demo/invoice/11/e71714381bae6bd43336936ec2f2eca9"
+                                                                            target="_blank">View</a> | <a
+                                                                            href="https://perfexcrm.com/demo/admin/invoices/invoice/11">Edit
+                                                                        </a></div>
                                                                 </td>
-                                                                <td>$870.10</td>
-                                                                <td><a href="https://perfexcrm.com/demo/admin/expenses/list_expenses/1"
-                                                                        onclick="init_expense(1);return false;">However,
-                                                                        it was sneezing on the top of.</a></td>
+                                                                <td><span class="tw-font-medium">$2,150.00</span></td>
+                                                                <td><span class="tw-font-medium">$0.00</span></td>
+                                                                <td>2025-02-09</td>
                                                                 <td><a
-                                                                        href="https://perfexcrm.com/demo/download/file/expense/1">food.jpg</a>
+                                                                        href="https://perfexcrm.com/demo/admin/clients/client/10">Walter
+                                                                        PLC</a></td>
+                                                                <td><a
+                                                                        href="https://perfexcrm.com/demo/admin/projects/view/0"></a>
                                                                 </td>
-                                                                <td class="sorting_1">2025-02-06</td>
-                                                                <td><a
-                                                                        href="https://perfexcrm.com/demo/admin/projects/view/2">SEO
-                                                                        Optimization</a></td>
-                                                                <td><a
-                                                                        href="https://perfexcrm.com/demo/admin/clients/client/6">Lind
-                                                                        Ltd</a></td>
-                                                                <td><a
-                                                                        href="https://perfexcrm.com/demo/admin/invoices/list_invoices/13">INV-000013</a>
+                                                                <td></td>
+                                                                <td>2025-03-11</td>
+                                                                <td><span
+                                                                        class="label label-success  s-status invoice-status-2">Paid</span>
                                                                 </td>
-                                                                <td>262</td>
-                                                                <td>Bank</td>
                                                             </tr>
                                                             <tr class="has-row-options even">
-                                                                <td>
-                                                                    <div class="checkbox"><input type="checkbox"
-                                                                            value="5"><label></label></div>
-                                                                </td>
-                                                                <td><a href="https://perfexcrm.com/demo/admin/expenses/list_expenses/5"
-                                                                        onclick="init_expense(5);return false;"
-                                                                        class="tw-font-medium">Telephone</a>
-                                                                    <p
-                                                                        class="text-danger tw-text-sm tw-mb-1 tw-font-medium">
-                                                                        Not Invoiced</p>
+                                                                <td class="sorting_2"><a
+                                                                        href="https://perfexcrm.com/demo/admin/invoices/list_invoices/10"
+                                                                        onclick="init_invoice(10); return false;"
+                                                                        class="tw-font-medium">INV-000010</a>
                                                                     <div class="row-options"><a
-                                                                            href="https://perfexcrm.com/demo/admin/expenses/list_expenses/5"
-                                                                            onclick="init_expense(5);return false;">View</a>
-                                                                        | <a
-                                                                            href="https://perfexcrm.com/demo/admin/expenses/expense/5">Edit
-                                                                        </a> | <a
-                                                                            href="https://perfexcrm.com/demo/admin/expenses/delete/5"
-                                                                            class="_delete">Delete </a></div>
+                                                                            href="https://perfexcrm.com/demo/invoice/10/5c922e3ad3f1b712a3cb124429b700b1"
+                                                                            target="_blank">View</a> | <a
+                                                                            href="https://perfexcrm.com/demo/admin/invoices/invoice/10">Edit
+                                                                        </a></div>
                                                                 </td>
-                                                                <td>$641.30</td>
-                                                                <td><a href="https://perfexcrm.com/demo/admin/expenses/list_expenses/5"
-                                                                        onclick="init_expense(5);return false;">YET,'
-                                                                        she said this, she was ever to.</a></td>
-                                                                <td></td>
-                                                                <td class="sorting_1">2025-01-26</td>
-                                                                <td><a
-                                                                        href="https://perfexcrm.com/demo/admin/projects/view/3">Brochure
-                                                                        Design</a></td>
-                                                                <td><a
-                                                                        href="https://perfexcrm.com/demo/admin/clients/client/2">Fisher-Frami</a>
-                                                                </td>
-                                                                <td></td>
-                                                                <td>430</td>
-                                                                <td>Bank</td>
-                                                            </tr>
-                                                            <tr class="has-row-options odd">
-                                                                <td>
-                                                                    <div class="checkbox"><input type="checkbox"
-                                                                            value="2"><label></label></div>
-                                                                </td>
-                                                                <td><a href="https://perfexcrm.com/demo/admin/expenses/list_expenses/2"
-                                                                        onclick="init_expense(2);return false;"
-                                                                        class="tw-font-medium">Automobile Expense</a>
-                                                                    <div class="row-options"><a
-                                                                            href="https://perfexcrm.com/demo/admin/expenses/list_expenses/2"
-                                                                            onclick="init_expense(2);return false;">View</a>
-                                                                        | <a
-                                                                            href="https://perfexcrm.com/demo/admin/expenses/expense/2">Edit
-                                                                        </a> | <a
-                                                                            href="https://perfexcrm.com/demo/admin/expenses/delete/2"
-                                                                            class="_delete">Delete </a></div>
-                                                                </td>
-                                                                <td>$533.50</td>
-                                                                <td><a href="https://perfexcrm.com/demo/admin/expenses/list_expenses/2"
-                                                                        onclick="init_expense(2);return false;">I ought
-                                                                        to be sure, this generally.</a></td>
-                                                                <td></td>
-                                                                <td class="sorting_1">2025-01-19</td>
-                                                                <td><a
-                                                                        href="https://perfexcrm.com/demo/admin/projects/view/2">SEO
-                                                                        Optimization</a></td>
-                                                                <td><a
-                                                                        href="https://perfexcrm.com/demo/admin/clients/client/6">Lind
-                                                                        Ltd</a></td>
-                                                                <td></td>
-                                                                <td>888</td>
-                                                                <td>Bank</td>
-                                                            </tr>
-                                                            <tr class="has-row-options even">
-                                                                <td>
-                                                                    <div class="checkbox"><input type="checkbox"
-                                                                            value="4"><label></label></div>
-                                                                </td>
-                                                                <td><a href="https://perfexcrm.com/demo/admin/expenses/list_expenses/4"
-                                                                        onclick="init_expense(4);return false;"
-                                                                        class="tw-font-medium">Parking</a>
-                                                                    <div class="row-options"><a
-                                                                            href="https://perfexcrm.com/demo/admin/expenses/list_expenses/4"
-                                                                            onclick="init_expense(4);return false;">View</a>
-                                                                        | <a
-                                                                            href="https://perfexcrm.com/demo/admin/expenses/expense/4">Edit
-                                                                        </a> | <a
-                                                                            href="https://perfexcrm.com/demo/admin/expenses/delete/4"
-                                                                            class="_delete">Delete </a></div>
-                                                                </td>
-                                                                <td>$929.84</td>
-                                                                <td><a href="https://perfexcrm.com/demo/admin/expenses/list_expenses/4"
-                                                                        onclick="init_expense(4);return false;">Alice's
-                                                                        shoulder, and it put more.</a></td>
-                                                                <td></td>
-                                                                <td class="sorting_1">2025-01-19</td>
-                                                                <td><a
-                                                                        href="https://perfexcrm.com/demo/admin/projects/view/3">Brochure
-                                                                        Design</a></td>
-                                                                <td><a
-                                                                        href="https://perfexcrm.com/demo/admin/clients/client/2">Fisher-Frami</a>
-                                                                </td>
-                                                                <td></td>
-                                                                <td>1016</td>
-                                                                <td>Bank</td>
-                                                            </tr>
-                                                            <tr class="has-row-options odd">
-                                                                <td>
-                                                                    <div class="checkbox"><input type="checkbox"
-                                                                            value="3"><label></label></div>
-                                                                </td>
-                                                                <td><a href="https://perfexcrm.com/demo/admin/expenses/list_expenses/3"
-                                                                        onclick="init_expense(3);return false;"
-                                                                        class="tw-font-medium">Meals</a>
-                                                                    <p
-                                                                        class="text-danger tw-text-sm tw-mb-1 tw-font-medium">
-                                                                        Not Invoiced</p>
-                                                                    <div class="row-options"><a
-                                                                            href="https://perfexcrm.com/demo/admin/expenses/list_expenses/3"
-                                                                            onclick="init_expense(3);return false;">View</a>
-                                                                        | <a
-                                                                            href="https://perfexcrm.com/demo/admin/expenses/expense/3">Edit
-                                                                        </a> | <a
-                                                                            href="https://perfexcrm.com/demo/admin/expenses/delete/3"
-                                                                            class="_delete">Delete </a></div>
-                                                                </td>
-                                                                <td>$1,233.10</td>
-                                                                <td><a href="https://perfexcrm.com/demo/admin/expenses/list_expenses/3"
-                                                                        onclick="init_expense(3);return false;">CHAPTER
-                                                                        V. Advice from a bottle marked.</a></td>
-                                                                <td></td>
-                                                                <td class="sorting_1">2025-01-09</td>
-                                                                <td><a
-                                                                        href="https://perfexcrm.com/demo/admin/projects/view/4">Website
-                                                                        Redesign</a></td>
+                                                                <td><span class="tw-font-medium">$4,582.00</span></td>
+                                                                <td><span class="tw-font-medium">$432.00</span></td>
+                                                                <td>2025-02-09</td>
                                                                 <td><a
                                                                         href="https://perfexcrm.com/demo/admin/clients/client/9">Bradtke-Schultz</a>
                                                                 </td>
+                                                                <td><a
+                                                                        href="https://perfexcrm.com/demo/admin/projects/view/0"></a>
+                                                                </td>
                                                                 <td></td>
-                                                                <td>860</td>
-                                                                <td>Bank</td>
+                                                                <td>2025-03-11</td>
+                                                                <td><span
+                                                                        class="label label-danger  s-status invoice-status-1">Unpaid</span>
+                                                                </td>
+                                                            </tr>
+                                                            <tr class="has-row-options odd">
+                                                                <td class="sorting_2"><a
+                                                                        href="https://perfexcrm.com/demo/admin/invoices/list_invoices/9"
+                                                                        onclick="init_invoice(9); return false;"
+                                                                        class="tw-font-medium">INV-000009</a>
+                                                                    <div class="row-options"><a
+                                                                            href="https://perfexcrm.com/demo/invoice/9/250fbf830bf786d14c10ae2d75bce243"
+                                                                            target="_blank">View</a> | <a
+                                                                            href="https://perfexcrm.com/demo/admin/invoices/invoice/9">Edit
+                                                                        </a></div>
+                                                                </td>
+                                                                <td><span class="tw-font-medium">$2,567.00</span></td>
+                                                                <td><span class="tw-font-medium">$387.00</span></td>
+                                                                <td>2025-02-09</td>
+                                                                <td><a
+                                                                        href="https://perfexcrm.com/demo/admin/clients/client/8">Ernser,
+                                                                        Johnston and Mertz</a></td>
+                                                                <td><a
+                                                                        href="https://perfexcrm.com/demo/admin/projects/view/0"></a>
+                                                                </td>
+                                                                <td></td>
+                                                                <td>2025-03-11</td>
+                                                                <td><span
+                                                                        class="label label-success  s-status invoice-status-2">Paid</span>
+                                                                </td>
+                                                            </tr>
+                                                            <tr class="has-row-options even">
+                                                                <td class="sorting_2"><a
+                                                                        href="https://perfexcrm.com/demo/admin/invoices/list_invoices/8"
+                                                                        onclick="init_invoice(8); return false;"
+                                                                        class="tw-font-medium">INV-000008</a>
+                                                                    <div class="row-options"><a
+                                                                            href="https://perfexcrm.com/demo/invoice/8/d790c9144d7cc8446d6182df7ba863b1"
+                                                                            target="_blank">View</a> | <a
+                                                                            href="https://perfexcrm.com/demo/admin/invoices/invoice/8">Edit
+                                                                        </a></div>
+                                                                </td>
+                                                                <td><span class="tw-font-medium">$4,487.00</span></td>
+                                                                <td><span class="tw-font-medium">$387.00</span></td>
+                                                                <td>2025-02-09</td>
+                                                                <td><a
+                                                                        href="https://perfexcrm.com/demo/admin/clients/client/7">Ratke,
+                                                                        Von and Klein</a></td>
+                                                                <td><a
+                                                                        href="https://perfexcrm.com/demo/admin/projects/view/0"></a>
+                                                                </td>
+                                                                <td></td>
+                                                                <td>2025-03-11</td>
+                                                                <td><span
+                                                                        class="label label-success  s-status invoice-status-2">Paid</span>
+                                                                </td>
+                                                            </tr>
+                                                            <tr class="has-row-options odd">
+                                                                <td class="sorting_2"><a
+                                                                        href="https://perfexcrm.com/demo/admin/invoices/list_invoices/7"
+                                                                        onclick="init_invoice(7); return false;"
+                                                                        class="tw-font-medium">INV-000007</a>
+                                                                    <div class="row-options"><a
+                                                                            href="https://perfexcrm.com/demo/invoice/7/8d020c16dbb06a13e3578d68ae3c5790"
+                                                                            target="_blank">View</a> | <a
+                                                                            href="https://perfexcrm.com/demo/admin/invoices/invoice/7">Edit
+                                                                        </a></div>
+                                                                </td>
+                                                                <td><span class="tw-font-medium">$2,297.40</span></td>
+                                                                <td><span class="tw-font-medium">$167.40</span></td>
+                                                                <td>2025-02-09</td>
+                                                                <td><a
+                                                                        href="https://perfexcrm.com/demo/admin/clients/client/6">Lind
+                                                                        Ltd</a></td>
+                                                                <td><a
+                                                                        href="https://perfexcrm.com/demo/admin/projects/view/0"></a>
+                                                                </td>
+                                                                <td></td>
+                                                                <td>2025-03-11</td>
+                                                                <td><span
+                                                                        class="label label-warning  s-status invoice-status-3">Partially
+                                                                        Paid</span></td>
+                                                            </tr>
+                                                            <tr class="has-row-options even">
+                                                                <td class="sorting_2"><a
+                                                                        href="https://perfexcrm.com/demo/admin/invoices/list_invoices/6"
+                                                                        onclick="init_invoice(6); return false;"
+                                                                        class="tw-font-medium">INV-000006</a>
+                                                                    <div class="row-options"><a
+                                                                            href="https://perfexcrm.com/demo/invoice/6/21fb752e05cf7fe7bde3c398a749c018"
+                                                                            target="_blank">View</a> | <a
+                                                                            href="https://perfexcrm.com/demo/admin/invoices/invoice/6">Edit
+                                                                        </a></div>
+                                                                </td>
+                                                                <td><span class="tw-font-medium">$590.00</span></td>
+                                                                <td><span class="tw-font-medium">$90.00</span></td>
+                                                                <td>2025-02-09</td>
+                                                                <td><a
+                                                                        href="https://perfexcrm.com/demo/admin/clients/client/5">Langosh
+                                                                        LLC</a></td>
+                                                                <td><a
+                                                                        href="https://perfexcrm.com/demo/admin/projects/view/0"></a>
+                                                                </td>
+                                                                <td></td>
+                                                                <td>2025-03-11</td>
+                                                                <td><span
+                                                                        class="label label-danger  s-status invoice-status-1">Unpaid</span>
+                                                                </td>
+                                                            </tr>
+                                                            <tr class="has-row-options odd">
+                                                                <td class="sorting_2"><a
+                                                                        href="https://perfexcrm.com/demo/admin/invoices/list_invoices/5"
+                                                                        onclick="init_invoice(5); return false;"
+                                                                        class="tw-font-medium">INV-000005</a>
+                                                                    <div class="row-options"><a
+                                                                            href="https://perfexcrm.com/demo/invoice/5/386e6ee18f581572f50607058ef2cf3e"
+                                                                            target="_blank">View</a> | <a
+                                                                            href="https://perfexcrm.com/demo/admin/invoices/invoice/5">Edit
+                                                                        </a></div>
+                                                                </td>
+                                                                <td><span class="tw-font-medium">$5,303.00</span></td>
+                                                                <td><span class="tw-font-medium">$153.00</span></td>
+                                                                <td>2025-02-09</td>
+                                                                <td><a
+                                                                        href="https://perfexcrm.com/demo/admin/clients/client/4">Krajcik-Kilback</a>
+                                                                </td>
+                                                                <td><a
+                                                                        href="https://perfexcrm.com/demo/admin/projects/view/0"></a>
+                                                                </td>
+                                                                <td></td>
+                                                                <td>2025-03-11</td>
+                                                                <td><span
+                                                                        class="label label-danger  s-status invoice-status-1">Unpaid</span>
+                                                                </td>
+                                                            </tr>
+                                                            <tr class="has-row-options even">
+                                                                <td class="sorting_2"><a
+                                                                        href="https://perfexcrm.com/demo/admin/invoices/list_invoices/4"
+                                                                        onclick="init_invoice(4); return false;"
+                                                                        class="tw-font-medium">INV-000004</a>
+                                                                    <div class="row-options"><a
+                                                                            href="https://perfexcrm.com/demo/invoice/4/824d7cfa51c5d6aca71546cd7452ba57"
+                                                                            target="_blank">View</a> | <a
+                                                                            href="https://perfexcrm.com/demo/admin/invoices/invoice/4">Edit
+                                                                        </a></div>
+                                                                </td>
+                                                                <td><span class="tw-font-medium">$3,953.00</span></td>
+                                                                <td><span class="tw-font-medium">$603.00</span></td>
+                                                                <td>2025-02-09</td>
+                                                                <td><a
+                                                                        href="https://perfexcrm.com/demo/admin/clients/client/3">Altenwerth
+                                                                        Inc</a></td>
+                                                                <td><a
+                                                                        href="https://perfexcrm.com/demo/admin/projects/view/0"></a>
+                                                                </td>
+                                                                <td></td>
+                                                                <td>2025-03-11</td>
+                                                                <td><span
+                                                                        class="label label-warning  s-status invoice-status-3">Partially
+                                                                        Paid</span></td>
+                                                            </tr>
+                                                            <tr class="has-row-options odd">
+                                                                <td class="sorting_2"><a
+                                                                        href="https://perfexcrm.com/demo/admin/invoices/list_invoices/3"
+                                                                        onclick="init_invoice(3); return false;"
+                                                                        class="tw-font-medium">INV-000003</a>
+                                                                    <div class="row-options"><a
+                                                                            href="https://perfexcrm.com/demo/invoice/3/ac9e9152640b4be61436e3d3af1be4dd"
+                                                                            target="_blank">View</a> | <a
+                                                                            href="https://perfexcrm.com/demo/admin/invoices/invoice/3">Edit
+                                                                        </a></div>
+                                                                </td>
+                                                                <td><span class="tw-font-medium">$390.00</span></td>
+                                                                <td><span class="tw-font-medium">$0.00</span></td>
+                                                                <td>2025-02-09</td>
+                                                                <td><a
+                                                                        href="https://perfexcrm.com/demo/admin/clients/client/3">Altenwerth
+                                                                        Inc</a></td>
+                                                                <td><a
+                                                                        href="https://perfexcrm.com/demo/admin/projects/view/0"></a>
+                                                                </td>
+                                                                <td></td>
+                                                                <td>2025-03-11</td>
+                                                                <td><span
+                                                                        class="label label-danger  s-status invoice-status-1">Unpaid</span>
+                                                                </td>
+                                                            </tr>
+                                                            <tr class="has-row-options even">
+                                                                <td class="sorting_2"><a
+                                                                        href="https://perfexcrm.com/demo/admin/invoices/list_invoices/2"
+                                                                        onclick="init_invoice(2); return false;"
+                                                                        class="tw-font-medium">INV-000002</a>
+                                                                    <div class="row-options"><a
+                                                                            href="https://perfexcrm.com/demo/invoice/2/7667429380cc8544806dc6ea07303b0c"
+                                                                            target="_blank">View</a> | <a
+                                                                            href="https://perfexcrm.com/demo/admin/invoices/invoice/2">Edit
+                                                                        </a></div>
+                                                                </td>
+                                                                <td><span class="tw-font-medium">$8,319.00</span></td>
+                                                                <td><span class="tw-font-medium">$1,269.00</span></td>
+                                                                <td>2025-02-09</td>
+                                                                <td><a
+                                                                        href="https://perfexcrm.com/demo/admin/clients/client/2">Fisher-Frami</a>
+                                                                </td>
+                                                                <td><a
+                                                                        href="https://perfexcrm.com/demo/admin/projects/view/0"></a>
+                                                                </td>
+                                                                <td></td>
+                                                                <td>2025-03-11</td>
+                                                                <td><span
+                                                                        class="label label-danger  s-status invoice-status-1">Unpaid</span>
+                                                                </td>
+                                                            </tr>
+                                                            <tr class="has-row-options odd">
+                                                                <td class="sorting_2"><a
+                                                                        href="https://perfexcrm.com/demo/admin/invoices/list_invoices/1"
+                                                                        onclick="init_invoice(1); return false;"
+                                                                        class="tw-font-medium">INV-000001</a>
+                                                                    <div class="row-options"><a
+                                                                            href="https://perfexcrm.com/demo/invoice/1/2d5455a889c5b5bdb1e937983ffccaba"
+                                                                            target="_blank">View</a> | <a
+                                                                            href="https://perfexcrm.com/demo/admin/invoices/invoice/1">Edit
+                                                                        </a></div>
+                                                                </td>
+                                                                <td><span class="tw-font-medium">$2,926.20</span></td>
+                                                                <td><span class="tw-font-medium">$286.20</span></td>
+                                                                <td>2025-02-09</td>
+                                                                <td><a
+                                                                        href="https://perfexcrm.com/demo/admin/clients/client/1">Goyette,
+                                                                        Runolfsson and Schroeder</a></td>
+                                                                <td><a
+                                                                        href="https://perfexcrm.com/demo/admin/projects/view/0"></a>
+                                                                </td>
+                                                                <td></td>
+                                                                <td>2025-03-11</td>
+                                                                <td><span
+                                                                        class="label label-danger  s-status invoice-status-1">Unpaid</span>
+                                                                </td>
                                                             </tr>
                                                         </tbody>
                                                     </table>
                                                 </div>
                                                 <div class="row">
                                                     <div class="col-md-4">
-                                                        <div class="dataTables_info" id="expenses_info" role="status"
-                                                            aria-live="polite">Showing 1 to 7 of 7 entries</div>
+                                                        <div class="dataTables_info" id="invoices_info" role="status"
+                                                            aria-live="polite">Showing 1 to 13 of 13 entries</div>
                                                     </div>
                                                     <div class="col-md-8 dataTables_paging">
                                                         <div id="colvis"></div>
                                                         <div id="" class="dt-page-jump"></div>
                                                         <div class="dataTables_paginate paging_simple_numbers"
-                                                            id="expenses_paginate">
+                                                            id="invoices_paginate">
                                                             <ul class="pagination">
                                                                 <li class="paginate_button previous disabled"
-                                                                    id="expenses_previous"><a href="#"
-                                                                        aria-controls="expenses" data-dt-idx="0"
+                                                                    id="invoices_previous"><a href="#"
+                                                                        aria-controls="invoices" data-dt-idx="0"
                                                                         tabindex="0">Previous</a></li>
                                                                 <li class="paginate_button active"><a href="#"
-                                                                        aria-controls="expenses" data-dt-idx="1"
+                                                                        aria-controls="invoices" data-dt-idx="1"
                                                                         tabindex="0">1</a></li>
                                                                 <li class="paginate_button next disabled"
-                                                                    id="expenses_next"><a href="#"
-                                                                        aria-controls="expenses" data-dt-idx="2"
+                                                                    id="invoices_next"><a href="#"
+                                                                        aria-controls="invoices" data-dt-idx="2"
                                                                         tabindex="0">Next</a></li>
                                                             </ul>
                                                         </div>
@@ -2305,214 +2455,11 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="modal fade bulk_actions" id="expenses_bulk_actions" tabindex="-1"
-                                            role="dialog" data-table=".table-expenses">
-                                            <div class="modal-dialog" role="document">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <button type="button" class="close" data-dismiss="modal"
-                                                            aria-label="Close"><span
-                                                                aria-hidden="true">×</span></button>
-                                                        <h4 class="modal-title">
-                                                            Bulk Actions </h4>
-                                                    </div>
-                                                    <div class="modal-body">
-                                                        <div class="checkbox checkbox-danger">
-                                                            <input type="checkbox" name="mass_delete" id="mass_delete">
-                                                            <label for="mass_delete">Mass Delete</label>
-                                                        </div>
-                                                        <hr class="mass_delete_separator">
-                                                        <div id="bulk_change">
-                                                            <div class="form-group"
-                                                                app-field-wrapper="expenses_bulk_amount"><label
-                                                                    for="expenses_bulk_amount"
-                                                                    class="control-label">Amount</label><input
-                                                                    type="number" id="expenses_bulk_amount"
-                                                                    name="expenses_bulk_amount" class="form-control"
-                                                                    value=""></div>
-                                                            <div class="form-group"
-                                                                app-field-wrapper="expenses_bulk_category"><label
-                                                                    for="expenses_bulk_category"
-                                                                    class="control-label">Expense Category</label>
-                                                                <div class="dropdown bootstrap-select bs3"
-                                                                    style="width: 100%;"><select
-                                                                        id="expenses_bulk_category"
-                                                                        name="expenses_bulk_category"
-                                                                        class="selectpicker" data-width="100%"
-                                                                        data-none-selected-text="Nothing selected"
-                                                                        data-live-search="true" tabindex="-98">
-                                                                        <option value=""></option>
-                                                                        <option value="2">Automobile Expense</option>
-                                                                        <option value="5">Insurance</option>
-                                                                        <option value="8">IT and Internet Expenses
-                                                                        </option>
-                                                                        <option value="6">Meals</option>
-                                                                        <option value="3">Parking</option>
-                                                                        <option value="4">Telephone</option>
-                                                                        <option value="7">Travel Expense</option>
-                                                                        <option value="1">Trips</option>
-                                                                    </select><button type="button"
-                                                                        class="btn dropdown-toggle btn-default bs-placeholder"
-                                                                        data-toggle="dropdown" role="combobox"
-                                                                        aria-owns="bs-select-1" aria-haspopup="listbox"
-                                                                        aria-expanded="false"
-                                                                        data-id="expenses_bulk_category"
-                                                                        title="Nothing selected">
-                                                                        <div class="filter-option">
-                                                                            <div class="filter-option-inner">
-                                                                                <div class="filter-option-inner-inner">
-                                                                                    Nothing selected</div>
-                                                                            </div>
-                                                                        </div><span class="bs-caret"><span
-                                                                                class="caret"></span></span>
-                                                                    </button>
-                                                                    <div class="dropdown-menu open">
-                                                                        <div class="bs-searchbox"><input type="search"
-                                                                                class="form-control" autocomplete="off"
-                                                                                role="combobox" aria-label="Search"
-                                                                                aria-controls="bs-select-1"
-                                                                                aria-autocomplete="list"></div>
-                                                                        <div class="inner open" role="listbox"
-                                                                            id="bs-select-1" tabindex="-1">
-                                                                            <ul class="dropdown-menu inner "
-                                                                                role="presentation"></ul>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="form-group"
-                                                                app-field-wrapper="expenses_bulk_date"><label
-                                                                    for="expenses_bulk_date"
-                                                                    class="control-label">Expense Date</label>
-                                                                <div class="input-group date"><input type="text"
-                                                                        id="expenses_bulk_date"
-                                                                        name="expenses_bulk_date"
-                                                                        class="form-control datepicker" value=""
-                                                                        autocomplete="off">
-                                                                    <div class="input-group-addon">
-                                                                        <i
-                                                                            class="fa-regular fa-calendar calendar-icon"></i>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="form-group"
-                                                                app-field-wrapper="expenses_bulk_paymentmode"><label
-                                                                    for="expenses_bulk_paymentmode"
-                                                                    class="control-label">Payment Mode</label>
-                                                                <div class="dropdown bootstrap-select bs3"
-                                                                    style="width: 100%;"><select
-                                                                        id="expenses_bulk_paymentmode"
-                                                                        name="expenses_bulk_paymentmode"
-                                                                        class="selectpicker" data-width="100%"
-                                                                        data-none-selected-text="Nothing selected"
-                                                                        data-live-search="true" tabindex="-98">
-                                                                        <option value=""></option>
-                                                                        <option value="1">Bank</option>
-                                                                        <option value="authorize_acceptjs">Authorize.net
-                                                                            Accept.js</option>
-                                                                        <option value="instamojo">Instamojo</option>
-                                                                        <option value="mollie">Mollie</option>
-                                                                        <option value="paypal_braintree">Braintree
-                                                                        </option>
-                                                                        <option value="paypal_checkout">Paypal Smart
-                                                                            Checkout</option>
-                                                                        <option value="paypal">Paypal</option>
-                                                                        <option value="payu_money">PayU Money</option>
-                                                                        <option value="stripe">Stripe Checkout</option>
-                                                                        <option value="stripe_ideal">Stripe iDEAL
-                                                                        </option>
-                                                                        <option value="two_checkout">2Checkout</option>
-                                                                    </select><button type="button"
-                                                                        class="btn dropdown-toggle btn-default bs-placeholder"
-                                                                        data-toggle="dropdown" role="combobox"
-                                                                        aria-owns="bs-select-2" aria-haspopup="listbox"
-                                                                        aria-expanded="false"
-                                                                        data-id="expenses_bulk_paymentmode"
-                                                                        title="Nothing selected">
-                                                                        <div class="filter-option">
-                                                                            <div class="filter-option-inner">
-                                                                                <div class="filter-option-inner-inner">
-                                                                                    Nothing selected</div>
-                                                                            </div>
-                                                                        </div><span class="bs-caret"><span
-                                                                                class="caret"></span></span>
-                                                                    </button>
-                                                                    <div class="dropdown-menu open">
-                                                                        <div class="bs-searchbox"><input type="search"
-                                                                                class="form-control" autocomplete="off"
-                                                                                role="combobox" aria-label="Search"
-                                                                                aria-controls="bs-select-2"
-                                                                                aria-autocomplete="list"></div>
-                                                                        <div class="inner open" role="listbox"
-                                                                            id="bs-select-2" tabindex="-1">
-                                                                            <ul class="dropdown-menu inner "
-                                                                                role="presentation"></ul>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <button type="button" class="btn btn-default"
-                                                            data-dismiss="modal">Close</button>
-                                                        <a href="#" class="btn btn-primary"
-                                                            onclick="expenses_bulk_action(this); return false;">Confirm</a>
-                                                    </div>
-                                                </div>
-                                                <!-- /.modal-content -->
-                                            </div>
-                                            <!-- /.modal-dialog -->
-                                        </div>
-                                        <!-- /.modal -->
-                                        <script>
-                                            function expenses_bulk_action(event) {
-                                                if (confirm_delete()) {
-                                                    var ids = [],
-                                                        data = {},
-                                                        mass_delete = $('#mass_delete').prop('checked');
-                                                    if (mass_delete == false || typeof (mass_delete) == 'undefined') {
-                                                        data.amount = $('#expenses_bulk_amount').val();
-                                                        data.date = $('#expenses_bulk_date').val();
-
-                                                        var category = $('#expenses_bulk_category');
-                                                        data.category = category.length ? category.selectpicker('val') : '';
-
-                                                        var paymentmode = $('#expenses_bulk_paymentmode');
-                                                        data.paymentmode = paymentmode.length ? paymentmode.selectpicker('val') : '';
-
-                                                        if (data.amount === '' &&
-                                                            data.date === '' &&
-                                                            data.category === '' &&
-                                                            data.paymentmode === '') {
-                                                            return;
-                                                        }
-                                                    } else {
-                                                        data.mass_delete = true;
-                                                    }
-                                                    var rows = $($('#expenses_bulk_actions').attr('data-table')).find('tbody tr');
-                                                    $.each(rows, function () {
-                                                        var checkbox = $($(this).find('td').eq(0)).find('input');
-                                                        if (checkbox.prop('checked') === true) {
-                                                            ids.push(checkbox.val());
-                                                        }
-                                                    });
-                                                    data.ids = ids;
-                                                    $(event).addClass('disabled');
-                                                    setTimeout(function () {
-                                                        $.post(admin_url + 'expenses/bulk_action', data).done(function () {
-                                                            window.location.reload();
-                                                        });
-                                                    }, 200);
-                                                }
-                                            }
-                                        </script>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-md-7 small-table-right-col">
-                            <div id="expense" class="hide">
+                            <div class="col-md-7 small-table-right-col">
+                                <div id="invoice" class="hide"></div>
                             </div>
                         </div>
                     </div>
@@ -2520,42 +2467,37 @@
             </div>
         </div>
     </div>
-    <div class="modal fade" id="expense_convert_helper_modal" tabindex="-1" role="dialog">
-        <div class="modal-dialog" role="document">
+    <div class="modal fade" tabindex="-1" id="sales_attach_file" role="dialog">
+        <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                             aria-hidden="true">×</span></button>
                     <h4 class="modal-title">
-                        Additional action required! </h4>
+                        Attach File </h4>
                 </div>
                 <div class="modal-body">
-                    <div class="radio radio-primary">
-                        <input type="radio" checked="" id="expense_convert_invoice_type_1" value="save_as_draft_false"
-                            name="expense_convert_invoice_type">
-                        <label for="expense_convert_invoice_type_1">Convert</label>
-                    </div>
-                    <div class="radio radio-primary">
-                        <input type="radio" id="expense_convert_invoice_type_2" value="save_as_draft_true"
-                            name="expense_convert_invoice_type">
-                        <label for="expense_convert_invoice_type_2">Convert and save as draft</label>
-                    </div>
-                    <div id="inc_field_wrapper">
-                        <hr>
-                        <p>Include additional details to item long description taken from this expense. </p>
-                        <p><b>Category Description +</b></p>
-                        <div class="checkbox checkbox-primary inc_note">
-                            <input type="checkbox" id="inc_note">
-                            <label for="inc_note">Expense Note</label>
-                        </div>
-                        <div class="checkbox checkbox-primary inc_name">
-                            <input type="checkbox" id="inc_name">
-                            <label for="inc_name">Expense Name</label>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <form action="https://perfexcrm.com/demo/admin/misc/upload_sales_file" id="sales-upload"
+                                class="dropzone dz-clickable" enctype="multipart/form-data" method="post"
+                                accept-charset="utf-8">
+                                <input type="hidden" name="csrf_token_name" value="1fa70fcd47d958deba204b8c7c448af7">
+                                <input type="file" name="file" multiple="">
+                                <div class="dz-default dz-message"><span>Drop files here to upload</span></div>
+                            </form>
+                            <div class="row mtop15" id="sales_uploaded_files_preview">
+                            </div>
+                            <div class="tw-flex tw-justify-end tw-items-center tw-space-x-2">
+                                <button class="gpicker" data-on-pick="salesGoogleDriveSave" style="opacity: 0;">
+                                    <i class="fa-brands fa-google" aria-hidden="true"></i>
+                                    Choose from Google Drive </button>
+                                <div id="dropbox-chooser-sales"><a href="#"
+                                        class=" dropbox-dropin-btn dropbox-dropin-default"><span
+                                            class="dropin-btn-status"></span>Choose from Dropbox</a></div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" id="expense_confirm_convert">Confirm</button>
                 </div>
             </div>
             <!-- /.modal-content -->
@@ -2563,8 +2505,9 @@
         <!-- /.modal-dialog -->
     </div>
     <!-- /.modal -->
+    <div id="modal-wrapper"></div>
     <script>
-        var hidden_columns = [4, 5, 6, 7, 8, 9];
+        var hidden_columns = [2, 6, 7, 8];
     </script>
     <!-- Likes -->
     <div class="modal likes_modal fade" id="modal_post_likes" tabindex="-1" role="dialog"
@@ -2678,7 +2621,7 @@
         src="../../assets/builds/common.js?v=3.2.1"></script>
     <script type="text/javascript" id="app-js" src="../../assets/js/main.min.js?v=3.2.1"></script>
     <script type="text/javascript" id="app-v3" src="../../assets/builds/app.js?v=3.2.1"></script>
-    <div class="modal fade filters-modal" id="expenses" tabindex="-1" role="dialog">
+    <div class="modal fade filters-modal" id="invoices" tabindex="-1" role="dialog">
         <div class="modal-dialog modal-lg tw-max-w-[48rem]" role="document">
             <div class="modal-content">
                 <div class="modal-header"><button type="button" class="close" aria-label="Close"><span
@@ -2688,20 +2631,24 @@
                 <div class="modal-body">
                     <div class="tw-px-3">
                         <div class="dropdown bootstrap-select bs3" style="width: 100%;"><select class="selectpicker"
-                                id="expensesRules" data-width="100%" data-live-search="true" name="tax"
+                                id="invoicesRules" data-width="100%" data-live-search="true" name="tax"
                                 data-none-selected-text="Add Rule" tabindex="-98">
-                                <option value="expense_name">Name</option>
-                                <option value="date">Date</option>
+                                <option value="number">Invoice Number</option>
+                                <option value="total">Total</option>
+                                <option value="subtotal">Sub Total</option>
+                                <option value="date">Invoice Date</option>
+                                <option value="duedate">Due Date</option>
+                                <option value="sent">Sent</option>
+                                <option value="sale_agent">Sale Agent</option>
+                                <option value="status">Status</option>
                                 <option value="year">Year</option>
-                                <option value="amount">Amount</option>
-                                <option value="category">Category</option>
-                                <option value="billable">Billable</option>
-                                <option value="unbilled">Not Invoiced</option>
-                                <option value="recurring">Recurring</option>
-                                <option value="paymentmode">Payment Mode</option>
+                                <option value="recurring">Recurring Invoices</option>
+                                <option value="not_have_payment">Invoices with no payment records</option>
+                                <option value="made_payment_by">Made Payment by </option>
+                                <option value="invoice_automatic_emailing">Automatic Emailing</option>
                             </select><button type="button" class="btn dropdown-toggle btn-default bs-placeholder"
-                                data-toggle="dropdown" role="combobox" aria-owns="bs-select-3" aria-haspopup="listbox"
-                                aria-expanded="false" data-id="expensesRules" title="Add Rule">
+                                data-toggle="dropdown" role="combobox" aria-owns="bs-select-1" aria-haspopup="listbox"
+                                aria-expanded="false" data-id="invoicesRules" title="Add Rule">
                                 <div class="filter-option">
                                     <div class="filter-option-inner">
                                         <div class="filter-option-inner-inner">Add Rule</div>
@@ -2710,9 +2657,9 @@
                             </button>
                             <div class="dropdown-menu open">
                                 <div class="bs-searchbox"><input type="search" class="form-control" autocomplete="off"
-                                        role="combobox" aria-label="Search" aria-controls="bs-select-3"
+                                        role="combobox" aria-label="Search" aria-controls="bs-select-1"
                                         aria-autocomplete="list"></div>
-                                <div class="inner open" role="listbox" id="bs-select-3" tabindex="-1">
+                                <div class="inner open" role="listbox" id="bs-select-1" tabindex="-1">
                                     <ul class="dropdown-menu inner " role="presentation"></ul>
                                 </div>
                             </div>
@@ -2722,10 +2669,10 @@
                                     class="tw-bg-neutral-50 tw-rounded-md tw-p-2.5 tw-border tw-border-b-0 tw-border-solid tw-border-neutral-200 -tw-mb-2.5 tw-inline-block tw-z-10 relative tw-ml-5 tw-overflow-hidden"
                                     style="display: none;">
                                     <div class="radio radio-primary radio-inline"><input type="radio"
-                                            id="match_type_and" name="match_expenses" value="and"><label
+                                            id="match_type_and" name="match_invoices" value="and"><label
                                             for="match_type_and" class="tw-lowercase">and</label></div>
                                     <div class="radio radio-primary radio-inline"><input type="radio" id="match_type_or"
-                                            name="match_expenses" value="or"><label for="match_type_or"
+                                            name="match_invoices" value="or"><label for="match_type_or"
                                             class="tw-lowercase">or</label></div>
                                 </span></div>
                             <div class="tw-py-6 tw-px-4 tw-bg-neutral-50 tw-rounded-md tw-border tw-border-solid tw-border-neutral-200 relative"
@@ -2739,9 +2686,9 @@
                                 class="relative tw-mt-1"><span
                                     class="tw-font-medium tw-mr-3 tw-absolute -tw-left-20 rtl:-tw-left-0 rtl:tw-right-20 rtl:tw-ml-3">Save
                                     Filter</span>
-                                <div class="onoffswitch"><input type="checkbox" id="expensesSaveFilter"
+                                <div class="onoffswitch"><input type="checkbox" id="invoicesSaveFilter"
                                         class="onoffswitch-checkbox"><label class="onoffswitch-label"
-                                        for="expensesSaveFilter"></label></div>
+                                        for="invoicesSaveFilter"></label></div>
                             </span><!----><button type="button" class="btn btn-primary btn-sm">Apply</button></div>
                     </div>
                 </div>
@@ -2843,38 +2790,8 @@
 
     </script>
     <script>
-        Dropzone.autoDiscover = false;
         $(function () {
-            initDataTable('.table-expenses', admin_url + 'expenses/table', [0], [0], {},
-                [6, "desc"])
-                .column(1).visible(false, false).columns.adjust();
-
-            init_expense();
-
-            $('#expense_convert_helper_modal').on('show.bs.modal', function () {
-                var emptyNote = $('#tab_expense').attr('data-empty-note');
-                var emptyName = $('#tab_expense').attr('data-empty-name');
-                if (emptyNote == '1' && emptyName == '1') {
-                    $('#inc_field_wrapper').addClass('hide');
-                } else {
-                    $('#inc_field_wrapper').removeClass('hide');
-                    emptyNote === '1' && $('.inc_note').addClass('hide') || $('.inc_note').removeClass(
-                        'hide')
-                    emptyName === '1' && $('.inc_name').addClass('hide') || $('.inc_name').removeClass(
-                        'hide')
-                }
-            });
-
-            $('body').on('click', '#expense_confirm_convert', function () {
-                var parameters = new Array();
-                if ($('input[name="expense_convert_invoice_type"]:checked').val() == 'save_as_draft_true') {
-                    parameters['save_as_draft'] = 'true';
-                }
-                parameters['include_name'] = $('#inc_name').prop('checked');
-                parameters['include_note'] = $('#inc_note').prop('checked');
-                window.location.href = buildUrl(admin_url + 'expenses/convert_to_invoice/' + $('body').find(
-                    '.expense_convert_btn').attr('data-id'), parameters);
-            });
+            init_invoice();
         });
     </script>
 
@@ -2894,7 +2811,9 @@
                 <div class="lb-closeContainer"><a class="lb-close"></a></div>
             </div>
         </div>
-    </div>
+    </div><input type="file" multiple="multiple" class="dz-hidden-input"
+        accept=".png,.jpg,.pdf,.doc,.docx,.xls,.xlsx,.zip,.rar,.txt"
+        style="visibility: hidden; position: absolute; top: 0px; left: 0px; height: 0px; width: 0px;">
 </body>
 
 </html>

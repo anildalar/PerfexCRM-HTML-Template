@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>
-        Activity Log </title>
+        CSV Exports </title>
 
     <link rel="shortcut icon" id="favicon" href="../../../uploads/company/favicon.ico">
     <link rel="apple-touch-icon”" id="favicon-apple-touch-icon"
@@ -688,7 +688,7 @@
     </style>
 </head>
 
-<body class="app admin h-full utilities activity_log user-id-1 chrome" cz-shortcut-listen="true"
+<body class="app admin h-full exports user-id-1 chrome" cz-shortcut-listen="true"
     data-new-gr-c-s-check-loaded="14.1221.0" data-gr-ext-installed="">
     <div id="header">
         <button type="button"
@@ -711,8 +711,7 @@
                 <div class="tw-flex tw-flex-1 sm:tw-flex-initial">
                     <div id="top_search"
                         class="tw-inline-flex tw-relative dropdown sm:tw-ml-1.5 sm:tw-mr-3 tw-max-w-xl tw-flex-auto tw-group/top-search"
-                        data-toggle="tooltip" data-placement="bottom" data-title="Use # + tagname to search by tags"
-                        data-original-title="" title="">
+                        data-toggle="tooltip" data-placement="bottom" data-title="Use # + tagname to search by tags">
                         <input type="search" id="search_input"
                             class="ltr:tw-pr-4 ltr:tw-pl-9 rtl:tw-pr-9 rtl:tw-pl-4 tw-ml-1 tw-mt-2 focus:!tw-ring-0 tw-w-full !tw-placeholder-neutral-500 !tw-shadow-none tw-text-neutral-800 focus:!tw-placeholder-neutral-600 hover:!tw-placeholder-neutral-600 sm:tw-w-[350px] tw-h-[38px] tw-border-0 tw-border-solid !tw-border-white !tw-bg-neutral-100 !tw-rounded-xl"
                             placeholder="Search..." autocomplete="off">
@@ -1086,7 +1085,7 @@
             </div>
         </nav>
     </div>
-    <div id="setup-menu-wrapper" class="sidebar animated" style="min-height: 1274px;">
+    <div id="setup-menu-wrapper" class="sidebar animated" style="min-height: 983px;">
         <ul class="nav metis-menu tw-mt-[57px]" id="setup-menu">
             <div
                 class="tw-flex tw-items-center tw-justify-between tw-space-x-2 rtl:tw-space-x-reverse tw-pl-4 tw-pr-2.5 tw-py-3">
@@ -1350,7 +1349,7 @@
             </li>
         </ul>
     </div>
-    <aside id="menu" class="sidebar" style="min-height: 1388px;">
+    <aside id="menu" class="sidebar" style="min-height: 1097px;">
         <div class="dropdown sidebar-user-profile tw-mt-[80px] tw-mx-1.5 ">
             <a href="#"
                 class="dropdown-toggle profile -tw-mt-1 tw-font-medium tw-border tw-border-solid tw-rounded-lg tw-bg-white/20 tw-py-2 tw-px-2.5 tw-block tw-shadow-sm tw-border-neutral-900/20 tw-text-neutral-700 hover:tw-text-neutral-800 focus:tw-text-neutral-800 hover:tw-bg-neutral-900/5 focus:tw-bg-neutral-900/5"
@@ -1538,7 +1537,7 @@
                                 Bulk PDF Export </span>
                         </a>
                     </li>
-                    <li class="sub-menu-item-csv-export">
+                    <li class="sub-menu-item-csv-export active">
                         <a href="https://perfexcrm.com/demo/admin/exports">
                             <span class="sub-menu-text">
                                 CSV Export </span>
@@ -1562,7 +1561,7 @@
                                 Goals </span>
                         </a>
                     </li>
-                    <li class="sub-menu-item-activity-log active">
+                    <li class="sub-menu-item-activity-log">
                         <a href="https://perfexcrm.com/demo/admin/utilities/activity_log">
                             <span class="sub-menu-text">
                                 Activity Log </span>
@@ -1658,293 +1657,117 @@
             </li>
         </ul>
     </aside>
-    <div id="wrapper" style="min-height: 1331px;">
+    <div id="wrapper" style="min-height: 946.736px;">
         <div class="content">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="form-group" app-field-wrapper="activity_log_date"><label for="activity_log_date"
-                                    class="control-label">Filter by date</label>
-                                <div class="input-group date"><input type="text" id="activity_log_date"
-                                        name="activity_log_date" class="form-control datepicker activity-log-date"
-                                        value="" autocomplete="off">
-                                    <div class="input-group-addon">
-                                        <i class="fa-regular fa-calendar calendar-icon"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-8 text-right mtop20">
-                            <a class="btn btn-danger _delete"
-                                href="https://perfexcrm.com/demo/admin/utilities/clear_activity_log">Clear log</a>
-                        </div>
-                    </div>
+            <div class="tw-max-w-4xl tw-mx-auto">
+                <h4 class="tw-mt-0 tw-font-bold tw-text-lg tw-text-neutral-700">
+                    CSV Exports </h4>
+                <form action="https://perfexcrm.com/demo/admin/exports" id="export-form" method="post"
+                    accept-charset="utf-8" novalidate="novalidate">
+                    <input type="hidden" name="csrf_token_name" value="4480454d06636f4782052ce9b2d496d7">
                     <div class="panel_s">
                         <div class="panel-body">
-                            <div class="panel-table-full">
-                                <div class="">
-                                    <div id="DataTables_Table_0_wrapper"
-                                        class="dataTables_wrapper form-inline dt-bootstrap no-footer">
-                                        <div class="row"></div>
+                            <div class="row">
+                                <div class="col-md-12">
+
+                                    <div class="form-group">
+                                        <label for="export_type"> <small class="req text-danger">* </small>Export
+                                            Type</label>
+                                        <div class="dropdown bootstrap-select bs3" style="width: 100%;"><select
+                                                name="export_type" id="export_type" class="selectpicker"
+                                                data-width="100%" data-none-selected-text="Nothing selected"
+                                                tabindex="-98">
+                                                <option value=""></option>
+                                                <option value="customers">
+                                                    Customers </option>
+                                                <option value="contacts">
+                                                    Contacts </option>
+                                                <option value="leads">
+                                                    Leads </option>
+                                                <option value="expenses">
+                                                    Expenses </option>
+                                                <option value="payments">
+                                                    Payments </option>
+                                            </select><button type="button"
+                                                class="btn dropdown-toggle btn-default bs-placeholder"
+                                                data-toggle="dropdown" role="combobox" aria-owns="bs-select-1"
+                                                aria-haspopup="listbox" aria-expanded="false" data-id="export_type"
+                                                title="Nothing selected">
+                                                <div class="filter-option">
+                                                    <div class="filter-option-inner">
+                                                        <div class="filter-option-inner-inner">Nothing selected</div>
+                                                    </div>
+                                                </div><span class="bs-caret"><span class="caret"></span></span>
+                                            </button>
+                                            <div class="dropdown-menu open">
+                                                <div class="inner open" role="listbox" id="bs-select-1" tabindex="-1">
+                                                    <ul class="dropdown-menu inner " role="presentation"></ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="period"> <small class="req text-danger">* </small>Period</label>
+                                        <br>
+                                        <div class="dropdown bootstrap-select bs3" style="width: 100%;"><select
+                                                class="selectpicker" name="period" data-width="100%"
+                                                data-none-selected-text="Nothing selected" tabindex="-98">
+                                                <option value="all_time">
+                                                    All Time </option>
+                                                <option value="this_month">
+                                                    This Month </option>
+                                                <option value="last_month">
+                                                    Last Month </option>
+                                                <option value="this_year">
+                                                    This Year </option>
+                                                <option value="last_year">
+                                                    Last Year </option>
+                                                <option value="last_3_months" data-subtext="01/12/2024 - 28/02/2025">
+                                                    Last 3 Months </option>
+                                                <option value="last_6_months" data-subtext="01/09/2024 - 28/02/2025">
+                                                    Last 6 Months </option>
+                                                <option value="last_12_months" data-subtext="01/03/2024 - 28/02/2025">
+                                                    Last 12 Months </option>
+                                                <option value="custom">
+                                                    Period </option>
+                                            </select><button type="button" class="btn dropdown-toggle btn-default"
+                                                data-toggle="dropdown" role="combobox" aria-owns="bs-select-2"
+                                                aria-haspopup="listbox" aria-expanded="false" title="All Time">
+                                                <div class="filter-option">
+                                                    <div class="filter-option-inner">
+                                                        <div class="filter-option-inner-inner">All Time</div>
+                                                    </div>
+                                                </div><span class="bs-caret"><span class="caret"></span></span>
+                                            </button>
+                                            <div class="dropdown-menu open">
+                                                <div class="inner open" role="listbox" id="bs-select-2" tabindex="-1">
+                                                    <ul class="dropdown-menu inner " role="presentation"></ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="date-range" class="hide mbot15">
                                         <div class="row">
-                                            <div class="col-md-7">
-                                                <div class="dataTables_length" id="DataTables_Table_0_length">
-                                                    <label><select name="DataTables_Table_0_length"
-                                                            aria-controls="DataTables_Table_0"
-                                                            class="form-control input-sm">
-                                                            <option value="10">10</option>
-                                                            <option value="25">25</option>
-                                                            <option value="50">50</option>
-                                                            <option value="100">100</option>
-                                                            <option value="-1">All</option>
-                                                        </select></label></div>
-                                                <div class="dt-buttons btn-group"> <button
-                                                        class="btn btn-default buttons-collection btn-sm btn-default-dt-options"
-                                                        tabindex="0" aria-controls="DataTables_Table_0" type="button"
-                                                        aria-haspopup="true"
-                                                        aria-expanded="false"><span>Export</span></button> <button
-                                                        class="btn btn-default btn-sm btn-default-dt-options btn-dt-reload"
-                                                        tabindex="0" aria-controls="DataTables_Table_0" type="button"
-                                                        data-toggle="tooltip" title="Reload"><span><i
-                                                                class="fa fa-refresh"></i></span></button> </div>
+                                            <div class="col-md-12">
+                                                <label for="start_date" class="control-label"> <small
+                                                        class="req text-danger">* </small>From Date</label>
+                                                <div class="input-group date">
+                                                    <input type="text" class="form-control datepicker" id="start_date"
+                                                        name="start_date" autocomplete="off">
+                                                    <div class="input-group-addon">
+                                                        <i class="fa-regular fa-calendar calendar-icon"></i>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div class="col-md-5">
-                                                <div id="DataTables_Table_0_filter" class="dataTables_filter"><label>
-                                                        <div class="input-group"><span class="input-group-addon"><span
-                                                                    class="fa fa-search"></span></span><input
-                                                                type="search" class="form-control input-sm"
-                                                                placeholder="Search..."
-                                                                aria-controls="DataTables_Table_0"></div>
-                                                    </label></div>
-                                            </div>
-                                        </div>
-                                        <div id="DataTables_Table_0_processing"
-                                            class="dataTables_processing panel panel-default" style="display: none;">
-                                            <div class="dt-loader"></div>
-                                        </div>
-                                        <div class="table-responsive">
-                                            <table class="table table-activity-log dataTable no-footer"
-                                                id="DataTables_Table_0" role="grid"
-                                                aria-describedby="DataTables_Table_0_info">
-                                                <thead>
-                                                    <tr role="row">
-                                                        <th class="sorting" tabindex="0"
-                                                            aria-controls="DataTables_Table_0" rowspan="1" colspan="1"
-                                                            aria-label="Description activate to sort column ascending">
-                                                            Description</th>
-                                                        <th class="sorting sorting_desc" tabindex="0"
-                                                            aria-controls="DataTables_Table_0" rowspan="1" colspan="1"
-                                                            aria-sort="descending"
-                                                            aria-label="Date activate to sort column ascending">Date
-                                                        </th>
-                                                        <th class="sorting" tabindex="0"
-                                                            aria-controls="DataTables_Table_0" rowspan="1" colspan="1"
-                                                            aria-label="Staff activate to sort column ascending">Staff
-                                                        </th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr class="odd">
-                                                        <td>Invoice Deleted [INV-000017]</td>
-                                                        <td class="sorting_1">07/02/2025 16:27:43</td>
-                                                        <td>Ernie Sanford</td>
-                                                    </tr>
-                                                    <tr class="even">
-                                                        <td>User Successfully Logged In [User Id: 1, Is Staff Member:
-                                                            Yes, IP: 173.225.242.140]</td>
-                                                        <td class="sorting_1">07/02/2025 16:27:26</td>
-                                                        <td>Ernie Sanford</td>
-                                                    </tr>
-                                                    <tr class="odd">
-                                                        <td>User Successfully Logged In [User Id: 1, Is Staff Member:
-                                                            Yes, IP: 102.141.53.18]</td>
-                                                        <td class="sorting_1">07/02/2025 16:26:48</td>
-                                                        <td>Ernie Sanford</td>
-                                                    </tr>
-                                                    <tr class="even">
-                                                        <td>User Successfully Logged In [User Id: 1, Is Staff Member:
-                                                            Yes, IP: 14.99.195.194]</td>
-                                                        <td class="sorting_1">07/02/2025 16:26:27</td>
-                                                        <td>Ernie Sanford</td>
-                                                    </tr>
-                                                    <tr class="odd">
-                                                        <td>User Successfully Logged In [User Id: 1, Is Staff Member:
-                                                            Yes, IP: 103.212.147.75]</td>
-                                                        <td class="sorting_1">07/02/2025 16:24:28</td>
-                                                        <td>Ernie Sanford</td>
-                                                    </tr>
-                                                    <tr class="even">
-                                                        <td>User Successfully Logged In [User Id: 1, Is Staff Member:
-                                                            Yes, IP: 149.90.182.125]</td>
-                                                        <td class="sorting_1">07/02/2025 16:24:17</td>
-                                                        <td>Coleman Sipes</td>
-                                                    </tr>
-                                                    <tr class="odd">
-                                                        <td>User Successfully Logged In [User Id: 1, Is Staff Member:
-                                                            No, IP: 149.90.182.125]</td>
-                                                        <td class="sorting_1">07/02/2025 16:24:01</td>
-                                                        <td>Coleman Sipes</td>
-                                                    </tr>
-                                                    <tr class="even">
-                                                        <td>New Staff Member Added [ID: 12, raj singh]</td>
-                                                        <td class="sorting_1">07/02/2025 16:23:45</td>
-                                                        <td>Ernie Sanford</td>
-                                                    </tr>
-                                                    <tr class="odd">
-                                                        <td>New Staff Member Added [ID: 11, raj singh]</td>
-                                                        <td class="sorting_1">07/02/2025 16:23:14</td>
-                                                        <td>Ernie Sanford</td>
-                                                    </tr>
-                                                    <tr class="even">
-                                                        <td>User Successfully Logged In [User Id: 1, Is Staff Member:
-                                                            Yes, IP: 106.51.31.154]</td>
-                                                        <td class="sorting_1">07/02/2025 16:21:30</td>
-                                                        <td>Ernie Sanford</td>
-                                                    </tr>
-                                                    <tr class="odd">
-                                                        <td>User Successfully Logged In [User Id: 1, Is Staff Member:
-                                                            Yes, IP: 109.75.50.43]</td>
-                                                        <td class="sorting_1">07/02/2025 16:20:10</td>
-                                                        <td>Ernie Sanford</td>
-                                                    </tr>
-                                                    <tr class="even">
-                                                        <td>User Successfully Logged In [User Id: 1, Is Staff Member:
-                                                            Yes, IP: 122.182.203.89]</td>
-                                                        <td class="sorting_1">07/02/2025 16:14:09</td>
-                                                        <td>Ernie Sanford</td>
-                                                    </tr>
-                                                    <tr class="odd">
-                                                        <td>Failed Login Attempt [Email: admin@test.com, Is Staff
-                                                            Member: Yes, IP: 103.159.129.56]</td>
-                                                        <td class="sorting_1">07/02/2025 16:09:27</td>
-                                                        <td></td>
-                                                    </tr>
-                                                    <tr class="even">
-                                                        <td>Failed Login Attempt [Email: admin@test.com, Is Staff
-                                                            Member: Yes, IP: 103.159.129.56]</td>
-                                                        <td class="sorting_1">07/02/2025 16:09:21</td>
-                                                        <td></td>
-                                                    </tr>
-                                                    <tr class="odd">
-                                                        <td>New Task Added [ID:64, Name: rajvirsingh]</td>
-                                                        <td class="sorting_1">07/02/2025 16:07:27</td>
-                                                        <td>Ernie Sanford</td>
-                                                    </tr>
-                                                    <tr class="even">
-                                                        <td>User Successfully Logged In [User Id: 1, Is Staff Member:
-                                                            Yes, IP: 115.99.216.40]</td>
-                                                        <td class="sorting_1">07/02/2025 16:05:58</td>
-                                                        <td>Ernie Sanford</td>
-                                                    </tr>
-                                                    <tr class="odd">
-                                                        <td>User Successfully Logged In [User Id: 1, Is Staff Member:
-                                                            Yes, IP: 49.36.83.137]</td>
-                                                        <td class="sorting_1">07/02/2025 15:57:05</td>
-                                                        <td>Ernie Sanford</td>
-                                                    </tr>
-                                                    <tr class="even">
-                                                        <td>New Project Created [ID: 5]</td>
-                                                        <td class="sorting_1">07/02/2025 15:50:19</td>
-                                                        <td>Ernie Sanford</td>
-                                                    </tr>
-                                                    <tr class="odd">
-                                                        <td>User Successfully Logged In [User Id: 1, Is Staff Member:
-                                                            Yes, IP: 146.70.132.228]</td>
-                                                        <td class="sorting_1">07/02/2025 15:48:55</td>
-                                                        <td>Ernie Sanford</td>
-                                                    </tr>
-                                                    <tr class="even">
-                                                        <td>User Successfully Logged In [User Id: 1, Is Staff Member:
-                                                            Yes, IP: 103.251.19.12]</td>
-                                                        <td class="sorting_1">07/02/2025 15:45:24</td>
-                                                        <td>Ernie Sanford</td>
-                                                    </tr>
-                                                    <tr class="odd">
-                                                        <td>User Successfully Logged In [User Id: 1, Is Staff Member:
-                                                            Yes, IP: 212.174.9.210]</td>
-                                                        <td class="sorting_1">07/02/2025 15:44:58</td>
-                                                        <td>Ernie Sanford</td>
-                                                    </tr>
-                                                    <tr class="even">
-                                                        <td>User Successfully Logged In [User Id: 1, Is Staff Member:
-                                                            Yes, IP: 103.102.117.142]</td>
-                                                        <td class="sorting_1">07/02/2025 15:43:52</td>
-                                                        <td>Ernie Sanford</td>
-                                                    </tr>
-                                                    <tr class="odd">
-                                                        <td>User Successfully Logged In [User Id: 1, Is Staff Member:
-                                                            Yes, IP: 202.150.89.178]</td>
-                                                        <td class="sorting_1">07/02/2025 15:43:14</td>
-                                                        <td>Ernie Sanford</td>
-                                                    </tr>
-                                                    <tr class="even">
-                                                        <td>User Successfully Logged In [User Id: 1, Is Staff Member:
-                                                            Yes, IP: 175.100.46.183]</td>
-                                                        <td class="sorting_1">07/02/2025 15:38:18</td>
-                                                        <td>Ernie Sanford</td>
-                                                    </tr>
-                                                    <tr class="odd">
-                                                        <td>Article Deleted [ArticleID: 1]</td>
-                                                        <td class="sorting_1">07/02/2025 15:36:49</td>
-                                                        <td>Ernie Sanford</td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-4">
-                                                <div class="dataTables_info" id="DataTables_Table_0_info" role="status"
-                                                    aria-live="polite">Showing 1 to 25 of 205 entries</div>
-                                            </div>
-                                            <div class="col-md-8 dataTables_paging">
-                                                <div id="colvis"></div>
-                                                <div id="" class="dt-page-jump"><select data-id="DataTables_Table_0"
-                                                        class="dt-page-jump-select form-control"
-                                                        id="dt-page-jump-DataTables_Table_0">
-                                                        <option value="1" selected="">1</option>
-                                                        <option value="2">2</option>
-                                                        <option value="3">3</option>
-                                                        <option value="4">4</option>
-                                                        <option value="5">5</option>
-                                                        <option value="6">6</option>
-                                                        <option value="7">7</option>
-                                                        <option value="8">8</option>
-                                                        <option value="9">9</option>
-                                                    </select></div>
-                                                <div class="dataTables_paginate paging_simple_numbers"
-                                                    id="DataTables_Table_0_paginate">
-                                                    <ul class="pagination">
-                                                        <li class="paginate_button previous disabled"
-                                                            id="DataTables_Table_0_previous"><a href="#"
-                                                                aria-controls="DataTables_Table_0" data-dt-idx="0"
-                                                                tabindex="0">Previous</a></li>
-                                                        <li class="paginate_button active"><a href="#"
-                                                                aria-controls="DataTables_Table_0" data-dt-idx="1"
-                                                                tabindex="0">1</a></li>
-                                                        <li class="paginate_button "><a href="#"
-                                                                aria-controls="DataTables_Table_0" data-dt-idx="2"
-                                                                tabindex="0">2</a></li>
-                                                        <li class="paginate_button "><a href="#"
-                                                                aria-controls="DataTables_Table_0" data-dt-idx="3"
-                                                                tabindex="0">3</a></li>
-                                                        <li class="paginate_button "><a href="#"
-                                                                aria-controls="DataTables_Table_0" data-dt-idx="4"
-                                                                tabindex="0">4</a></li>
-                                                        <li class="paginate_button "><a href="#"
-                                                                aria-controls="DataTables_Table_0" data-dt-idx="5"
-                                                                tabindex="0">5</a></li>
-                                                        <li class="paginate_button disabled"
-                                                            id="DataTables_Table_0_ellipsis"><a href="#"
-                                                                aria-controls="DataTables_Table_0" data-dt-idx="6"
-                                                                tabindex="0">…</a></li>
-                                                        <li class="paginate_button "><a href="#"
-                                                                aria-controls="DataTables_Table_0" data-dt-idx="7"
-                                                                tabindex="0">9</a></li>
-                                                        <li class="paginate_button next" id="DataTables_Table_0_next"><a
-                                                                href="#" aria-controls="DataTables_Table_0"
-                                                                data-dt-idx="8" tabindex="0">Next</a></li>
-                                                    </ul>
+                                            <div class="col-md-12">
+                                                <label for="stop_date" class="control-label"> <small
+                                                        class="req text-danger">* </small>To Date</label>
+                                                <div class="input-group date">
+                                                    <input type="text" class="form-control datepicker" id="stop_date"
+                                                        name="stop_date" autocomplete="off">
+                                                    <div class="input-group-addon">
+                                                        <i class="fa-regular fa-calendar calendar-icon"></i>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -1952,8 +1775,12 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="panel-footer text-right">
+                            <button class="btn btn-primary" type="submit">
+                                Export </button>
+                        </div>
                     </div>
-                </div>
+                </form>
             </div>
         </div>
     </div>
@@ -2163,6 +1990,40 @@
         ga('send', 'pageview');
 
     </script>
+    <script>
+        var date_validation_rule = {
+            required: {
+                depends: function () {
+                    return $('select[name="period"]').val() === 'custom';
+                }
+            }
+        }
+        appValidateForm('#export-form', {
+            'period': 'required',
+            'export_type': 'required',
+            'start_date': date_validation_rule,
+            'stop_date': date_validation_rule,
+        });
+
+        var date_range = $('#date-range');
+        var start_date = $('input[name="start_date"]');
+        var stop_date = $('input[name="stop_date"]');
+
+        $('select[name="period"]').on('change', function () {
+            var val = $(this).val();
+            if (val == 'custom') {
+                start_date.val('');
+                stop_date.val('');
+                date_range.addClass('fadeIn').removeClass('hide');
+                return;
+            } else {
+                if (!date_range.hasClass('hide')) {
+                    date_range.removeClass('fadeIn').addClass('hide');
+                }
+            }
+        })
+    </script>
+
 
     <div id="lightboxOverlay" class="lightboxOverlay" style="display: none;"></div>
     <div id="lightbox" class="lightbox" style="display: none;">
@@ -2181,5 +2042,4 @@
         </div>
     </div>
 </body>
-
 </html>
