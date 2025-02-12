@@ -126,6 +126,29 @@
                 transform: rotate(360deg);
             }
         }
+body {
+                overflow: hidden; /* Prevent the body from scrolling */
+            }
+
+            /* Style for the aside (sidebar) */
+            .aside {
+                width: 100px; /* Adjust width as needed */
+                height: 100vh; /* Full height */
+                overflow-y: auto; /* Allow scrolling within the sidebar */
+                
+                left: 0;
+                top: 0;
+                background-color: #f8f9fa; /* Light gray background */
+                padding: 10px;
+            }
+
+            /* Style for the main content */
+            .content {
+                margin-left: 5px; /* Adjust to fit sidebar width */
+                height: 100vh; /* Full height */
+                overflow-y: auto; /* Allow scrolling within content */
+                padding: 20px;
+            }
 
         .dropbox-dropin-btn,
         .dropbox-dropin-btn:link,
@@ -942,6 +965,73 @@
                         </ul>
                     </div>
                 </div>
+
+                <ul class="nav navbar-nav navbar-right -tw-mt-px">
+                    <li class="dropdown-submenu pull-left header-languages">
+                        <a href="#" tabindex="-1">Language</a>
+                        <ul class="dropdown-menu dropdown-menu">
+                            <li class="active">
+                                <a href="./admin/staff/change_language">
+                                    <img src="https://flagcdn.com/w40/us.png" width="20"> System Default
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./admin/staff/change_language/hindi">
+                                    <img src="https://flagcdn.com/w40/in.png" width="20"> Hindi
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./admin/staff/change_language/slovak">
+                                    <img src="https://flagcdn.com/w40/sk.png" width="20"> Slovak
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./admin/staff/change_language/ukrainian">
+                                    <img src="https://flagcdn.com/w40/ua.png" width="20"> Ukrainian
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./admin/staff/change_language/vietnamese">
+                                    <img src="https://flagcdn.com/w40/vn.png" width="20"> Vietnamese
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./admin/staff/change_language/finnish">
+                                    <img src="https://flagcdn.com/w40/fi.png" width="20"> Finnish
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./admin/staff/change_language/portuguese_br">
+                                    <img src="https://flagcdn.com/w40/br.png" width="20"> Portuguese (BR)
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./admin/staff/change_language/polish">
+                                    <img src="https://flagcdn.com/w40/pl.png" width="20"> Polish
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./admin/staff/change_language/german">
+                                    <img src="https://flagcdn.com/w40/de.png" width="20"> German
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./admin/staff/change_language/english">
+                                    <img src="https://flagcdn.com/w40/gb.png" width="20"> English
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./admin/staff/change_language/japanese">
+                                    <img src="https://flagcdn.com/w40/jp.png" width="20"> Japanese
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./admin/staff/change_language/french">
+                                    <img src="https://flagcdn.com/w40/fr.png" width="20"> French
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
 
                 <ul class="nav navbar-nav navbar-right -tw-mt-px">
                     <li><a href="https://perfexcrm.com/demo/admin/clients/login_as_client/1" target="_blank"

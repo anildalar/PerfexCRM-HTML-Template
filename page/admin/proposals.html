@@ -120,6 +120,29 @@
                 transform: rotate(360deg);
             }
         }
+body {
+                overflow: hidden; /* Prevent the body from scrolling */
+            }
+
+            /* Style for the aside (sidebar) */
+            .aside {
+                width: 100px; /* Adjust width as needed */
+                height: 100vh; /* Full height */
+                overflow-y: auto; /* Allow scrolling within the sidebar */
+                
+                left: 0;
+                top: 0;
+                background-color: #f8f9fa; /* Light gray background */
+                padding: 10px;
+            }
+
+            /* Style for the main content */
+            .content {
+                margin-left: 5px; /* Adjust to fit sidebar width */
+                height: 100vh; /* Full height */
+                overflow-y: auto; /* Allow scrolling within content */
+                padding: 20px;
+            }
 
         .dropbox-dropin-btn,
         .dropbox-dropin-btn:link,
