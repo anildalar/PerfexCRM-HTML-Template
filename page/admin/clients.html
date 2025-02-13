@@ -956,8 +956,11 @@ data-new-gr-c-s-check-loaded="14.1221.0" data-gr-ext-installed="">
 </div>
 
 <ul class="nav navbar-nav navbar-right -tw-mt-px">
-    <li class="dropdown-submenu pull-left header-languages">
-        <a href="#" tabindex="-1">Language</a>
+    <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+            <img src="https://flagcdn.com/w40/us.png" width="20" id="selected-flag"> 
+            <span id="selected-language"></span>
+        </a>
         <ul class="dropdown-menu dropdown-menu">
             <li class="active">
                 <a href="./admin/staff/change_language">
@@ -1981,7 +1984,7 @@ data-new-gr-c-s-check-loaded="14.1221.0" data-gr-ext-installed="">
                                 <div class="">
                                     <div id="clients_wrapper"
                                         class="dataTables_wrapper form-inline dt-bootstrap no-footer">
-                                        <div class="row"></div>
+                                       
                                         <div class="row">
                                             <div class="col-md-7">
                                                 <div class="dataTables_length" id="clients_length"><label><select
@@ -2790,10 +2793,28 @@ data-new-gr-c-s-check-loaded="14.1221.0" data-gr-ext-installed="">
                 }, 50);
             }
         }
-    </script>
+    </script> 
+    <!-- serch box -->
+        <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        let searchInput = document.querySelector("#clients_filter input");
+
+        searchInput.addEventListener("keyup", function () {
+            let filterValue = searchInput.value.toLowerCase();
+            let rows = document.querySelectorAll("#clients tbody tr");
+
+            rows.forEach(row => {
+                let text = row.textContent.toLowerCase();
+                row.style.display = text.includes(filterValue) ? "" : "none";
+            });
+        });
+    });
+</script>
+
+ 
 
 
-    <!-- <div id="lightboxOverlay" class="lightboxOverlay" style="display: none;"></div>
+    <div id="lightboxOverlay" class="lightboxOverlay" style="display: none;"></div>
     <div id="lightbox" class="lightbox" style="display: none;">
         <div class="lb-outerContainer">
             <div class="lb-container"><img class="lb-image"
@@ -2808,6 +2829,6 @@ data-new-gr-c-s-check-loaded="14.1221.0" data-gr-ext-installed="">
                 <div class="lb-closeContainer"><a class="lb-close"></a></div>
             </div>
         </div>
-    </div> -->
+    </div>
 </body>
 </html>
