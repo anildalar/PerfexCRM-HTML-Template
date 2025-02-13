@@ -9,7 +9,7 @@
     <title>
         Dashboard </title>
 
-    <link rel="shortcut icon" id="favicon" href="../../uploads/company/favicon.ico">
+    <link rel="shortcut icon" id="favicon" href="../../uploads/company/perfex.png">
     <link rel="apple-touch-icon”" id="favicon-apple-touch-icon" href="../../uploads/company/favicon.ico">
     <link rel="stylesheet" type="text/css" id="reset-css" href="../../assets/css/reset.min.css?v=3.2.1">
     <link rel="stylesheet" type="text/css" id="inter-font" href="../../assets/plugins/inter/inter.css?v=3.2.1">
@@ -127,53 +127,44 @@
             }
         }
         body {
-                overflow: hidden; /* Prevent the body from scrolling */
-            }
+            overflow: hidden; /* Prevent full-page scrolling */
+        }
 
-            /* Style for the aside (sidebar) */
-            .aside {
-                width: 100px; /* Adjust width as needed */
-                height: 100vh; /* Full height */
-                overflow-y: auto; /* Allow scrolling within the sidebar */
-                
-                left: 0;
-                top: 0;
-                background-color: #f8f9fa; /* Light gray background */
-                padding: 10px;
-            }
+        .sidebar {
+            max-height: 100vh; /* Keep sidebar height within viewport */
+            overflow-y: auto; /* Enable scrolling for sidebar only */
+            scrollbar-width: thin; /* Firefox */
+            scrollbar-color: #ccc #f5f5f5; /* Firefox */
+        }
 
-            /* Style for the main content */
-            .content {
-                margin-left: 5px; /* Adjust to fit sidebar width */
-                height: 100vh; /* Full height */
-                overflow-y: auto; /* Allow scrolling within content */
-                padding: 20px;
-            }
-          /* Ensure the body does not interfere with scrolling */
-            body {
-                overflow: hidden; /* Prevent the body from scrolling */
-            }
+        /* Custom scrollbar for Webkit-based browsers (Chrome, Edge, Safari) */
+        .sidebar::-webkit-scrollbar {
+            width: 6px;
+        }
 
-            /* Style for the aside (sidebar) */
-            .aside {
-                width: 100px; /* Adjust width as needed */
-                height: 100vh; /* Full height */
-                overflow-y: auto; /* Allow scrolling within the sidebar */
-                
-                left: 0;
-                top: 0;
-                background-color: #f8f9fa; /* Light gray background */
-                padding: 10px;
-            }
+        .sidebar::-webkit-scrollbar-track {
+            background: #f5f5f5;
+        }
 
-            /* Style for the main content */
-            .content {
-                margin-left: 5px; /* Adjust to fit sidebar width */
-                height: 100vh; /* Full height */
-                overflow-y: auto; /* Allow scrolling within content */
-                padding: 20px;
-            }
-            
+        .sidebar::-webkit-scrollbar-thumb {
+            background: #ccc;
+            border-radius: 3px;
+        }
+
+        .content {
+            margin-left: 5px; /* Adjust for sidebar */
+            height: 100vh; /* Full height */
+            overflow-y: auto; /* Allow scrolling within content */
+            padding: 20px;
+        }
+        .r_scroll {
+            height: 1000px;
+            overflow-x: auto;
+        }
+        .navbar-nav.navbar-right {
+            margin-right: 20px; /* Adjust as needed */
+        }
+  
         .dropbox-dropin-btn,
         .dropbox-dropin-btn:link,
         .dropbox-dropin-btn:hover {
@@ -746,10 +737,9 @@
     </style>
 </head>
 
-<body class="app admin h-full dashboard invoices-total-manual user-id-1 chrome page-small"
-    data-new-gr-c-s-check-loaded="14.1220.0" data-gr-ext-installed="" cz-shortcut-listen="true">
+<body class="app admin h-full dashboard invoices-total-manual user-id-1 chrome page-small">
     <div id="header">
-        <button type="button"
+        <button type="button" id="toggleMenu"
             class="hide-menu tw-inline-flex tw-bg-transparent tw-border-0 tw-p-1 tw-mt-4 hover:tw-bg-neutral-600/10 tw-text-neutral-600 hover:tw-text-neutral-800 focus:tw-text-neutral-800 focus:tw-outline-none tw-rounded-md tw-mx-4 ltr:md:tw-ml-4 rtl:md:tw-mr-4 ltr:tw-float-left  rtl:tw-float-right">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="tw-h-4 tw-w-4 tw-text-current">
                 <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
@@ -992,12 +982,15 @@
 
                 
                 <ul class="nav navbar-nav navbar-right -tw-mt-px">
-                    <li class="dropdown-submenu pull-left header-languages">
-                        <a href="#" tabindex="-1">Language</a>
-                        <ul class="dropdown-menu dropdown-menu">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                            <img src="https://flagcdn.com/w40/us.png" width="20" id="selected-flag"> 
+                            <span id="selected-language"></span>
+                        </a>
+                        <ul class="dropdown-menu">
                             <li class="active">
-                                <a href="./admin/staff/change_language">
-                                    <img src="https://flagcdn.com/w40/us.png" width="20"> System Default
+                                <a href="#" onclick="changeLanguage('https://flagcdn.com/w40/us.png', 'System Default')">
+                                    <img src="https://flagcdn.com/w40/us.png" width="20"> US
                                 </a>
                             </li>
                             <li>
@@ -1027,7 +1020,7 @@
                             </li>
                             <li>
                                 <a href="./admin/staff/change_language/portuguese_br">
-                                    <img src="https://flagcdn.com/w40/br.png" width="20"> Portuguese (BR)
+                                    <img src="https://flagcdn.com/w40/br.png" width="20"> (BR)
                                 </a>
                             </li>
                             <li>
@@ -1443,327 +1436,371 @@
         </ul>
     </div>
     <aside id="menu" class="sidebar" style="min-height: 9434px;">
-        <div class="dropdown sidebar-user-profile tw-mt-[80px] tw-mx-1.5 ">
-            <a href="#"
-                class="dropdown-toggle profile -tw-mt-1 tw-font-medium tw-border tw-border-solid tw-rounded-lg tw-bg-white/20 tw-py-2 tw-px-2.5 tw-block tw-shadow-sm tw-border-neutral-900/20 tw-text-neutral-700 hover:tw-text-neutral-800 focus:tw-text-neutral-800 hover:tw-bg-neutral-900/5 focus:tw-bg-neutral-900/5"
-                data-toggle="dropdown" aria-expanded="false">
-                <span class="tw-inline-flex tw-items-center tw-gap-x-3 tw-pt-0.5">
-                    <img src="../../uploads/staff_profile_images/small_1.png"
-                        class="img img-responsive staff-profile-image-small"> <span>
-                        <span class="tw-truncate tw-block tw-w-[140px] tw-font-semibold">Orval Powlowski</span>
-                        <span class="tw-font-normal tw-truncate tw-block tw-w-[140px] tw-text-sm tw-text-neutral-500">
-                            admin@test.com </span>
+        <div style="overflow: scroll; height: 100vh;">
+            <div class="dropdown sidebar-user-profile tw-mt-[80px] tw-mx-1.5 ">
+                <a href="#"
+                    class="dropdown-toggle profile -tw-mt-1 tw-font-medium tw-border tw-border-solid tw-rounded-lg tw-bg-white/20 tw-py-2 tw-px-2.5 tw-block tw-shadow-sm tw-border-neutral-900/20 tw-text-neutral-700 hover:tw-text-neutral-800 focus:tw-text-neutral-800 hover:tw-bg-neutral-900/5 focus:tw-bg-neutral-900/5"
+                    data-toggle="dropdown" aria-expanded="false">
+                    <span class="tw-inline-flex tw-items-center tw-gap-x-3 tw-pt-0.5">
+                        <img src="../../uploads/staff_profile_images/small_1.png"
+                            class="img img-responsive staff-profile-image-small"> <span>
+                            <span class="tw-truncate tw-block tw-w-[140px] tw-font-semibold">Orval Powlowski</span>
+                            <span class="tw-font-normal tw-truncate tw-block tw-w-[140px] tw-text-sm tw-text-neutral-500">
+                                admin@test.com </span>
+                        </span>
                     </span>
-                </span>
-            </a>
-            <ul class="dropdown-menu tw-w-full">
-                <li class="header-my-profile"><a href="./admin/profile">My Profile</a>
+                </a>
+                <ul class="dropdown-menu tw-w-full">
+                    <li class="header-my-profile"><a href="./admin/profile">My Profile</a>
+                    </li>
+                    <li class="header-my-timesheets"><a href="./admin/staff/timesheets">My
+                            Timesheets</a>
+                    </li>
+                    <li class="header-edit-profile"><a href="./admin/staff/edit_profile">Edit
+                            Profile </a>
+                    </li>
+                   
+                    <li class="header-logout">
+                        <a href="#" onclick="logout(); return false;">Logout</a>
+                    </li>
+                </ul>
+            </div>
+            <ul class="nav metis-menu tw-mt-[15px]" id="side-menu">
+    
+                <li class="menu-item-dashboard active">
+                    <a href="./dashboard.html" aria-expanded="false">
+                        <i class="fa-regular fa-object-group menu-icon"></i>
+                        <span class="menu-text">
+                            Dashboard </span>
+                    </a>
                 </li>
-                <li class="header-my-timesheets"><a href="./admin/staff/timesheets">My
-                        Timesheets</a>
+                <li class="menu-item-customers">
+                    <a href="./clients.html" aria-expanded="false">
+                        <i class="fa-regular fa-user menu-icon"></i>
+                        <span class="menu-text">
+                            Customers </span>
+                    </a>
                 </li>
-                <li class="header-edit-profile"><a href="./admin/staff/edit_profile">Edit
-                        Profile </a>
+                <li class="menu-item-sales">
+                    <a href="#" aria-expanded="false">
+                        <i class="fa-solid fa-bolt menu-icon"></i>
+                        <span class="menu-text">
+                            Sales </span>
+                        <span class="fa arrow pleft5"></span>
+                    </a>
+                    <ul class="nav nav-second-level collapse" aria-expanded="false">
+                        <li class="sub-menu-item-proposals">
+                            <a href="./proposals.html">
+                                <span class="sub-menu-text">
+                                    Proposals </span>
+                            </a>
+                        </li>
+                        <li class="sub-menu-item-estimates">
+                            <a href="./estimate_request.html">
+                                <span class="sub-menu-text">
+                                    Estimates </span>
+                            </a>
+                        </li>
+                        <li class="sub-menu-item-invoices">
+                            <a href="./invoices.html">
+                                <span class="sub-menu-text">
+                                    Invoices </span>
+                            </a>
+                        </li>
+                        <li class="sub-menu-item-payments">
+                            <a href="./payments.html">
+                                <span class="sub-menu-text">
+                                    Payments </span>
+                            </a>
+                        </li>
+                        <li class="sub-menu-item-credit_notes">
+                            <a href="./credit_notes.html">
+                                <span class="sub-menu-text">
+                                    Credit Notes </span>
+                            </a>
+                        </li>
+                        <li class="sub-menu-item-items">
+                            <a href="./invoice_items.html">
+                                <span class="sub-menu-text">
+                                    Items </span>
+                            </a>
+                        </li>
+                    </ul>
                 </li>
-               
-                <li class="header-logout">
-                    <a href="#" onclick="logout(); return false;">Logout</a>
+                <li class="menu-item-subscriptions">
+                    <a href="./subscriptions.html" aria-expanded="false">
+                        <i class="fa fa-repeat menu-icon"></i>
+                        <span class="menu-text">
+                            Subscriptions </span>
+                    </a>
+                </li>
+                <li class="menu-item-expenses">
+                    <a href="./expenses.html" aria-expanded="false">
+                        <i class="fa-regular fa-file-lines menu-icon"></i>
+                        <span class="menu-text">
+                            Expenses </span>
+                    </a>
+                </li>
+                <li class="menu-item-contracts">
+                    <a href="./contracts.html" aria-expanded="false">
+                        <i class="fa-regular fa-note-sticky menu-icon"></i>
+                        <span class="menu-text">
+                            Contracts </span>
+                    </a>
+                </li>
+                <li class="menu-item-projects">
+                    <a href="./project.html" aria-expanded="false">
+                        <i class="fa-solid fa-chart-gantt menu-icon"></i>
+                        <span class="menu-text">
+                            Projects </span>
+                    </a>
+                </li>
+                <li class="menu-item-tasks">
+                    <a href="./tasks.html" aria-expanded="false">
+                        <i class="fa-regular fa-circle-check menu-icon"></i>
+                        <span class="menu-text">
+                            Tasks </span>
+                    </a>
+                </li>
+                <li class="menu-item-support">
+                    <a href="./tickets.html" aria-expanded="false">
+                        <i class="fa-regular fa-life-ring menu-icon"></i>
+                        <span class="menu-text">
+                            Support </span>
+                    </a>
+                </li>
+                <li class="menu-item-leads">
+                    <a href="./leads.html" aria-expanded="false">
+                        <i class="fa-solid fa-crosshairs menu-icon"></i>
+                        <span class="menu-text">
+                            Leads </span>
+                    </a>
+                </li>
+                <li class="menu-item-estimate_request">
+                    <a href="./estimate_request.html" aria-expanded="false">
+                        <i class="fa-regular fa-file menu-icon"></i>
+                        <span class="menu-text">
+                            Estimate Request </span>
+                    </a>
+                </li>
+                <li class="menu-item-knowledge-base">
+                    <a href="./knowledge_base.html" aria-expanded="false">
+                        <i class="fa-regular fa-question-circle menu-icon"></i>
+                        <span class="menu-text">
+                            Knowledge Base </span>
+                    </a>
+                </li>
+                <li class="menu-item-utilities">
+                    <a href="#" aria-expanded="false">
+                        <i class="fa-regular fa-circle-dot menu-icon"></i>
+                        <span class="menu-text">
+                            Utilities </span>
+                        <span class="fa arrow pleft5"></span>
+                    </a>
+                    <ul class="nav nav-second-level collapse" aria-expanded="false">
+                        <li class="sub-menu-item-media">
+                            <a href="./utilities/media.html">
+                                <span class="sub-menu-text">
+                                    Media </span>
+                            </a>
+                        </li>
+                        <li class="sub-menu-item-bulk-pdf-exporter">
+                            <a href="./utilities/bulk_pdf_exporter.html">
+                                <span class="sub-menu-text">
+                                    Bulk PDF Export </span>
+                            </a>
+                        </li>
+                        <li class="sub-menu-item-csv-export">
+                            <a href="./utilities/exports.html">
+                                <span class="sub-menu-text">
+                                    CSV Export </span>
+                            </a>
+                        </li>
+                        <li class="sub-menu-item-calendar">
+                            <a href="./utilities/calendar.html">
+                                <span class="sub-menu-text">
+                                    Calendar </span>
+                            </a>
+                        </li>
+                        <li class="sub-menu-item-announcements">
+                            <a href="./utilities/announcements.html">
+                                <span class="sub-menu-text">
+                                    Announcements </span>
+                            </a>
+                        </li>
+                        <li class="sub-menu-item-goals-tracking">
+                            <a href="./utilities/goals.html">
+                                <span class="sub-menu-text">
+                                    Goals </span>
+                            </a>
+                        </li>
+                        <li class="sub-menu-item-activity-log">
+                            <a href="./utilities/activity_log.html">
+                                <span class="sub-menu-text">
+                                    Activity Log </span>
+                            </a>
+                        </li>
+                        <li class="sub-menu-item-surveys">
+                            <a href="./utilities/surveys.html">
+                                <span class="sub-menu-text">
+                                    Surveys </span>
+                            </a>
+                        </li>
+                        <li class="sub-menu-item-utility_backup">
+                            <a href="./utilities/backup.html">
+                                <span class="sub-menu-text">
+                                    Database Backup </span>
+                            </a>
+                        </li>
+                        <li class="sub-menu-item-ticket-pipe-log">
+                            <a href="./utilities/pipe_log.html">
+                                <span class="sub-menu-text">
+                                    Ticket Pipe Log </span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="menu-item-reports">
+                    <a href="#" aria-expanded="false">
+                        <i class="fa-solid fa-chart-line menu-icon"></i>
+                        <span class="menu-text">
+                            Reports </span>
+                        <span class="fa arrow pleft5"></span>
+                    </a>
+                    <ul class="nav nav-second-level collapse" aria-expanded="false">
+                        <li class="sub-menu-item-sales-reports">
+                            <a href="./reports/sales.html">
+                                <span class="sub-menu-text">
+                                    Sales </span>
+                            </a>
+                        </li>
+                        <li class="sub-menu-item-expenses-reports">
+                            <a href="./reports/expenses.html">
+                                <span class="sub-menu-text">
+                                    Expenses </span>
+                            </a>
+                        </li>
+                        <li class="sub-menu-item-expenses-vs-income-reports">
+                            <a href="./reports/expenses_vs_income.html">
+                                <span class="sub-menu-text">
+                                    Expenses vs Income </span>
+                            </a>
+                        </li>
+                        <li class="sub-menu-item-leads-reports">
+                            <a href="./reports/leads.html">
+                                <span class="sub-menu-text">
+                                    Leads </span>
+                            </a>
+                        </li>
+                        <li class="sub-menu-item-timesheets-reports">
+                            <a href="./reports/timesheets.html">
+                                <span class="sub-menu-text">
+                                    Timesheets overview </span>
+                            </a>
+                        </li>
+                        <li class="sub-menu-item-knowledge-base-reports">
+                            <a href="./reports/knowledge_base_articles.html">
+                                <span class="sub-menu-text">
+                                    KB Articles </span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li id="setup-menu-item">
+                    <a href="#" class="open-customizer"><i class="fa fa-cog menu-icon"></i>
+                        <span class="menu-text">
+                            Setup </span>
+                    </a>
+                </li>
+                <li id="setup-menu-item">
+                    <a href="#" class="open-customizer"><i class="fa fa-cog menu-icon"></i>
+                        <span class="menu-text">
+                            Setup </span>
+                    </a>
+                </li>
+                <li id="setup-menu-item">
+                    <a href="#" class="open-customizer"><i class="fa fa-cog menu-icon"></i>
+                        <span class="menu-text">
+                            Setup </span>
+                    </a>
+                </li>
+                <li id="setup-menu-item">
+                    <a href="#" class="open-customizer"><i class="fa fa-cog menu-icon"></i>
+                        <span class="menu-text">
+                            Setup </span>
+                    </a>
+                </li>
+                <li id="setup-menu-item">
+                    <a href="#" class="open-customizer"><i class="fa fa-cog menu-icon"></i>
+                        <span class="menu-text">
+                            Setup </span>
+                    </a>
+                </li>
+                <li id="setup-menu-item">
+                    <a href="#" class="open-customizer"><i class="fa fa-cog menu-icon"></i>
+                        <span class="menu-text">
+                            Setup </span>
+                    </a>
+                </li>
+                <li id="setup-menu-item">
+                    <a href="#" class="open-customizer"><i class="fa fa-cog menu-icon"></i>
+                        <span class="menu-text">
+                            Setup </span>
+                    </a>
+                </li>
+                <li id="setup-menu-item">
+                    <a href="#" class="open-customizer"><i class="fa fa-cog menu-icon"></i>
+                        <span class="menu-text">
+                            Setup </span>
+                    </a>
+                </li>
+                <li id="setup-menu-item">
+                    <a href="#" class="open-customizer"><i class="fa fa-cog menu-icon"></i>
+                        <span class="menu-text">
+                            Setup </span>
+                    </a>
+                </li>
+                <li id="setup-menu-item">
+                    <a href="#" class="open-customizer"><i class="fa fa-cog menu-icon"></i>
+                        <span class="menu-text">
+                            Setup </span>
+                    </a>
+                </li>
+                <li id="setup-menu-item">
+                    <a href="#" class="open-customizer"><i class="fa fa-cog menu-icon"></i>
+                        <span class="menu-text">
+                            Setup </span>
+                    </a>
+                </li>
+                <li id="setup-menu-item">
+                    <a href="#" class="open-customizer"><i class="fa fa-cog menu-icon"></i>
+                        <span class="menu-text">
+                            Setup </span>
+                    </a>
+                </li>
+                <li id="setup-menu-item">
+                    <a href="#" class="open-customizer"><i class="fa fa-cog menu-icon"></i>
+                        <span class="menu-text">
+                            Setup </span>
+                    </a>
+                </li>
+                <li class="pinned-separator tw-border-b tw-border-solid tw-border-neutral-900/10 tw-mt-1"></li>
+                <li class="pinned_project last:tw-border-b last:tw-border-solid last:tw-border-neutral-900/10">
+                    <a href="./admin/projects/view/2" data-toggle="tooltip" data-title="Pinned Project">
+                        SEO Optimization<br>
+                        <small>
+                            Pacocha, Roberts and Romaguera </small>
+                    </a>
+                    <div class="col-md-12">
+                        <div class="progress progress-bar-mini">
+                            <div class="progress-bar no-percent-text not-dynamic" role="progressbar" data-percent="26.67"
+                                style="width: 26.67%;">
+                            </div>
+                        </div>
+                    </div>
                 </li>
             </ul>
         </div>
-        <ul class="nav metis-menu tw-mt-[15px]" id="side-menu">
-
-            <li class="menu-item-dashboard active">
-                <a href="./dashboard.html" aria-expanded="false">
-                    <i class="fa-regular fa-object-group menu-icon"></i>
-                    <span class="menu-text">
-                        Dashboard </span>
-                </a>
-            </li>
-            <li class="menu-item-customers">
-                <a href="./clients.html" aria-expanded="false">
-                    <i class="fa-regular fa-user menu-icon"></i>
-                    <span class="menu-text">
-                        Customers </span>
-                </a>
-            </li>
-            <li class="menu-item-sales">
-                <a href="#" aria-expanded="false">
-                    <i class="fa-solid fa-bolt menu-icon"></i>
-                    <span class="menu-text">
-                        Sales </span>
-                    <span class="fa arrow pleft5"></span>
-                </a>
-                <ul class="nav nav-second-level collapse" aria-expanded="false">
-                    <li class="sub-menu-item-proposals">
-                        <a href="./proposals.html">
-                            <span class="sub-menu-text">
-                                Proposals </span>
-                        </a>
-                    </li>
-                    <li class="sub-menu-item-estimates">
-                        <a href="./estimate_request.html">
-                            <span class="sub-menu-text">
-                                Estimates </span>
-                        </a>
-                    </li>
-                    <li class="sub-menu-item-invoices">
-                        <a href="./invoices.html">
-                            <span class="sub-menu-text">
-                                Invoices </span>
-                        </a>
-                    </li>
-                    <li class="sub-menu-item-payments">
-                        <a href="./payments.html">
-                            <span class="sub-menu-text">
-                                Payments </span>
-                        </a>
-                    </li>
-                    <li class="sub-menu-item-credit_notes">
-                        <a href="./credit_notes.html">
-                            <span class="sub-menu-text">
-                                Credit Notes </span>
-                        </a>
-                    </li>
-                    <li class="sub-menu-item-items">
-                        <a href="./invoice_items.html">
-                            <span class="sub-menu-text">
-                                Items </span>
-                        </a>
-                    </li>
-                </ul>
-            </li>
-            <li class="menu-item-subscriptions">
-                <a href="./subscriptions.html" aria-expanded="false">
-                    <i class="fa fa-repeat menu-icon"></i>
-                    <span class="menu-text">
-                        Subscriptions </span>
-                </a>
-            </li>
-            <li class="menu-item-expenses">
-                <a href="./expenses.html" aria-expanded="false">
-                    <i class="fa-regular fa-file-lines menu-icon"></i>
-                    <span class="menu-text">
-                        Expenses </span>
-                </a>
-            </li>
-            <li class="menu-item-contracts">
-                <a href="./contracts.html" aria-expanded="false">
-                    <i class="fa-regular fa-note-sticky menu-icon"></i>
-                    <span class="menu-text">
-                        Contracts </span>
-                </a>
-            </li>
-            <li class="menu-item-projects">
-                <a href="./project.html" aria-expanded="false">
-                    <i class="fa-solid fa-chart-gantt menu-icon"></i>
-                    <span class="menu-text">
-                        Projects </span>
-                </a>
-            </li>
-            <li class="menu-item-tasks">
-                <a href="./tasks.html" aria-expanded="false">
-                    <i class="fa-regular fa-circle-check menu-icon"></i>
-                    <span class="menu-text">
-                        Tasks </span>
-                </a>
-            </li>
-            <li class="menu-item-support">
-                <a href="./tickets.html" aria-expanded="false">
-                    <i class="fa-regular fa-life-ring menu-icon"></i>
-                    <span class="menu-text">
-                        Support </span>
-                </a>
-            </li>
-            <li class="menu-item-leads">
-                <a href="./leads.html" aria-expanded="false">
-                    <i class="fa-solid fa-crosshairs menu-icon"></i>
-                    <span class="menu-text">
-                        Leads </span>
-                </a>
-            </li>
-            <li class="menu-item-estimate_request">
-                <a href="./estimate_request.html" aria-expanded="false">
-                    <i class="fa-regular fa-file menu-icon"></i>
-                    <span class="menu-text">
-                        Estimate Request </span>
-                </a>
-            </li>
-            <li class="menu-item-knowledge-base">
-                <a href="./knowledge_base.html" aria-expanded="false">
-                    <i class="fa-regular fa-question-circle menu-icon"></i>
-                    <span class="menu-text">
-                        Knowledge Base </span>
-                </a>
-            </li>
-            <li class="menu-item-utilities">
-                <a href="#" aria-expanded="false">
-                    <i class="fa-regular fa-circle-dot menu-icon"></i>
-                    <span class="menu-text">
-                        Utilities </span>
-                    <span class="fa arrow pleft5"></span>
-                </a>
-                <ul class="nav nav-second-level collapse" aria-expanded="false">
-                    <li class="sub-menu-item-media">
-                        <a href="./utilities/media.html">
-                            <span class="sub-menu-text">
-                                Media </span>
-                        </a>
-                    </li>
-                    <li class="sub-menu-item-bulk-pdf-exporter">
-                        <a href="./utilities/bulk_pdf_exporter.html">
-                            <span class="sub-menu-text">
-                                Bulk PDF Export </span>
-                        </a>
-                    </li>
-                    <li class="sub-menu-item-csv-export">
-                        <a href="./utilities/exports.html">
-                            <span class="sub-menu-text">
-                                CSV Export </span>
-                        </a>
-                    </li>
-                    <li class="sub-menu-item-calendar">
-                        <a href="./utilities/calendar.html">
-                            <span class="sub-menu-text">
-                                Calendar </span>
-                        </a>
-                    </li>
-                    <li class="sub-menu-item-announcements">
-                        <a href="./utilities/announcements.html">
-                            <span class="sub-menu-text">
-                                Announcements </span>
-                        </a>
-                    </li>
-                    <li class="sub-menu-item-goals-tracking">
-                        <a href="./utilities/goals.html">
-                            <span class="sub-menu-text">
-                                Goals </span>
-                        </a>
-                    </li>
-                    <li class="sub-menu-item-activity-log">
-                        <a href="./utilities/activity_log.html">
-                            <span class="sub-menu-text">
-                                Activity Log </span>
-                        </a>
-                    </li>
-                    <li class="sub-menu-item-surveys">
-                        <a href="./utilities/surveys.html">
-                            <span class="sub-menu-text">
-                                Surveys </span>
-                        </a>
-                    </li>
-                    <li class="sub-menu-item-utility_backup">
-                        <a href="./utilities/backup.html">
-                            <span class="sub-menu-text">
-                                Database Backup </span>
-                        </a>
-                    </li>
-                    <li class="sub-menu-item-ticket-pipe-log">
-                        <a href="./utilities/pipe_log.html">
-                            <span class="sub-menu-text">
-                                Ticket Pipe Log </span>
-                        </a>
-                    </li>
-                </ul>
-            </li>
-            <li class="menu-item-reports">
-                <a href="#" aria-expanded="false">
-                    <i class="fa-solid fa-chart-line menu-icon"></i>
-                    <span class="menu-text">
-                        Reports </span>
-                    <span class="fa arrow pleft5"></span>
-                </a>
-                <ul class="nav nav-second-level collapse" aria-expanded="false">
-                    <li class="sub-menu-item-sales-reports">
-                        <a href="./reports/sales.html">
-                            <span class="sub-menu-text">
-                                Sales </span>
-                        </a>
-                    </li>
-                    <li class="sub-menu-item-expenses-reports">
-                        <a href="./reports/expenses.html">
-                            <span class="sub-menu-text">
-                                Expenses </span>
-                        </a>
-                    </li>
-                    <li class="sub-menu-item-expenses-vs-income-reports">
-                        <a href="./reports/expenses_vs_income.html">
-                            <span class="sub-menu-text">
-                                Expenses vs Income </span>
-                        </a>
-                    </li>
-                    <li class="sub-menu-item-leads-reports">
-                        <a href="./reports/leads.html">
-                            <span class="sub-menu-text">
-                                Leads </span>
-                        </a>
-                    </li>
-                    <li class="sub-menu-item-timesheets-reports">
-                        <a href="./reports/timesheets.html">
-                            <span class="sub-menu-text">
-                                Timesheets overview </span>
-                        </a>
-                    </li>
-                    <li class="sub-menu-item-knowledge-base-reports">
-                        <a href="./reports/knowledge_base_articles.html">
-                            <span class="sub-menu-text">
-                                KB Articles </span>
-                        </a>
-                    </li>
-                </ul>
-            </li>
-            <li id="setup-menu-item">
-                <a href="#" class="open-customizer"><i class="fa fa-cog menu-icon"></i>
-                    <span class="menu-text">
-                        Setup </span>
-                </a>
-            </li>
-            <li id="setup-menu-item">
-                <a href="#" class="open-customizer"><i class="fa fa-cog menu-icon"></i>
-                    <span class="menu-text">
-                        Setup </span>
-                </a>
-            </li>
-            <li id="setup-menu-item">
-                <a href="#" class="open-customizer"><i class="fa fa-cog menu-icon"></i>
-                    <span class="menu-text">
-                        Setup </span>
-                </a>
-            </li>
-            <li id="setup-menu-item">
-                <a href="#" class="open-customizer"><i class="fa fa-cog menu-icon"></i>
-                    <span class="menu-text">
-                        Setup </span>
-                </a>
-            </li>
-            <li id="setup-menu-item">
-                <a href="#" class="open-customizer"><i class="fa fa-cog menu-icon"></i>
-                    <span class="menu-text">
-                        Setup </span>
-                </a>
-            </li>
-            <li id="setup-menu-item">
-                <a href="#" class="open-customizer"><i class="fa fa-cog menu-icon"></i>
-                    <span class="menu-text">
-                        Setup </span>
-                </a>
-            </li>
-            <li class="pinned-separator tw-border-b tw-border-solid tw-border-neutral-900/10 tw-mt-1"></li>
-            <li class="pinned_project last:tw-border-b last:tw-border-solid last:tw-border-neutral-900/10">
-                <a href="./admin/projects/view/2" data-toggle="tooltip" data-title="Pinned Project">
-                    SEO Optimization<br>
-                    <small>
-                        Pacocha, Roberts and Romaguera </small>
-                </a>
-                <div class="col-md-12">
-                    <div class="progress progress-bar-mini">
-                        <div class="progress-bar no-percent-text not-dynamic" role="progressbar" data-percent="26.67"
-                            style="width: 26.67%;">
-                        </div>
-                    </div>
-                </div>
-            </li>
-        </ul>
     </aside>
     <div id="wrapper" style="min-height: 9377px;">
         <div class="screen-options-area">
@@ -1825,16 +1862,7 @@
         </div>
         <div class="content">
             <div class="row">
-
-                <div class="col-md-12">
-                    <div class="alert alert-success">
-                        <p style="font-size:15px;">Demo resets every 12 hours. Feel free to test all the features before
-                            purchasing, keep in mind that some features are disabled.</p>
-                        <p class="bold">Demo PHP Version: 8.1.27</p>
-                    </div>
-                </div>
                 <div class="clearfix"></div>
-
                 <div class="col-md-12 mtop20 ui-sortable" data-container="top-12">
                     <div class="widget relative" id="widget-top_stats" data-name="Quick Statistics">
                         <div class="widget-dragger ui-sortable-handle"></div>
@@ -9053,11 +9081,10 @@
             });
             return false
         }
-        
     </script>
+
+    
        
-
-
     <div id="lightboxOverlay" class="lightboxOverlay" style="display: none;"></div>
     <div id="lightbox" class="lightbox" style="display: none;">
         <div class="lb-outerContainer">
