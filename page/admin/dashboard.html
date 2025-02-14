@@ -140,7 +140,6 @@
         }
         #menu {
         position: fixed;
-        left: -250px; /* Hide the menu initially */
         top: 0;
         width: 250px;
         height: 100vh;
@@ -9120,80 +9119,7 @@
         $("#menu").removeClass("show");
     });
 });
-document.addEventListener("DOMContentLoaded", function () {
-    let menu = document.getElementById("menu");
-    let trigger = document.createElement("div");
-    trigger.classList.add("sidebar-trigger");
-    document.body.appendChild(trigger);
-
-    trigger.addEventListener("mouseenter", function () {
-        menu.classList.add("show");
-    });
-
-    menu.addEventListener("mouseleave", function () {
-        menu.classList.remove("show");
-    });
-});
-
-    </script>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-        const menu = document.getElementById("menu");
-        const wrapper = document.getElementById("wrapper");
-
-        // Create a narrow trigger on the left edge
-        const trigger = document.createElement("div");
-        trigger.classList.add("sidebar-trigger");
-        // Style the trigger (this one is 10px wide and covers the full height)
-        Object.assign(trigger.style, {
-            position: "fixed",
-            left: "0",
-            top: "0",
-            width: "10px",
-            height: "100vh",
-            background: "transparent",
-            zIndex: "9999",
-            cursor: "pointer"
-        });
-        document.body.appendChild(trigger);
-
-        // When hovering over the trigger, show the sidebar and remove m-0
-        trigger.addEventListener("mouseenter", function () {
-            menu.classList.add("show");
-            wrapper.classList.remove("m-0");
-        });
-
-        // When leaving the sidebar, hide it and add m-0 to wrapper
-        menu.addEventListener("mouseleave", function () {
-            menu.classList.remove("show");
-            wrapper.classList.add("m-0");
-        });
-        });
-
-    </script>
-    <style>
-        /* Sidebar default hidden state */
-        #menu {
-        position: absolute; /* or fixed */
-        top: 0;
-        left: -250px;  /* off-canvas */
-        width: 250px;
-        height: 100vh;
-        transition: left 0.3s ease-in-out;
-        }
-
-        /* When shown, slide it in */
-        #menu.show {
-        left: 0;
-        }
-
-        /* The m-0 class should remove any margin; in Tailwind m-0 sets margin: 0 */
-        .m-0 {
-        margin: 0 !important;
-        }
-
-    </style>
+</script>
 
 
 
