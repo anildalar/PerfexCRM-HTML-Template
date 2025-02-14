@@ -134,35 +134,65 @@
             height: 100vh; /* Full height */
             overflow-y: auto; /* Allow scrolling within content */
             padding: 20px;
+            transition: margin-left 0.3s ease-in-out;
+            left: -250px;
+           
         }
+        #menu {
+        position: fixed;
+        left: -250px; /* Hide the menu initially */
+        top: 0;
+        width: 250px;
+        height: 100vh;
+        background: #ffffff;
+        transition: left 0.3s ease-in-out;
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+        overflow-y: auto;
+        }
+
+        #menu.show {
+            left: 0; /* Show the menu when active */
+        }
+
+        .sidebar-trigger {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 20px; /* Small area to detect cursor */
+            height: 100vh;
+            background: transparent;
+        }
+
         .r_scroll {
             height: 1000px;
             overflow-x: auto;
         }
         /* Scrollbar Customization */
-#menu div[style*="overflow: scroll"]::-webkit-scrollbar {
-  width: 20px;
-}
+        #menu div[style*="overflow: scroll"]::-webkit-scrollbar {
+        width: 20px;
+        
+        }
+        .row-resize {cursor: row-resize;}
 
-#menu div[style*="overflow: scroll"]::-webkit-scrollbar-track {
-  background: #f3f4f6;
-  border-radius: 5px;
-  cursor: grab;
-}
+        #menu div[style*="overflow: scroll"]::-webkit-scrollbar-track {
+        background: #f3f4f6;
+        border-radius: 5px;
+        cursor: grab;
+        }
 
-#menu div[style*="overflow: scroll"]::-webkit-scrollbar-thumb {
-  background: linear-gradient(135deg, #4f46e5, #9333ea);
-  border-radius: 10px;
-  border: 2px solid #f3f4f6;
-}
+        #menu div[style*="overflow: scroll"]::-webkit-scrollbar-thumb {
+        background: linear-gradient(135deg, #4f46e5, #9333ea);
+        border-radius: 10px;
+        border: 2px solid #f3f4f6;
+        }
 
-#menu div[style*="overflow: scroll"]::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(135deg, #3b82f6, #a855f7);
-}
+        #menu div[style*="overflow: scroll"]::-webkit-scrollbar-thumb:hover {
+        background: linear-gradient(135deg, #3b82f6, #a855f7);
+        }
 
         
         .navbar-nav.navbar-right {
-            margin-right: 20px; /* Adjust as needed */
+            margin-right: 50px; /* Adjust as needed */
         }
   
         .dropbox-dropin-btn,
@@ -984,68 +1014,68 @@
                 <ul class="nav navbar-nav navbar-right -tw-mt-px">
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                            <img src="https://flagcdn.com/w40/us.png" width="20" id="selected-flag"> 
-                            <span id="selected-language"></span>
+                            <img src="https://flagcdn.com/w40/us.png" width="30" id="selected-flag"> 
+                            <span id="selected-language"></span>  US
                         </a>
-                        <ul class="dropdown-menu">
+                        <ul class="dropdown-menu dropdown-menu-left" style="left: -30%;">
                             <li class="active">
                                 <a href="#" onclick="changeLanguage('https://flagcdn.com/w40/us.png', 'System Default')">
-                                    <img src="https://flagcdn.com/w40/us.png" width="20"> US
+                                    <img src="https://flagcdn.com/w40/us.png" width="30"> US
                                 </a>
                             </li>
                             <li>
                                 <a href="./admin/staff/change_language/hindi">
-                                    <img src="https://flagcdn.com/w40/in.png" width="20"> Hindi
+                                    <img src="https://flagcdn.com/w40/in.png" width="30"> Hindi
                                 </a>
                             </li>
                             <li>
                                 <a href="./admin/staff/change_language/slovak">
-                                    <img src="https://flagcdn.com/w40/sk.png" width="20"> Slovak
+                                    <img src="https://flagcdn.com/w40/sk.png" width="30"> Slovak
                                 </a>
                             </li>
                             <li>
                                 <a href="./admin/staff/change_language/ukrainian">
-                                    <img src="https://flagcdn.com/w40/ua.png" width="20"> Ukrainian
+                                    <img src="https://flagcdn.com/w40/ua.png" width="30"> Ukrainian
                                 </a>
                             </li>
                             <li>
                                 <a href="./admin/staff/change_language/vietnamese">
-                                    <img src="https://flagcdn.com/w40/vn.png" width="20"> Vietnamese
+                                    <img src="https://flagcdn.com/w40/vn.png" width="30"> Vietnamese
                                 </a>
                             </li>
                             <li>
                                 <a href="./admin/staff/change_language/finnish">
-                                    <img src="https://flagcdn.com/w40/fi.png" width="20"> Finnish
+                                    <img src="https://flagcdn.com/w40/fi.png" width="30"> Finnish
                                 </a>
                             </li>
                             <li>
                                 <a href="./admin/staff/change_language/portuguese_br">
-                                    <img src="https://flagcdn.com/w40/br.png" width="20"> (BR)
+                                    <img src="https://flagcdn.com/w40/br.png" width="30"> (BR)
                                 </a>
                             </li>
                             <li>
                                 <a href="./admin/staff/change_language/polish">
-                                    <img src="https://flagcdn.com/w40/pl.png" width="20"> Polish
+                                    <img src="https://flagcdn.com/w40/pl.png" width="30"> Polish
                                 </a>
                             </li>
                             <li>
                                 <a href="./admin/staff/change_language/german">
-                                    <img src="https://flagcdn.com/w40/de.png" width="20"> German
+                                    <img src="https://flagcdn.com/w40/de.png" width="30"> German
                                 </a>
                             </li>
                             <li>
                                 <a href="./admin/staff/change_language/english">
-                                    <img src="https://flagcdn.com/w40/gb.png" width="20"> English
+                                    <img src="https://flagcdn.com/w40/gb.png" width="30"> English
                                 </a>
                             </li>
                             <li>
                                 <a href="./admin/staff/change_language/japanese">
-                                    <img src="https://flagcdn.com/w40/jp.png" width="20"> Japanese
+                                    <img src="https://flagcdn.com/w40/jp.png" width="30"> Japanese
                                 </a>
                             </li>
                             <li>
                                 <a href="./admin/staff/change_language/french">
-                                    <img src="https://flagcdn.com/w40/fr.png" width="20"> French
+                                    <img src="https://flagcdn.com/w40/fr.png" width="30"> French
                                 </a>
                             </li>
                         </ul>
@@ -1436,7 +1466,7 @@
         </ul>
     </div>
     <aside id="menu" class="sidebar" style="min-height: 9434px;">
-        <div style="overflow: scroll; height: 100vh;">
+        <div style="overflow: scroll; height: 100vh;"class="row-resize">
             <div class="dropdown sidebar-user-profile tw-mt-[80px] tw-mx-1.5 ">
                 <a href="#"
                     class="dropdown-toggle profile -tw-mt-1 tw-font-medium tw-border tw-border-solid tw-rounded-lg tw-bg-white/20 tw-py-2 tw-px-2.5 tw-block tw-shadow-sm tw-border-neutral-900/20 tw-text-neutral-700 hover:tw-text-neutral-800 focus:tw-text-neutral-800 hover:tw-bg-neutral-900/5 focus:tw-bg-neutral-900/5"
@@ -9081,9 +9111,34 @@
             });
             return false
         }
+        $(document).ready(function () {
+    $(".sidebar-trigger").mouseenter(function () {
+        $("#menu").addClass("show");
+    });
+
+    $("#menu").mouseleave(function () {
+        $("#menu").removeClass("show");
+    });
+});
+document.addEventListener("DOMContentLoaded", function () {
+    let menu = document.getElementById("menu");
+    let trigger = document.createElement("div");
+    trigger.classList.add("sidebar-trigger");
+    document.body.appendChild(trigger);
+
+    trigger.addEventListener("mouseenter", function () {
+        menu.classList.add("show");
+    });
+
+    menu.addEventListener("mouseleave", function () {
+        menu.classList.remove("show");
+    });
+});
+
     </script>
 
-    
+
+
        
     <div id="lightboxOverlay" class="lightboxOverlay" style="display: none;"></div>
     <div id="lightbox" class="lightbox" style="display: none;">
