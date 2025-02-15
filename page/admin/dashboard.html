@@ -26,7 +26,7 @@
     <link rel="stylesheet" type="text/css" id="app-css" href="../../assets/css/style.min.css?v=3.2.1">
     <link rel="stylesheet" type="text/css" id="fullcalendar-css"
         href="../../assets/plugins/fullcalendar/lib/main.min.css?v=3.2.1">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/4.1.7/css/flag-icon.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/4.1.7/css/flag-icon.min.css">
 
     <script async="" src="//www.google-analytics.com/analytics.js"></script>
     <script async="" src="https://connect.facebook.net/en_US/fbevents.js"></script>
@@ -126,74 +126,64 @@
                 transform: rotate(360deg);
             }
         }
+
         body {
-            overflow: hidden; /* Prevent full-page scrolling */
+            overflow: hidden;
+            /* Prevent full-page scrolling */
+            transition: all 0.3s ease-in-out;
         }
+
         .content {
-            margin-left: 5px; /* Adjust for sidebar */
-            height: 100vh; /* Full height */
-            overflow-y: auto; /* Allow scrolling within content */
-            padding: 20px;
-            
-          
-           
-        }
-        #menu {
-        position: fixed;
-        top: 0;
-        width: 250px;
-        height: 100vh;
-        background: #ffffff;
-        transition: left 0.3s ease-in-out;
-        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
-        overflow-y: auto;
-        }
-
-        #menu.show {
-            left: 0; /* Show the menu when active */
-        }
-
-        .sidebar-trigger {
-            position: fixed;
-            left: 0;
-            top: 0;
-            width: 20px; /* Small area to detect cursor */
+            margin-left: 5px;
+            /* Adjust for sidebar */
             height: 100vh;
-            background: transparent;
+            /* Full height */
+            overflow-y: auto;
+            /* Allow scrolling within content */
+            padding: 20px;
+            width: 100%;
+
+        }
+        
+        .main-wrapper {
+            display: flex;
+            /* So aside + .content line up horizontally */
+            width: 100%;
+            height: 100vh;
+            /* Full height if you want a full-page layout */
+            margin: 0;
+            padding: 0;
         }
 
-        .r_scroll {
-            height: 1000px;
-            overflow-x: auto;
-        }
         /* Scrollbar Customization */
         #menu div[style*="overflow: scroll"]::-webkit-scrollbar {
-        width: 20px;
-        
+            width: 15px;
+
         }
-        .row-resize {cursor: row-resize;}
+
 
         #menu div[style*="overflow: scroll"]::-webkit-scrollbar-track {
-        background: #f3f4f6;
-        border-radius: 5px;
-        cursor: grab;
+            background: #f3f4f6;
+            border-radius: 5px;
+            cursor: grab;
         }
 
         #menu div[style*="overflow: scroll"]::-webkit-scrollbar-thumb {
-        background: linear-gradient(135deg, #4f46e5, #9333ea);
-        border-radius: 10px;
-        border: 2px solid #f3f4f6;
+            background: linear-gradient(135deg, #B72974, #9333ea);
+            border-radius: 10px;
+            border: 2px solid #f3f4f6;
         }
 
         #menu div[style*="overflow: scroll"]::-webkit-scrollbar-thumb:hover {
-        background: linear-gradient(135deg, #3b82f6, #a855f7);
+            background: linear-gradient(135deg, #3b82f6, #444952);
         }
 
-        
+
         .navbar-nav.navbar-right {
-            margin-right: 50px; /* Adjust as needed */
+            margin-right: 50px;
+            /* Adjust as needed */
         }
-  
+
         .dropbox-dropin-btn,
         .dropbox-dropin-btn:link,
         .dropbox-dropin-btn:hover {
@@ -1009,16 +999,17 @@
                     </div>
                 </div>
 
-                
+
                 <ul class="nav navbar-nav navbar-right -tw-mt-px">
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                            <img src="https://flagcdn.com/w40/us.png" width="30" id="selected-flag"> 
-                            <span id="selected-language"></span>  US
+                            <img src="https://flagcdn.com/w40/us.png" width="30" id="selected-flag">
+                            <span id="selected-language"></span> US
                         </a>
                         <ul class="dropdown-menu dropdown-menu-left" style="left: -30%;">
                             <li class="active">
-                                <a href="#" onclick="changeLanguage('https://flagcdn.com/w40/us.png', 'System Default')">
+                                <a href="#"
+                                    onclick="changeLanguage('https://flagcdn.com/w40/us.png', 'System Default')">
                                     <img src="https://flagcdn.com/w40/us.png" width="30"> US
                                 </a>
                             </li>
@@ -1079,7 +1070,7 @@
                             </li>
                         </ul>
                     </li>
-                    
+
 
                     <li><a href="./admin/clients/login_as_client/1" target="_blank" data-toggle="tooltip"
                             data-title="Demo Link" data-placement="bottom">Customers area</a></li>
@@ -1465,7 +1456,7 @@
         </ul>
     </div>
     <aside id="menu" class="sidebar" style="min-height: 9434px;">
-        <div style="overflow: scroll; height: 100vh;"class="row-resize">
+        <div style="overflow: scroll; height: 100vh;" class="row-resize">
             <div class="dropdown sidebar-user-profile tw-mt-[80px] tw-mx-1.5 ">
                 <a href="#"
                     class="dropdown-toggle profile -tw-mt-1 tw-font-medium tw-border tw-border-solid tw-rounded-lg tw-bg-white/20 tw-py-2 tw-px-2.5 tw-block tw-shadow-sm tw-border-neutral-900/20 tw-text-neutral-700 hover:tw-text-neutral-800 focus:tw-text-neutral-800 hover:tw-bg-neutral-900/5 focus:tw-bg-neutral-900/5"
@@ -1474,7 +1465,8 @@
                         <img src="../../uploads/staff_profile_images/small_1.png"
                             class="img img-responsive staff-profile-image-small"> <span>
                             <span class="tw-truncate tw-block tw-w-[140px] tw-font-semibold">Orval Powlowski</span>
-                            <span class="tw-font-normal tw-truncate tw-block tw-w-[140px] tw-text-sm tw-text-neutral-500">
+                            <span
+                                class="tw-font-normal tw-truncate tw-block tw-w-[140px] tw-text-sm tw-text-neutral-500">
                                 admin@test.com </span>
                         </span>
                     </span>
@@ -1488,14 +1480,14 @@
                     <li class="header-edit-profile"><a href="./admin/staff/edit_profile">Edit
                             Profile </a>
                     </li>
-                   
+
                     <li class="header-logout">
                         <a href="#" onclick="logout(); return false;">Logout</a>
                     </li>
                 </ul>
             </div>
             <ul class="nav metis-menu tw-mt-[15px]" id="side-menu">
-    
+
                 <li class="menu-item-dashboard active">
                     <a href="./dashboard.html" aria-expanded="false">
                         <i class="fa-regular fa-object-group menu-icon"></i>
@@ -1822,8 +1814,8 @@
                     </a>
                     <div class="col-md-12">
                         <div class="progress progress-bar-mini">
-                            <div class="progress-bar no-percent-text not-dynamic" role="progressbar" data-percent="26.67"
-                                style="width: 26.67%;">
+                            <div class="progress-bar no-percent-text not-dynamic" role="progressbar"
+                                data-percent="26.67" style="width: 26.67%;">
                             </div>
                         </div>
                     </div>
@@ -9110,20 +9102,99 @@
             });
             return false
         }
-        $(document).ready(function () {
-    $(".sidebar-trigger").mouseenter(function () {
-        $("#menu").addClass("show");
-    });
-
-    $("#menu").mouseleave(function () {
-        $("#menu").removeClass("show");
-    });
-});
-</script>
 
 
+    </script>
 
-       
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const menu = document.getElementById("menu");
+            const content = document.querySelector(".content");
+
+            // Create a small invisible trigger area on the left
+            const trigger = document.createElement("div");
+            trigger.classList.add("sidebar-trigger");
+            document.body.appendChild(trigger);
+
+            // Sidebar trigger area styling (just a narrow invisible box on the left)
+            trigger.style.position = "fixed";
+            trigger.style.left = 0;
+            trigger.style.top = 0;
+            trigger.style.width = "20px";
+            trigger.style.height = "100vh";
+
+            // Hovering on the trigger shows the sidebar
+            trigger.addEventListener("mouseenter", function () {
+                menu.classList.add("show");
+                // If you want content to shift right, uncomment:
+                // content.classList.add("sidebar-open");
+            });
+
+            // Leaving the sidebar hides it again
+            menu.addEventListener("mouseleave", function () {
+                menu.classList.remove("show");
+                // If you want content to shift right, uncomment:
+                // content.classList.remove("sidebar-open");
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const menu = document.getElementById("menu");
+            const wrapper = document.getElementById("wrapper");
+
+            // Create a narrow trigger on the left edge
+            const trigger = document.createElement("div");
+            trigger.classList.add("sidebar-trigger");
+            // Style the trigger (this one is 10px wide and covers the full height)
+            Object.assign(trigger.style, {
+                position: "fixed",
+                left: "0",
+                top: "0",
+                width: "10px",
+                height: "100vh",
+                background: "transparent",
+                zIndex: "9999",
+                cursor: "pointer"
+            });
+            document.body.appendChild(trigger);
+
+            // When hovering over the trigger, show the sidebar and remove m-0
+            trigger.addEventListener("mouseenter", function () {
+                menu.classList.add("show");
+                wrapper.classList.remove("m-0");
+            });
+
+            // When leaving the sidebar, hide it and add m-0 to wrapper
+            menu.addEventListener("mouseleave", function () {
+                menu.classList.remove("show");
+                wrapper.classList.add("m-0");
+            });
+        });
+    </script>
+
+    <style>
+        /* Sidebar default hidden state */
+        #menu {
+            position: absolute;
+            top: 0;
+            left: -250px;
+            width: 250px;
+            height: 100vh;
+            transition: left 0.3s ease-in-out;
+        }
+
+        /* When shown, slide it in */
+        #menu.show {
+            left: 0;
+        }
+
+        /* The m-0 class should remove any margin; in Tailwind m-0 sets margin: 0 */
+        .m-0 {
+            margin: 0 !important;
+        }
+    </style>
+
     <div id="lightboxOverlay" class="lightboxOverlay" style="display: none;"></div>
     <div id="lightbox" class="lightbox" style="display: none;">
         <div class="lb-outerContainer">
