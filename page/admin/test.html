@@ -3,90 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sidebar Dashboard</title>
+    <title>menu Toggle with Session Storage</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            display: flex;
-            height: 100vh;
-            overflow: hidden;
-        }
-        .sidebar {
+        /* Basic styles for the menu */
+        .menu {
             width: 250px;
-            background-color: #2c3e50;
+            height: 100vh;
+            background-color: #333;
             color: white;
-            transition: transform 0.3s ease-in-out;
-            transform: translateX(-100%);
-            position: absolute;
-            height: 100vh;
-            min-height: 9434px;
-        }
-        .sidebar:hover, .sidebar.active {
-            transform: translateX(0);
-        }
-        .sidebar .row-resize {
-            overflow: scroll;
-            height: 100vh;
-        }
-        .sidebar ul {
-            list-style: none;
-            padding: 20px;
-        }
-        .sidebar ul li {
             padding: 15px;
+            transition: all 0.3s ease;
+        }
+        .menu.hidden {
+            display: none; /* menu is hidden */
+        }
+        .menu.visible {
+            display: block; /* menu is visible */
+        }
+        /* Button style */
+        #toggleButton {
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
             cursor: pointer;
         }
-        .sidebar ul li:hover {
-            background: rgba(255, 255, 255, 0.2);
-        }
-        .content {
-            flex: 1;
-            background-color: #ecf0f1;
-            padding: 20px;
-            width: 100%;
-            transition: margin-left 0.3s ease-in-out;
-        }
-        .sidebar.active ~ .content {
-            margin-left: 250px;
-            width: calc(100% - 250px);
+        #toggleButton:hover {
+            background-color: #0056b3;
         }
     </style>
 </head>
 <body>
-    <aside id="menu" class="sidebar">
-        <div class="row-resize">
-            <ul>
-                <li>Dashboard</li>
-                <li>Profile</li>
-                <li>Settings</li>
-                <li>Logout</li>
-            </ul>
-        </div>
-    </aside>
-    <div class="content" id="content">
-        <h1>Dashboard Content</h1>
-        <p>Move your mouse to the left edge to show the sidebar.</p>
-    </div>
-    
-    <script>
-        const sidebar = document.getElementById("menu");
-        const content = document.getElementById("content");
 
-        document.body.addEventListener("mousemove", (e) => {
-            if (e.clientX < 50) {
-                sidebar.classList.add("active");
-                content.style.marginLeft = "250px";
-                content.style.width = "calc(100% - 250px)";
+    <div id="menu" class="menu visible">
+        <h2>menu Menu</h2>
+        <ul>
+            <li>Home</li>
+            <li>About</li>
+            <li>Contact</li>
+        </ul>
+    </div>
+
+    <button id="toggleButton">Toggle menu</button>
+
+    <script>
+        // Toggle menu visibility
+        document.getElementById('toggleButton').addEventListener('click', function() {
+            const menu = document.getElementById('menu');
+            
+            // Check if the menu is visible and toggle
+            if (menu.classList.contains('visible')) {
+                menu.classList.remove('visible');
+                menu.classList.add('hidden');
+                sessionStorage.setItem('menuState', 'hidden'); // Store state
             } else {
-                sidebar.classList.remove("active");
-                content.style.marginLeft = "0";
-                content.style.width = "100%";
+                menu.classList.remove('hidden');
+                menu.classList.add('visible');
+                sessionStorage.setItem('menuState', 'visible'); // Store state
+            }
+        });
+
+        // On page load, check sessionStorage and apply the state
+        window.addEventListener('load', function() {
+            const menu = document.getElementById('menu');
+            const menuState = sessionStorage.getItem('menuState');
+
+            // Apply the state
+            if (menuState === 'hidden') {
+                menu.classList.remove('visible');
+                menu.classList.add('hidden');
+            } else {
+                menu.classList.remove('hidden');
+                menu.classList.add('visible');
             }
         });
     </script>
+
 </body>
 </html>

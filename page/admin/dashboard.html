@@ -128,61 +128,75 @@
         }
 
         body {
-            overflow: hidden;
-            /* Prevent full-page scrolling */
-            transition: all 0.3s ease-in-out;
-        }
+    overflow: hidden; /* Prevent full-page scrolling */
+}
 
-        .content {
-            margin-left: 5px;
-            /* Adjust for sidebar */
-            height: 100vh;
-            /* Full height */
-            overflow-y: auto;
-            /* Allow scrolling within content */
-            padding: 20px;
-            width: 100%;
-
-        }
-        
-        .main-wrapper {
-            display: flex;
-            /* So aside + .content line up horizontally */
-            width: 100%;
-            height: 100vh;
-            /* Full height if you want a full-page layout */
-            margin: 0;
-            padding: 0;
-        }
-
-        /* Scrollbar Customization */
-        #menu div[style*="overflow: scroll"]::-webkit-scrollbar {
-            width: 15px;
-
-        }
+.content {
+    margin-left: 5px; /* Adjust for sidebar */
+    height: 100vh; /* Full height */
+    overflow-y: auto; /* Allow scrolling within content */
+    padding: 20px;
+    transition: all 0.3s ease-in-out;
+}
 
 
-        #menu div[style*="overflow: scroll"]::-webkit-scrollbar-track {
-            background: #f3f4f6;
-            border-radius: 5px;
-            cursor: grab;
-        }
+.content.expanded {
+    margin-left: 250px; /* Adjust for expanded sidebar */
+}
 
-        #menu div[style*="overflow: scroll"]::-webkit-scrollbar-thumb {
-            background: linear-gradient(135deg, #B72974, #9333ea);
-            border-radius: 10px;
-            border: 2px solid #f3f4f6;
-        }
-
-        #menu div[style*="overflow: scroll"]::-webkit-scrollbar-thumb:hover {
-            background: linear-gradient(135deg, #3b82f6, #444952);
-        }
+body.sidebar-collapse .content {
+    margin-left: 0; /* No space on the left when the sidebar is hidden */
+}
 
 
-        .navbar-nav.navbar-right {
-            margin-right: 50px;
-            /* Adjust as needed */
-        }
+.r_scroll {
+    height: 1000px;
+}
+
+/* Scrollbar Customization */
+#menu div[style*="overflow: scroll"]::-webkit-scrollbar {
+    width: 10px;
+}
+
+
+.row-resize {
+    cursor: row-resize;
+}
+
+
+
+#menu div[style*="overflow: scroll"]::-webkit-scrollbar-track {
+    background: #f3f4f6;
+    border-radius: 5px;
+    cursor: grab;
+}
+
+#menu div[style*="overflow: scroll"]::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #4f46e5, #9333ea);
+    border-radius: 10px;
+    border: 2px solid #f3f4f6;
+}
+
+#menu div[style*="overflow: scroll"]::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #3b82f6, #a855f7);
+}
+
+.navbar-nav.navbar-right {
+    margin-right: 50px;
+    /* Adjust as needed */
+}
+
+#menu {
+    width: 60px; /* Collapsed width */
+    transition: width 0.3s ease-in-out;
+    overflow: hidden;
+}
+
+#menu:hover {
+    width: 250px; /* Expanded width */
+}
+
+
 
         .dropbox-dropin-btn,
         .dropbox-dropin-btn:link,
@@ -8780,6 +8794,22 @@
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
+    <div id="lightboxOverlay" class="lightboxOverlay" style="display: none;"></div>
+    <div id="lightbox" class="lightbox" style="display: none;">
+        <div class="lb-outerContainer">
+            <div class="lb-container"><img class="lb-image"
+                    src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==">
+                <div class="lb-nav"><a class="lb-prev" href=""></a><a class="lb-next" href=""></a></div>
+                <div class="lb-loader"><a class="lb-cancel"></a></div>
+            </div>
+        </div>
+        <div class="lb-dataContainer">
+            <div class="lb-data">
+                <div class="lb-details"><span class="lb-caption"></span><span class="lb-number"></span></div>
+                <div class="lb-closeContainer"><a class="lb-close"></a></div>
+            </div>
+        </div>
+    </div>
     <script>
         var weekly_payments_statistics;
         var monthly_payments_statistics;
@@ -9102,115 +9132,32 @@
             });
             return false
         }
-
-
     </script>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const menu = document.getElementById("menu");
-            const content = document.querySelector(".content");
 
-            // Create a small invisible trigger area on the left
-            const trigger = document.createElement("div");
-            trigger.classList.add("sidebar-trigger");
-            document.body.appendChild(trigger);
-
-            // Sidebar trigger area styling (just a narrow invisible box on the left)
-            trigger.style.position = "fixed";
-            trigger.style.left = 0;
-            trigger.style.top = 0;
-            trigger.style.width = "20px";
-            trigger.style.height = "100vh";
-
-            // Hovering on the trigger shows the sidebar
-            trigger.addEventListener("mouseenter", function () {
-                menu.classList.add("show");
-                // If you want content to shift right, uncomment:
-                // content.classList.add("sidebar-open");
-            });
-
-            // Leaving the sidebar hides it again
-            menu.addEventListener("mouseleave", function () {
-                menu.classList.remove("show");
-                // If you want content to shift right, uncomment:
-                // content.classList.remove("sidebar-open");
-            });
-        });
+        function collapseSidebar() {
+    
+            if (Boolean(sessionStorage.getItem('sidebar-toggle-collapsed'))) {
+            sessionStorage.setItem('sidebar-toggle-collapsed', '');
+            } else {
+            sessionStorage.setItem('sidebar-toggle-collapsed', '1');
+            }
+    
+            }
+    
+        function checksidebar() {
+            if (Boolean(sessionStorage.getItem('sidebar-toggle-collapsed'))) {
+            var body = document.getElementsByTagName('body')[0];
+            body.className = body.className + ' sidebar-collapse';
+            }
+        }
+    
+        checksidebar();
+    
     </script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const menu = document.getElementById("menu");
-            const wrapper = document.getElementById("wrapper");
+  
 
-            // Create a narrow trigger on the left edge
-            const trigger = document.createElement("div");
-            trigger.classList.add("sidebar-trigger");
-            // Style the trigger (this one is 10px wide and covers the full height)
-            Object.assign(trigger.style, {
-                position: "fixed",
-                left: "0",
-                top: "0",
-                width: "10px",
-                height: "100vh",
-                background: "transparent",
-                zIndex: "9999",
-                cursor: "pointer"
-            });
-            document.body.appendChild(trigger);
-
-            // When hovering over the trigger, show the sidebar and remove m-0
-            trigger.addEventListener("mouseenter", function () {
-                menu.classList.add("show");
-                wrapper.classList.remove("m-0");
-            });
-
-            // When leaving the sidebar, hide it and add m-0 to wrapper
-            menu.addEventListener("mouseleave", function () {
-                menu.classList.remove("show");
-                wrapper.classList.add("m-0");
-            });
-        });
-    </script>
-
-    <style>
-        /* Sidebar default hidden state */
-        #menu {
-            position: absolute;
-            top: 0;
-            left: -250px;
-            width: 250px;
-            height: 100vh;
-            transition: left 0.3s ease-in-out;
-        }
-
-        /* When shown, slide it in */
-        #menu.show {
-            left: 0;
-        }
-
-        /* The m-0 class should remove any margin; in Tailwind m-0 sets margin: 0 */
-        .m-0 {
-            margin: 0 !important;
-        }
-    </style>
-
-    <div id="lightboxOverlay" class="lightboxOverlay" style="display: none;"></div>
-    <div id="lightbox" class="lightbox" style="display: none;">
-        <div class="lb-outerContainer">
-            <div class="lb-container"><img class="lb-image"
-                    src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==">
-                <div class="lb-nav"><a class="lb-prev" href=""></a><a class="lb-next" href=""></a></div>
-                <div class="lb-loader"><a class="lb-cancel"></a></div>
-            </div>
-        </div>
-        <div class="lb-dataContainer">
-            <div class="lb-data">
-                <div class="lb-details"><span class="lb-caption"></span><span class="lb-number"></span></div>
-                <div class="lb-closeContainer"><a class="lb-close"></a></div>
-            </div>
-        </div>
-    </div>
 </body>
 
 </html>

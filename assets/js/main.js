@@ -1171,7 +1171,7 @@ $(function () {
 
   // Assign task to staff member
   $("body").on("change", 'select[name="select-assignees"]', function () {
-    $("body").append('<div class="dt-loader"></div>');
+    $("body").append('');
     var data = {};
     data.assignee = $('select[name="select-assignees"]').val();
     if (data.assignee !== "") {
@@ -1193,7 +1193,7 @@ $(function () {
     data.follower = $('select[name="select-followers"]').val();
     if (data.follower !== "") {
       data.taskid = $(this).attr("data-task-id");
-      $("body").append('<div class="dt-loader"></div>');
+      $("body").append('');
       $.post(admin_url + "tasks/add_task_followers", data).done(function (
         response
       ) {
@@ -4341,7 +4341,7 @@ function init_kanban(
   }
 
   delay(function () {
-    $("body").append('<div class="dt-loader"></div>');
+    $("body").append('');
     $("#kan-ban").load(url, function () {
       fix_kanban_height(column_px, container_px);
       var scrollingSensitivity = 20,
@@ -5510,7 +5510,7 @@ function add_proposal_comment() {
   var data = {};
   data.content = comment;
   data.proposalid = proposal_id;
-  $("body").append('<div class="dt-loader"></div>');
+  $("body").append('');
   $.post(admin_url + "proposals/add_proposal_comment", data).done(function (
     response
   ) {
@@ -6094,7 +6094,7 @@ function task_mark_as(status, task_id, url) {
     typeof url == "undefined" ? "tasks/mark_as/" + status + "/" + task_id : url;
   var taskModalVisible = $("#task-modal").is(":visible");
   url += "?single_task=" + taskModalVisible;
-  $("body").append('<div class="dt-loader"></div>');
+  $("body").append('');
   requestGetJSON(url).done(function (response) {
     $("body").find(".dt-loader").remove();
     if (response.success === true || response.success == "true") {
@@ -7124,7 +7124,7 @@ function add_item_to_table(data, itemid, merge_invoice, bill_expense) {
   var amount = data.rate * data.qty;
 
   var tax_name = "newitems[" + item_key + "][taxname][]";
-  $("body").append('<div class="dt-loader"></div>');
+  $("body").append('');
   var regex = /<br[^>]*>/gi;
   get_taxes_dropdown_template(tax_name, data.taxname).done(function (
     tax_dropdown

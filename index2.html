@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+        body {
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+        }
+        .sidebar {
+            width: 80px;
+            height: 100vh;
+            background: #343a40;
+            color: white;
+            position: fixed;
+            overflow: hidden;
+            transition: width 0.3s ease;
+        }
+        .sidebar.expanded {
+            width: 250px;
+        }
+        .sidebar .toggle-btn {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 20px;
+            padding: 10px;
+            width: 100%;
+            text-align: left;
+            cursor: pointer;
+        }
+        .sidebar a {
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            padding: 12px;
+            border-radius: 5px;
+            transition: background 0.3s, padding-left 0.3s;
+            white-space: nowrap;
+        }
+        .sidebar a:hover {
+            background: #495057;
+            padding-left: 15px;
+        }
+        .sidebar i {
+            width: 30px;
+            text-align: center;
+            font-size: 18px;
+        }
+        .submenu {
+            display: none;
+            padding-left: 20px;
+        }
+        .submenu a {
+            font-size: 14px;
+        }
+        .content {
+            margin-left: 100px;
+            padding: 30px;
+            flex-grow: 1;
+            transition: margin-left 0.3s ease;
+        }
+        .sidebar.expanded ~ .content {
+            margin-left: 270px;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar" id="menu">
+        <button class="toggle-btn" id="toggleSidebar">☰</button>
+        <a href="/dashboard"><i class="fas fa-tachometer-alt"></i> <span class="link-text">Dashboard</span></a>
+        <a href="#" class="menu-toggle"><i class="fas fa-globe"></i> <span class="link-text">DNS Records</span> <i class="fas fa-chevron-down ml-auto"></i></a>
+        <div class="submenu">
+            <a href="/dns/add"><i class="fas fa-plus"></i> Add Record</a>
+            <a href="/dns/manage"><i class="fas fa-edit"></i> Manage Records</a>
+        </div>
+        <a href="/settings"><i class="fas fa-cogs"></i> <span class="link-text">Settings</span></a>
+        <a href="#" class="mt-auto"><i class="fas fa-sign-out-alt"></i> <span class="link-text">Logout</span></a>
+    </div>
+    <section class="content" id="mainContent">
+        <h1>Welcome to the Dashboard</h1>
+        <p>Manage your DNS records and settings efficiently.</p>
+    </section>
+    <script>
+        $(document).ready(function() {
+            let isLocked = false;
+
+            $('#toggleSidebar').click(function() {
+                $('#sidebar').toggleClass('expanded');
+                $('#mainContent').toggleClass('expanded');
+            });
+
+            $('.menu-toggle').click(function(e) {
+                e.preventDefault();
+                $(this).next('.submenu').slideToggle();
+                $(this).find('.fa-chevron-down').toggleClass('rotated');
+            });
+
+            $('.sidebar').hover(
+                function() {
+                    if (!isLocked) $(this).addClass('expanded');
+                }, 
+                function() {
+                    if (!isLocked) $(this).removeClass('expanded');
+                }
+            );
+        });
+    </script>
+</body>
+</html>
