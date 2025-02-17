@@ -134,13 +134,11 @@
 body.sidebar-collapse .content {
     margin-left: 0;
 }
+
 /* Sidebar styles */
-.sidebar {
-  width: 250px;
-  padding: 15px;
-  transition: all 0.3s ease;
-  float: left;
-}
+body.sidebar-collapse .sidebar {
+      transform: translateX(-250px);
+    }
 
 /* Wrapper styles when sidebar is visible */
 #wrapper {
@@ -161,7 +159,9 @@ body.sidebar-collapse #wrapper {
     transition: all 0.3s ease-in-out;
 }
 
-
+body.sidebar-collapse .content {
+      margin-left: 0;
+    }
 .content.expanded {
     margin-left: 250px; /* Adjust for expanded sidebar */
 }
@@ -9193,9 +9193,21 @@ body.sidebar-collapse .content {
                 }
             });
         });
-
-
-    </script>
+</script>
+        <script>
+    // Listen for mouse movement on the document
+    document.addEventListener("mousemove", function (e) {
+      // If the mouse is near the left edge (e.g. within 20px), show the sidebar.
+      if (e.clientX < 20) {
+        document.body.classList.remove("sidebar-collapse");
+      } 
+      // If the mouse moves far enough to the right (e.g. beyond 300px), hide the sidebar.
+      else if (e.clientX > 300) {
+        document.body.classList.add("sidebar-collapse");
+      }
+    });
+  </script>
+    
 
 </body>
 
