@@ -129,6 +129,28 @@
 
         body {
     overflow: hidden; /* Prevent full-page scrolling */
+    transition: all 0.3s ease;
+}
+body.sidebar-collapse .content {
+    margin-left: 0;
+}
+/* Sidebar styles */
+.sidebar {
+  width: 250px;
+  padding: 15px;
+  transition: all 0.3s ease;
+  float: left;
+}
+
+/* Wrapper styles when sidebar is visible */
+#wrapper {
+  margin-left: 250px; /* Reserve space for the sidebar */
+  transition: margin-left 0.3s ease;
+}
+
+/* When sidebar is collapsed, remove left margin so wrapper expands full width */
+body.sidebar-collapse #wrapper {
+  margin-left: 0;
 }
 
 .content {
@@ -186,16 +208,28 @@ body.sidebar-collapse .content {
     /* Adjust as needed */
 }
 
-#menu {
-    width: 60px; /* Collapsed width */
-    transition: width 0.3s ease-in-out;
-    overflow: hidden;
+
+/* When the aside menu is hidden, adjust the content to fill the full width */
+#content.full-width {
+    width: 100%; /* Make content full width */
+    margin-left: 0; /* Reset margin */
 }
 
-#menu:hover {
-    width: 250px; /* Expanded width */
-}
 
+.menu {
+            width: 250px;
+            height: 100vh;
+            background-color: #333;
+            color: white;
+            padding: 15px;
+            transition: all 0.3s ease;
+        }
+        menu.hidden {
+            display: none; /* menu is hidden */
+        }
+        .menu.visible {
+            display: block; /* menu is visible */
+        }
 
 
         .dropbox-dropin-btn,
@@ -9133,30 +9167,35 @@ body.sidebar-collapse .content {
             return false
         }
     </script>
-
     <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const sidebar = document.getElementById("menu");
+            const toggleButton = document.getElementById("toggleMenu"); // Ensure ID matches exactly
 
-        function collapseSidebar() {
-    
-            if (Boolean(sessionStorage.getItem('sidebar-toggle-collapsed'))) {
-            sessionStorage.setItem('sidebar-toggle-collapsed', '');
-            } else {
-            sessionStorage.setItem('sidebar-toggle-collapsed', '1');
+            // Apply saved sidebar state from sessionStorage
+            if (sessionStorage.getItem("sidebarHidden") === "true") {
+                sidebar.style.display = "none";
+                document.body.classList.add("sidebar-collapse");
             }
-    
-            }
-    
-        function checksidebar() {
-            if (Boolean(sessionStorage.getItem('sidebar-toggle-collapsed'))) {
-            var body = document.getElementsByTagName('body')[0];
-            body.className = body.className + ' sidebar-collapse';
-            }
-        }
-    
-        checksidebar();
-    
+
+            toggleButton.addEventListener("click", function () {
+                // Check current display style (assuming empty string or "block" means visible)
+                if (sidebar.style.display === "none" || window.getComputedStyle(sidebar).display === "none") {
+                    // Show sidebar
+                    sidebar.style.display = "block";
+                    document.body.classList.remove("sidebar-collapse");
+                    sessionStorage.setItem("sidebarHidden", "false");
+                } else {
+                    // Hide sidebar and expand content to full width
+                    sidebar.style.display = "none";
+                    document.body.classList.add("sidebar-collapse");
+                    sessionStorage.setItem("sidebarHidden", "true");
+                }
+            });
+        });
+
+
     </script>
-  
 
 </body>
 
