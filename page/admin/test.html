@@ -1,83 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>menu Toggle with Session Storage</title>
-    <style>
-        /* Basic styles for the menu */
-        .menu {
-            width: 250px;
-            height: 100vh;
-            background-color: #333;
-            color: white;
-            padding: 15px;
-            transition: all 0.3s ease;
-        }
-        .menu.hidden {
-            display: none; /* menu is hidden */
-        }
-        .menu.visible {
-            display: block; /* menu is visible */
-        }
-        /* Button style */
-        #toggleButton {
-            padding: 10px;
-            background-color: #007BFF;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-        #toggleButton:hover {
-            background-color: #0056b3;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>Sidebar with Hover and Toggle Functionality</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+    }
+    /* Toggle button styles */
+    .toggle-btn {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      padding: 10px 15px;
+      font-size: 24px;
+      background-color: #333;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      z-index: 100;
+    }
+    /* Sidebar styles */
+    aside {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 60px; /* Narrow by default */
+      height: 100vh;
+      background-color: #333;
+      color: #fff;
+      transition: width 0.3s ease;
+      overflow: hidden;
+    }
+    /* Sidebar expanded state */
+    aside.expanded {
+      width: 200px;
+    }
+    /* Sidebar hover effect */
+    aside:hover {
+      width: 200px;
+    }
+    /* Sidebar content */
+    .content {
+      padding: 15px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    /* Show content when sidebar is expanded */
+    aside.expanded .content,
+    aside:hover .content {
+      opacity: 1;
+    }
+    /* Main content styling */
+    main {
+      margin-left: 60px;
+      padding: 20px;
+      transition: margin-left 0.3s ease;
+      width: 100%;
+    }
+    /* Shift main content when sidebar is expanded */
+    aside.expanded ~ main,
+    aside:hover ~ main {
+      margin-left: 200px;
+    }
+    a {
+      color: #fff;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
+  <!-- Toggle Button -->
+  <button class="toggle-btn" onclick="toggleSidebar()">&#9776;</button>
 
-    <div id="menu" class="menu visible">
-        <h2>menu Menu</h2>
-        <ul>
-            <li>Home</li>
-            <li>About</li>
-            <li>Contact</li>
-        </ul>
+  <!-- Sidebar -->
+  <aside id="sidebar">
+    <div class="menu-icon">&#9776;</div>
+    <div class="content">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
     </div>
+  </aside>
 
-    <button id="toggleButton">Toggle menu</button>
+  <!-- Main Content -->
+  <main id="main-content">
+    <h1>Main Content</h1>
+    <p>This content shifts when the sidebar is expanded.</p>
+  </main>
 
-    <script>
-        // Toggle menu visibility
-        document.getElementById('toggleButton').addEventListener('click', function() {
-            const menu = document.getElementById('menu');
-            
-            // Check if the menu is visible and toggle
-            if (menu.classList.contains('visible')) {
-                menu.classList.remove('visible');
-                menu.classList.add('hidden');
-                sessionStorage.setItem('menuState', 'hidden'); // Store state
-            } else {
-                menu.classList.remove('hidden');
-                menu.classList.add('visible');
-                sessionStorage.setItem('menuState', 'visible'); // Store state
-            }
-        });
-
-        // On page load, check sessionStorage and apply the state
-        window.addEventListener('load', function() {
-            const menu = document.getElementById('menu');
-            const menuState = sessionStorage.getItem('menuState');
-
-            // Apply the state
-            if (menuState === 'hidden') {
-                menu.classList.remove('visible');
-                menu.classList.add('hidden');
-            } else {
-                menu.classList.remove('hidden');
-                menu.classList.add('visible');
-            }
-        });
-    </script>
-
+  <script>
+    function toggleSidebar() {
+      const sidebar = document.getElementById('sidebar');
+      const mainContent = document.getElementById('main-content');
+      sidebar.classList.toggle('expanded');
+      mainContent.classList.toggle('shift');
+    }
+  </script>
 </body>
 </html>

@@ -128,107 +128,128 @@
         }
 
         body {
-    overflow: hidden; /* Prevent full-page scrolling */
-    transition: all 0.3s ease;
-}
-body.sidebar-collapse .content {
-    margin-left: 0;
-}
+            overflow: hidden;
+            /* Prevent full-page scrolling */
+            transition: all 0.3s ease;
+        }
 
-/* Sidebar styles */
-body.sidebar-collapse .sidebar {
-      transform: translateX(-250px);
-    }
+        body.sidebar-collapse .content {
+            margin-left: 0;
+        }
 
-/* Wrapper styles when sidebar is visible */
-#wrapper {
-  margin-left: 250px; /* Reserve space for the sidebar */
-  transition: margin-left 0.3s ease;
-}
+        /* Sidebar styles */
+        body.sidebar-collapse .sidebar {
+            display: none;
+        }
 
-/* When sidebar is collapsed, remove left margin so wrapper expands full width */
-body.sidebar-collapse #wrapper {
-  margin-left: 0;
-}
+        body.sidebar-expanded #wrapper {
+            margin-left: 250px;
+            /* Adjust content when sidebar is visible */
+        }
 
-.content {
-    margin-left: 5px; /* Adjust for sidebar */
-    height: 100vh; /* Full height */
-    overflow-y: auto; /* Allow scrolling within content */
-    padding: 20px;
-    transition: all 0.3s ease-in-out;
-}
+        /* Wrapper styles when sidebar is visible */
+        #wrapper {
+            margin-left: 250px;
+            /* Reserve space for the sidebar */
+            transition: margin-left 0.3s ease;
+        }
 
-body.sidebar-collapse .content {
-      margin-left: 0;
-    }
-.content.expanded {
-    margin-left: 250px; /* Adjust for expanded sidebar */
-}
+        /* When sidebar is collapsed, remove left margin so wrapper expands full width */
+        body.sidebar-collapse #wrapper {
+            margin-left: 0;
+        }
 
-body.sidebar-collapse .content {
-    margin-left: 0; /* No space on the left when the sidebar is hidden */
-}
+        .content {
+            margin-left: 5px;
+            /* Adjust for sidebar */
+            height: 100vh;
+            /* Full height */
+            overflow-y: auto;
+            /* Allow scrolling within content */
+            padding: 20px;
+            transition: all 0.3s ease-in-out;
+        }
 
+        body.sidebar-collapse .content {
+            margin-left: 0;
+        }
 
-.r_scroll {
-    height: 1000px;
-}
+        .content.expanded {
+            margin-left: 250px;
+            /* Adjust for expanded sidebar */
+        }
 
-/* Scrollbar Customization */
-#menu div[style*="overflow: scroll"]::-webkit-scrollbar {
-    width: 10px;
-}
-
-
-.row-resize {
-    cursor: row-resize;
-}
-
+        body.sidebar-collapse .content {
+            margin-left: 0;
+            /* No space on the left when the sidebar is hidden */
+        }
 
 
-#menu div[style*="overflow: scroll"]::-webkit-scrollbar-track {
-    background: #f3f4f6;
-    border-radius: 5px;
-    cursor: grab;
-}
+        .r_scroll {
+            height: 1000px;
+        }
 
-#menu div[style*="overflow: scroll"]::-webkit-scrollbar-thumb {
-    background: linear-gradient(135deg, #4f46e5, #9333ea);
-    border-radius: 10px;
-    border: 2px solid #f3f4f6;
-}
-
-#menu div[style*="overflow: scroll"]::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(135deg, #3b82f6, #a855f7);
-}
-
-.navbar-nav.navbar-right {
-    margin-right: 50px;
-    /* Adjust as needed */
-}
+        /* Scrollbar Customization */
+        #menu div[style*="overflow: scroll"]::-webkit-scrollbar {
+            width: 10px;
+        }
 
 
-/* When the aside menu is hidden, adjust the content to fill the full width */
-#content.full-width {
-    width: 100%; /* Make content full width */
-    margin-left: 0; /* Reset margin */
-}
+        .row-resize {
+            cursor: row-resize;
+        }
 
 
-.menu {
+
+        #menu div[style*="overflow: scroll"]::-webkit-scrollbar-track {
+            background: #f3f4f6;
+            border-radius: 5px;
+            cursor: grab;
+        }
+
+        #menu div[style*="overflow: scroll"]::-webkit-scrollbar-thumb {
+            background: linear-gradient(135deg, #4f46e5, #9333ea);
+            border-radius: 10px;
+            border: 2px solid #f3f4f6;
+        }
+
+        #menu div[style*="overflow: scroll"]::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(135deg, #3b82f6, #a855f7);
+        }
+
+        .navbar-nav.navbar-right {
+            margin-right: 50px;
+            /* Adjust as needed */
+        }
+
+
+        /* When the aside menu is hidden, adjust the content to fill the full width */
+        #content.full-width {
+            width: 100%;
+            /* Make content full width */
+            margin-left: 0;
+            /* Reset margin */
+        }
+
+
+        .menu {
             width: 250px;
             height: 100vh;
             background-color: #333;
             color: white;
             padding: 15px;
+            left: -250px;
             transition: all 0.3s ease;
         }
+
         menu.hidden {
-            display: none; /* menu is hidden */
+            display: none;
+            /* menu is hidden */
         }
+
         .menu.visible {
-            display: block; /* menu is visible */
+            display: block;
+            /* menu is visible */
         }
 
 
@@ -9193,21 +9214,21 @@ body.sidebar-collapse .content {
                 }
             });
         });
-</script>
-        <script>
-    // Listen for mouse movement on the document
-    document.addEventListener("mousemove", function (e) {
-      // If the mouse is near the left edge (e.g. within 20px), show the sidebar.
-      if (e.clientX < 20) {
-        document.body.classList.remove("sidebar-collapse");
-      } 
-      // If the mouse moves far enough to the right (e.g. beyond 300px), hide the sidebar.
-      else if (e.clientX > 300) {
-        document.body.classList.add("sidebar-collapse");
-      }
-    });
-  </script>
-    
+    </script>
+    <script>
+        // Listen for mouse movement on the document
+        document.addEventListener("mousemove", function (e) {
+            // If the mouse is near the left edge (e.g. within 20px), show the sidebar.
+            if (e.clientX < 20) {
+                document.body.classList.remove("sidebar-collapse");
+            }
+            // If the mouse moves far enough to the right (e.g. beyond 300px), hide the sidebar.
+            else if (e.clientX > 300) {
+                document.body.classList.add("sidebar-collapse");
+            }
+        });
+    </script>
+
 
 </body>
 
