@@ -133,8 +133,23 @@
             transition: all 0.3s ease;
         }
 
+        .sidebar {
+            width: 250px;
+            transition: all 0.3s ease;
+
+
+        }
+
+        #sidebar.hidden {
+            display: none;
+        }
+        #sidebar.hidden {
+    transform: translateX(-100%);
+    pointer-events: none;
+}
+
         body.sidebar-collapse .content {
-            margin-left: 0;
+            margin-left: -250px;
         }
 
         /* Sidebar styles */
@@ -199,7 +214,9 @@
             cursor: row-resize;
         }
 
-
+        #sidebar.hidden:hover {
+            transform: translateX(0);
+        }
 
         #menu div[style*="overflow: scroll"]::-webkit-scrollbar-track {
             background: #f3f4f6;
@@ -9188,45 +9205,48 @@
             return false
         }
     </script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const sidebar = document.getElementById("menu");
-            const toggleButton = document.getElementById("toggleMenu"); // Ensure ID matches exactly
+  <script>
+      document.addEventListener("DOMContentLoaded", function () {
+    const sidebar = document.getElementById("menu");
+    const toggleButton = document.getElementById("toggleMenu");
+    let isLocked = false; // Controls hover behavior
 
-            // Apply saved sidebar state from sessionStorage
-            if (sessionStorage.getItem("sidebarHidden") === "true") {
-                sidebar.style.display = "none";
-                document.body.classList.add("sidebar-collapse");
-            }
+    // Load sidebar state from sessionStorage
+    if (sessionStorage.getItem("sidebarLocked") === "true") {
+        sidebar.classList.add("hidden");
+        document.body.classList.add("sidebar-collapse");
+        isLocked = true; // Disable hover
+    }
 
-            toggleButton.addEventListener("click", function () {
-                // Check current display style (assuming empty string or "block" means visible)
-                if (sidebar.style.display === "none" || window.getComputedStyle(sidebar).display === "none") {
-                    // Show sidebar
-                    sidebar.style.display = "block";
-                    document.body.classList.remove("sidebar-collapse");
-                    sessionStorage.setItem("sidebarHidden", "false");
-                } else {
-                    // Hide sidebar and expand content to full width
-                    sidebar.style.display = "none";
-                    document.body.classList.add("sidebar-collapse");
-                    sessionStorage.setItem("sidebarHidden", "true");
-                }
-            });
-        });
-    </script>
-    <script>
-        // Listen for mouse movement on the document
-        document.addEventListener("mousemove", function (e) {
-            // If the mouse is near the left edge (e.g. within 20px), show the sidebar.
-            if (e.clientX < 20) {
-                document.body.classList.remove("sidebar-collapse");
-            }
-            // If the mouse moves far enough to the right (e.g. beyond 300px), hide the sidebar.
-            else if (e.clientX > 300) {
-                document.body.classList.add("sidebar-collapse");
-            }
-        });
+    // Toggle Button Click Event
+    toggleButton.addEventListener("click", function () {
+        isLocked = !isLocked; // Toggle lock state
+
+        if (isLocked) {
+            sidebar.classList.add("hidden");
+            document.body.classList.add("sidebar-collapse");
+            sessionStorage.setItem("sidebarLocked", "true");
+        } else {
+            sidebar.classList.remove("hidden");
+            document.body.classList.remove("sidebar-collapse");
+            sessionStorage.setItem("sidebarLocked", "false");
+        }
+    });
+
+    // Hover Effect (Only if not locked)
+    document.addEventListener("mousemove", function (e) {
+        if (isLocked) return; // Prevent hover if locked
+
+        if (e.clientX < 20) {
+            sidebar.classList.remove("hidden");
+            document.body.classList.remove("sidebar-collapse");
+        } else if (e.clientX > 300) {
+            sidebar.classList.add("hidden");
+            document.body.classList.add("sidebar-collapse");
+        }
+    });
+});
+
     </script>
 
 
