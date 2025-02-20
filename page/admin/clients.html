@@ -125,47 +125,11 @@
     body {
             overflow: hidden; /* Prevent full-page scrolling */
         }
-        .content {
-            margin-left: 5px; /* Adjust for sidebar */
-            height: 100vh; /* Full height */
-            overflow-y: auto; /* Allow scrolling within content */
-            padding: 20px;
-            
-          
-           
-        }
-        #menu {
-        position: fixed;
-        left: -250px; /* Hide the menu initially */
-        top: 0;
-        width: 250px;
-        height: 100vh;
-        background: #ffffff;
-        transition: left 0.3s ease-in-out;
-        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
-        overflow-y: auto;
-        }
-
-        #menu.show {
-            left: 0; /* Show the menu when active */
-        }
-
-        .sidebar-trigger {
-            position: fixed;
-            left: 0;
-            top: 0;
-            width: 20px; /* Small area to detect cursor */
-            height: 100vh;
-            background: transparent;
-        }
-
-        .r_scroll {
-            height: 1000px;
-            overflow-x: auto;
-        }
+       
+       
         /* Scrollbar Customization */
         #menu div[style*="overflow: scroll"]::-webkit-scrollbar {
-        width: 20px;
+        width: 10px;
         
         }
         .row-resize {cursor: row-resize;}
@@ -998,71 +962,88 @@ data-new-gr-c-s-check-loaded="14.1221.0" data-gr-ext-installed="">
     </div>
 </div>
 
+<ul class="nav navbar-nav navbar-right -tw-mt-px" style="margin-right: -250px;">
+    <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+            <span id="selected-currency-symbol">$</span> <span id="selected-currency">USD</span>
+        </a>
+        <ul class="dropdown-menu dropdown-menu-left" style="left: -30%;font-size: 16px;">
+            <li><a href="#" onclick="changeCurrency('$', 'USD')">💵 USD - US Dollar</a></li>
+            <li><a href="#" onclick="changeCurrency('€', 'EUR')">💶 EUR - Euro</a></li>
+            <li><a href="#" onclick="changeCurrency('₹', 'INR')">💴 INR - Indian Rupee</a></li>
+            <li><a href="#" onclick="changeCurrency('£', 'GBP')">💷 GBP - British Pound</a></li>
+            <li><a href="#" onclick="changeCurrency('¥', 'JPY')">💴 JPY - Japanese Yen</a></li>
+        </ul>
+    </li>
+</ul>
+
+
 <ul class="nav navbar-nav navbar-right -tw-mt-px">
     <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-            <img src="https://flagcdn.com/w40/us.png" width="20" id="selected-flag"> 
-            <span id="selected-language"></span>
+            <img src="https://flagcdn.com/w40/us.png" width="30" id="selected-flag">
+            <span id="selected-language"></span> US
         </a>
-        <ul class="dropdown-menu dropdown-menu">
+        <ul class="dropdown-menu dropdown-menu-left" style="left: -30%;">
             <li class="active">
-                <a href="./admin/staff/change_language">
-                    <img src="https://flagcdn.com/w40/us.png" width="20"> System Default
+                <a href="#"
+                    onclick="changeLanguage('https://flagcdn.com/w40/us.png', 'System Default')">
+                    <img src="https://flagcdn.com/w40/us.png" width="30"> US
                 </a>
             </li>
             <li>
                 <a href="./admin/staff/change_language/hindi">
-                    <img src="https://flagcdn.com/w40/in.png" width="20"> Hindi
+                    <img src="https://flagcdn.com/w40/in.png" width="30"> Hindi
                 </a>
             </li>
             <li>
                 <a href="./admin/staff/change_language/slovak">
-                    <img src="https://flagcdn.com/w40/sk.png" width="20"> Slovak
+                    <img src="https://flagcdn.com/w40/sk.png" width="30"> Slovak
                 </a>
             </li>
             <li>
                 <a href="./admin/staff/change_language/ukrainian">
-                    <img src="https://flagcdn.com/w40/ua.png" width="20"> Ukrainian
+                    <img src="https://flagcdn.com/w40/ua.png" width="30"> Ukrainian
                 </a>
             </li>
             <li>
                 <a href="./admin/staff/change_language/vietnamese">
-                    <img src="https://flagcdn.com/w40/vn.png" width="20"> Vietnamese
+                    <img src="https://flagcdn.com/w40/vn.png" width="30"> Vietnamese
                 </a>
             </li>
             <li>
                 <a href="./admin/staff/change_language/finnish">
-                    <img src="https://flagcdn.com/w40/fi.png" width="20"> Finnish
+                    <img src="https://flagcdn.com/w40/fi.png" width="30"> Finnish
                 </a>
             </li>
             <li>
                 <a href="./admin/staff/change_language/portuguese_br">
-                    <img src="https://flagcdn.com/w40/br.png" width="20"> Portuguese (BR)
+                    <img src="https://flagcdn.com/w40/br.png" width="30"> (BR)
                 </a>
             </li>
             <li>
                 <a href="./admin/staff/change_language/polish">
-                    <img src="https://flagcdn.com/w40/pl.png" width="20"> Polish
+                    <img src="https://flagcdn.com/w40/pl.png" width="30"> Polish
                 </a>
             </li>
             <li>
                 <a href="./admin/staff/change_language/german">
-                    <img src="https://flagcdn.com/w40/de.png" width="20"> German
+                    <img src="https://flagcdn.com/w40/de.png" width="30"> German
                 </a>
             </li>
             <li>
                 <a href="./admin/staff/change_language/english">
-                    <img src="https://flagcdn.com/w40/gb.png" width="20"> English
+                    <img src="https://flagcdn.com/w40/gb.png" width="30"> English
                 </a>
             </li>
             <li>
                 <a href="./admin/staff/change_language/japanese">
-                    <img src="https://flagcdn.com/w40/jp.png" width="20"> Japanese
+                    <img src="https://flagcdn.com/w40/jp.png" width="30"> Japanese
                 </a>
             </li>
             <li>
                 <a href="./admin/staff/change_language/french">
-                    <img src="https://flagcdn.com/w40/fr.png" width="20"> French
+                    <img src="https://flagcdn.com/w40/fr.png" width="30"> French
                 </a>
             </li>
         </ul>
@@ -1814,7 +1795,7 @@ data-new-gr-c-s-check-loaded="14.1221.0" data-gr-ext-installed="">
             </ul>
         </div>
     </aside>
-    <div id="wrapper" style="min-height: 1357px;">
+    <div id="wrapper" style="height: 100vh; overflow-y: auto;">
         <div class="content">
             <div class="row">
                 <div class="col-md-12">
@@ -2811,95 +2792,16 @@ data-new-gr-c-s-check-loaded="14.1221.0" data-gr-ext-installed="">
         });
     });
 
-    document.addEventListener("DOMContentLoaded", function () {
-    let menu = document.getElementById("menu");
-    let trigger = document.createElement("div");
-    trigger.classList.add("sidebar-trigger");
-    document.body.appendChild(trigger);
-
-    trigger.addEventListener("mouseenter", function () {
-        menu.classList.add("show");
-    });
-
-    menu.addEventListener("mouseleave", function () {
-        menu.classList.remove("show");
-    });
-});
-
-    
-
-document.addEventListener("DOMContentLoaded", function () {
-    const menu = document.getElementById("menu");
-    const wrapper = document.getElementById("wrapper");
-    const trigger = document.querySelector(".sidebar-trigger");
-    
-    // Check saved state: "collapsed" or "expanded"
-    const savedState = localStorage.getItem("sidebarState") || "collapsed";
-    
-    if (savedState === "expanded") {
-      menu.classList.add("show");
-      wrapper.classList.remove("m-0");
-    } else {
-      menu.classList.remove("show");
-      wrapper.classList.add("m-0");
+    </script>
+ 
+<script>
+    function changeCurrency(symbol, currency) {
+        document.getElementById('selected-currency-symbol').textContent = symbol;
+        document.getElementById('selected-currency').textContent = currency;
     }
     
-    // Show sidebar on hover
-    trigger.addEventListener("mouseenter", function() {
-      menu.classList.add("show");
-      wrapper.classList.remove("m-0");
-      localStorage.setItem("sidebarState", "expanded");
-    });
-    
-    // Hide sidebar when mouse leaves it
-    menu.addEventListener("mouseleave", function() {
-      menu.classList.remove("show");
-      wrapper.classList.add("m-0");
-      localStorage.setItem("sidebarState", "collapsed");
-    });
-  });
-  
 </script>
-    <style>
-        /* Sidebar default hidden state */
-        #menu {
-        position: absolute; /* or fixed */
-        top: 0;
-        left: -250px;  /* off-canvas */
-        width: 250px;
-        height: 100vh;
-        transition: left 0.3s ease-in-out;
-        }
-
-        /* When shown, slide it in */
-        #menu.show {
-        left: 0;
-        }
-
-        /* The m-0 class should remove any margin; in Tailwind m-0 sets margin: 0 */
-        .m-0 {
-        margin: 0 !important;
-        }
-
-    </style>
- 
-
-
-    <!-- <div id="lightboxOverlay" class="lightboxOverlay" style="display: none;"></div>
-    <div id="lightbox" class="lightbox" style="display: none;">
-        <div class="lb-outerContainer">
-            <div class="lb-container"><img class="lb-image"
-                    src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==">
-                <div class="lb-nav"><a class="lb-prev" href=""></a><a class="lb-next" href=""></a></div>
-                <div class="lb-loader"><a class="lb-cancel"></a></div>
-            </div>
-        </div>
-        <div class="lb-dataContainer">
-            <div class="lb-data">
-                <div class="lb-details"><span class="lb-caption"></span><span class="lb-number"></span></div>
-                <div class="lb-closeContainer"><a class="lb-close"></a></div>
-            </div>
-        </div>
-    </div> -->
 </body>
+
 </html>
+    
