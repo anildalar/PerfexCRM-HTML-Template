@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en" dir="ltr">
 
 <head>
@@ -123,9 +124,62 @@
                 transform: rotate(0deg);
             }
 
-            to {
+             to {
                 transform: rotate(360deg);
             }
+        }
+
+        body {
+            overflow: hidden;
+
+        }
+
+
+
+        .content {
+            margin-left: 5px;
+            /* Adjust for sidebar */
+            height: 100vh;
+            /* Full height */
+            overflow-y: auto;
+            /* Allow scrolling within content */
+            padding: 20px;
+
+        }
+
+        .r_scroll {
+            height: 1000px;
+        }
+
+        /* Scrollbar Customization */
+        #menu div[style*="overflow: scroll"]::-webkit-scrollbar {
+            width: 10px;
+        }
+
+
+        .row-resize {
+            cursor: row-resize;
+        }
+
+        #menu div[style*="overflow: scroll"]::-webkit-scrollbar-track {
+            background: #f3f4f6;
+            border-radius: 5px;
+            cursor: grab;
+        }
+
+        #menu div[style*="overflow: scroll"]::-webkit-scrollbar-thumb {
+            background: linear-gradient(135deg, #4f46e5, #9333ea);
+            border-radius: 10px;
+            border: 2px solid #f3f4f6;
+        }
+
+        #menu div[style*="overflow: scroll"]::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(135deg, #3b82f6, #a855f7);
+        }
+
+        .navbar-nav.navbar-right {
+            margin-right: 50px;
+
         }
 body {
             overflow: hidden; /* Prevent full-page scrolling */
@@ -1457,6 +1511,7 @@ body {
         </ul>
     </div>
     <aside id="menu" class="sidebar" style="min-height: 1097px;">
+        <div style="overflow: scroll; height: 100vh;" class="row-resize"></div>
         <div class="dropdown sidebar-user-profile tw-mt-[80px] tw-mx-1.5 ">
             <a href="#"
                 class="dropdown-toggle profile -tw-mt-1 tw-font-medium tw-border tw-border-solid tw-rounded-lg tw-bg-white/20 tw-py-2 tw-px-2.5 tw-block tw-shadow-sm tw-border-neutral-900/20 tw-text-neutral-700 hover:tw-text-neutral-800 focus:tw-text-neutral-800 hover:tw-bg-neutral-900/5 focus:tw-bg-neutral-900/5"
